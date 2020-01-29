@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="Dev Log">
 <meta property="og:description" content="주변장치없이 RPI 부팅하고 세팅해보아요.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-01-29T06:02:53.460Z">
+<meta property="og:updated_time" content="2020-01-29T06:22:23.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Raspberry Pi Boot without screen on MacOS">
 <meta name="twitter:description" content="주변장치없이 RPI 부팅하고 세팅해보아요.">
@@ -110,7 +110,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Draft"><span class="toc-number">1.</span> <span class="toc-text">Draft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물"><span class="toc-number">2.</span> <span class="toc-text">준비물</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#개발환경"><span class="toc-number">3.</span> <span class="toc-text">개발환경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#원격화면-연결을-위한-설정-Turn-VNC-on"><span class="toc-number">4.</span> <span class="toc-text">원격화면 연결을 위한 설정 | Turn VNC on</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac에서-RPI로-원격화면-연결하기-Connect-RPI-Remote-Screen-from-Mac"><span class="toc-number">5.</span> <span class="toc-text">Mac에서 RPI로 원격화면 연결하기 | Connect RPI Remote Screen from Mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reboot-amp-Execute"><span class="toc-number">6.</span> <span class="toc-text">Reboot &amp; Execute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac-Security-Preferences"><span class="toc-number">7.</span> <span class="toc-text">mac Security Preferences</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac-finder-command-K"><span class="toc-number">8.</span> <span class="toc-text">mac finder command+K</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Draft"><span class="toc-number">1.</span> <span class="toc-text">Draft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물-Prerequisites"><span class="toc-number">2.</span> <span class="toc-text">준비물 | Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#개발환경-Environments"><span class="toc-number">3.</span> <span class="toc-text">개발환경 | Environments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#원격화면-연결을-위한-설정-Turn-VNC-on"><span class="toc-number">4.</span> <span class="toc-text">원격화면 연결을 위한 설정 | Turn VNC on</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tightvncserver-설치-Install-tightvncserver"><span class="toc-number">5.</span> <span class="toc-text">tightvncserver 설치 | Install tightvncserver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reboot-amp-Execute"><span class="toc-number">6.</span> <span class="toc-text">Reboot &amp; Execute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Security-Preferences"><span class="toc-number">7.</span> <span class="toc-text">MacOS Security Preferences</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-finder"><span class="toc-number">8.</span> <span class="toc-text">MacOS finder</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -152,27 +152,31 @@
     <h2 id="Draft"><a href="#Draft" class="headerlink" title="Draft"></a>Draft</h2><ul>
 <li>2019-04-26</li>
 </ul>
-<h2 id="준비물"><a href="#준비물" class="headerlink" title="준비물"></a>준비물</h2><ul>
+<h2 id="준비물-Prerequisites"><a href="#준비물-Prerequisites" class="headerlink" title="준비물 | Prerequisites"></a>준비물 | Prerequisites</h2><ul>
 <li>내 컴퓨터</li>
 <li>공유기</li>
 <li>LAN 케이블</li>
 <li>Raspberry Pi</li>
 <li>Micro SD Card 16GB, Micro SD Card Reader</li>
 </ul>
-<h2 id="개발환경"><a href="#개발환경" class="headerlink" title="개발환경"></a>개발환경</h2><ul>
+<h2 id="개발환경-Environments"><a href="#개발환경-Environments" class="headerlink" title="개발환경 | Environments"></a>개발환경 | Environments</h2><ul>
 <li>MacOS Mojave</li>
 <li>RPI 3B</li>
 <li>Raspbian Stretch With Desktop</li>
 <li>BalenaEtcher</li>
 </ul>
 <h2 id="원격화면-연결을-위한-설정-Turn-VNC-on"><a href="#원격화면-연결을-위한-설정-Turn-VNC-on" class="headerlink" title="원격화면 연결을 위한 설정 | Turn VNC on"></a>원격화면 연결을 위한 설정 | Turn VNC on</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>interfaces config<br>VNC Enable &gt; YES</p>
-</blockquote>
-<h2 id="Mac에서-RPI로-원격화면-연결하기-Connect-RPI-Remote-Screen-from-Mac"><a href="#Mac에서-RPI로-원격화면-연결하기-Connect-RPI-Remote-Screen-from-Mac" class="headerlink" title="Mac에서 RPI로 원격화면 연결하기 | Connect RPI Remote Screen from Mac"></a>Mac에서 RPI로 원격화면 연결하기 | Connect RPI Remote Screen from Mac</h2><p>sudo apt-get install tightvncserver</p>
+<ol>
+<li>interfaces config</li>
+<li>VNC Enable &gt; YES</li>
+</ol>
+<h2 id="tightvncserver-설치-Install-tightvncserver"><a href="#tightvncserver-설치-Install-tightvncserver" class="headerlink" title="tightvncserver 설치 | Install tightvncserver"></a>tightvncserver 설치 | Install tightvncserver</h2><p>sudo apt-get install tightvncserver</p>
 <h2 id="Reboot-amp-Execute"><a href="#Reboot-amp-Execute" class="headerlink" title="Reboot &amp; Execute"></a>Reboot &amp; Execute</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo reboot</span><br><span class="line">...</span><br><span class="line">tightvncserver</span><br></pre></td></tr></table></figure>
-<h2 id="mac-Security-Preferences"><a href="#mac-Security-Preferences" class="headerlink" title="mac Security Preferences"></a>mac Security Preferences</h2><p>Sharing &gt; Screen sharing enable</p>
-<h2 id="mac-finder-command-K"><a href="#mac-finder-command-K" class="headerlink" title="mac finder command+K"></a>mac finder command+K</h2><p>vnc://raspberrypi.local:5901</p>
+<h2 id="MacOS-Security-Preferences"><a href="#MacOS-Security-Preferences" class="headerlink" title="MacOS Security Preferences"></a>MacOS Security Preferences</h2><p>Settings &gt; Sharing 에서 Screen sharing enable 설정하기</p>
+<h2 id="MacOS-finder"><a href="#MacOS-finder" class="headerlink" title="MacOS finder"></a>MacOS finder</h2><ol>
+<li>command + K</li>
+<li>vnc://raspberrypi.local:5901</li>
+</ol>
 
   </div>
 </article>
@@ -198,7 +202,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Draft"><span class="toc-number">1.</span> <span class="toc-text">Draft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물"><span class="toc-number">2.</span> <span class="toc-text">준비물</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#개발환경"><span class="toc-number">3.</span> <span class="toc-text">개발환경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#원격화면-연결을-위한-설정-Turn-VNC-on"><span class="toc-number">4.</span> <span class="toc-text">원격화면 연결을 위한 설정 | Turn VNC on</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac에서-RPI로-원격화면-연결하기-Connect-RPI-Remote-Screen-from-Mac"><span class="toc-number">5.</span> <span class="toc-text">Mac에서 RPI로 원격화면 연결하기 | Connect RPI Remote Screen from Mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reboot-amp-Execute"><span class="toc-number">6.</span> <span class="toc-text">Reboot &amp; Execute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac-Security-Preferences"><span class="toc-number">7.</span> <span class="toc-text">mac Security Preferences</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac-finder-command-K"><span class="toc-number">8.</span> <span class="toc-text">mac finder command+K</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Draft"><span class="toc-number">1.</span> <span class="toc-text">Draft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물-Prerequisites"><span class="toc-number">2.</span> <span class="toc-text">준비물 | Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#개발환경-Environments"><span class="toc-number">3.</span> <span class="toc-text">개발환경 | Environments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#원격화면-연결을-위한-설정-Turn-VNC-on"><span class="toc-number">4.</span> <span class="toc-text">원격화면 연결을 위한 설정 | Turn VNC on</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tightvncserver-설치-Install-tightvncserver"><span class="toc-number">5.</span> <span class="toc-text">tightvncserver 설치 | Install tightvncserver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reboot-amp-Execute"><span class="toc-number">6.</span> <span class="toc-text">Reboot &amp; Execute</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Security-Preferences"><span class="toc-number">7.</span> <span class="toc-text">MacOS Security Preferences</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-finder"><span class="toc-number">8.</span> <span class="toc-text">MacOS finder</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
