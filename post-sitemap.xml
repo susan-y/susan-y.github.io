@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>http://susan-y.github.io/2020/01/30/200130/</loc>
+        <lastmod>2020-01-29T07:03:34.683Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://susan-y.github.io/2018/04/16/180416-1/</loc>
+        <lastmod>2020-01-29T06:47:39.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://susan-y.github.io/2020/01/29/200129-2/</loc>
-        <lastmod>2020-01-29T06:22:23.701Z</lastmod>
+        <lastmod>2020-01-29T06:26:11.435Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -169,14 +185,6 @@
 
     <url>
         <loc>http://susan-y.github.io/2018/04/13/180413-2/</loc>
-        <lastmod>2020-01-29T05:12:01.286Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://susan-y.github.io/2018/04/16/180416-1/</loc>
         <lastmod>2020-01-29T05:12:01.286Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
