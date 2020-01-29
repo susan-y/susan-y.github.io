@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138985966-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'UA-138985966-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="환경 Windows 10 x64 ASUS BIOS  준비물Download VirtualBox버추얼박스를 다운로드합니다.  VirtualBox Download Page   Download CentOS 7 ISO최신 iso파일을 미러사이트에서 다운로드합니다.  CentOS Download Page 파일이름 참고: CentOS-7-x86_64-DVD-1810.i">
+<meta name="keywords" content="vm,VirtualBox,CentOS,Windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setup CentOS 7 in VritualBox">
+<meta property="og:url" content="http://susan-y.github.io/2019/02/28/190228/index.html">
+<meta property="og:site_name" content="Dev Log">
+<meta property="og:description" content="환경 Windows 10 x64 ASUS BIOS  준비물Download VirtualBox버추얼박스를 다운로드합니다.  VirtualBox Download Page   Download CentOS 7 ISO최신 iso파일을 미러사이트에서 다운로드합니다.  CentOS Download Page 파일이름 참고: CentOS-7-x86_64-DVD-1810.i">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://susan-y.github.io/2019/02/28/190228/image1.jpg">
+<meta property="og:image" content="http://susan-y.github.io/2019/02/28/190228/image2.jpg">
+<meta property="og:image" content="http://susan-y.github.io/2019/02/28/190228/image3.jpg">
+<meta property="og:image" content="http://susan-y.github.io/2019/02/28/190228/image4.jpg">
+<meta property="og:image" content="http://susan-y.github.io/2019/02/28/190228/image14.jpg">
+<meta property="og:updated_time" content="2020-01-29T05:12:01.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setup CentOS 7 in VritualBox">
+<meta name="twitter:description" content="환경 Windows 10 x64 ASUS BIOS  준비물Download VirtualBox버추얼박스를 다운로드합니다.  VirtualBox Download Page   Download CentOS 7 ISO최신 iso파일을 미러사이트에서 다운로드합니다.  CentOS Download Page 파일이름 참고: CentOS-7-x86_64-DVD-1810.i">
+<meta name="twitter:image" content="http://susan-y.github.io/2019/02/28/190228/image1.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Setup CentOS 7 in VritualBox</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/03/20/190320/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/08/09/180809-1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://susan-y.github.io/2019/02/28/190228/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://susan-y.github.io/2019/02/28/190228/&text=Setup CentOS 7 in VritualBox"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://susan-y.github.io/2019/02/28/190228/&is_video=false&description=Setup CentOS 7 in VritualBox"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Setup CentOS 7 in VritualBox&body=Check out this article: http://susan-y.github.io/2019/02/28/190228/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://susan-y.github.io/2019/02/28/190228/&name=Setup CentOS 7 in VritualBox&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#환경"><span class="toc-number">1.</span> <span class="toc-text">환경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물"><span class="toc-number">2.</span> <span class="toc-text">준비물</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Download-VirtualBox"><span class="toc-number">2.1.</span> <span class="toc-text">Download VirtualBox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Download-CentOS-7-ISO"><span class="toc-number">2.2.</span> <span class="toc-text">Download CentOS 7 ISO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VirtualBox에-CentOS-7-새로-만들기"><span class="toc-number">3.</span> <span class="toc-text">VirtualBox에 CentOS 7 새로 만들기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS-7-셋업하기"><span class="toc-number">4.</span> <span class="toc-text">CentOS 7 셋업하기</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Setup CentOS 7 in VritualBox
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Dev Log</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-02-28T05:39:19.000Z" itemprop="datePublished">2019-02-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/CentOS/">CentOS</a>, <a class="tag-link" href="/tags/VirtualBox/">VirtualBox</a>, <a class="tag-link" href="/tags/Windows/">Windows</a>, <a class="tag-link" href="/tags/vm/">vm</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="환경"><a href="#환경" class="headerlink" title="환경"></a>환경</h2><ul>
+<li>Windows 10 x64</li>
+<li>ASUS BIOS</li>
+</ul>
+<h2 id="준비물"><a href="#준비물" class="headerlink" title="준비물"></a>준비물</h2><h3 id="Download-VirtualBox"><a href="#Download-VirtualBox" class="headerlink" title="Download VirtualBox"></a>Download VirtualBox</h3><p>버추얼박스를 다운로드합니다.</p>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">VirtualBox Download Page</a></li>
+</ul>
+<p><img src="./image1.jpg" alt="image"></p>
+<h3 id="Download-CentOS-7-ISO"><a href="#Download-CentOS-7-ISO" class="headerlink" title="Download CentOS 7 ISO"></a>Download CentOS 7 ISO</h3><p>최신 iso파일을 미러사이트에서 다운로드합니다.</p>
+<ul>
+<li><a href="https://www.centos.org/download/" target="_blank" rel="noopener">CentOS Download Page</a></li>
+<li>파일이름 참고: CentOS-7-x86_64-DVD-1810.iso</li>
+</ul>
+<p><img src="./image2.jpg" alt="image"></p>
+<h2 id="VirtualBox에-CentOS-7-새로-만들기"><a href="#VirtualBox에-CentOS-7-새로-만들기" class="headerlink" title="VirtualBox에 CentOS 7 새로 만들기"></a>VirtualBox에 CentOS 7 새로 만들기</h2><p>VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.</p>
+<ol>
+<li>Install VirtualBox</li>
+<li>BIOS Setting에서 Advanced &gt; Intel Virtualization Technology 설정을 Enabled로 변경<br><img src="./image3.jpg" alt></li>
+<li>VirtualBox 실행</li>
+<li>VirtualBox -&gt; 새로 만들기<ul>
+<li>Name: Centos7 64</li>
+<li>종류: Linux</li>
+<li>버전: Red Hat(64-bit)<br><img src="./image4.jpg" alt></li>
+</ul>
+</li>
+<li>새로 만든 Centos7을 실행하기 전에 다음을 설정합니다.<ol>
+<li>Centos7 설정에서 시스템 -&gt; 포인팅 장치 -&gt; USB태블릿 으로 변경합니다.<br><img src="./image14.jpg" alt></li>
+<li>VirtualBox 설정에서 입력 -&gt; 호스트 키 설정 -&gt; Ctrl + Alt 로 변경합니다.</li>
+</ol>
+</li>
+<li>Centos7을 ‘시작’합니다.</li>
+</ol>
+<h2 id="CentOS-7-셋업하기"><a href="#CentOS-7-셋업하기" class="headerlink" title="CentOS 7 셋업하기"></a>CentOS 7 셋업하기</h2><p>CentOS 셋업 설정을 진행합니다.</p>
+<ol>
+<li>Install CentOS 7</li>
+<li>Language: English / English</li>
+<li>Date &amp; Time: Seoul </li>
+<li><strong>Begin Installation</strong></li>
+<li>Root Password 설정</li>
+<li>User Creation 아이디와 패스워드 설정. 관리자 아님.</li>
+<li><strong>Reboot</strong></li>
+<li>Login: User Name &amp; Password</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#환경"><span class="toc-number">1.</span> <span class="toc-text">환경</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#준비물"><span class="toc-number">2.</span> <span class="toc-text">준비물</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Download-VirtualBox"><span class="toc-number">2.1.</span> <span class="toc-text">Download VirtualBox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Download-CentOS-7-ISO"><span class="toc-number">2.2.</span> <span class="toc-text">Download CentOS 7 ISO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VirtualBox에-CentOS-7-새로-만들기"><span class="toc-number">3.</span> <span class="toc-text">VirtualBox에 CentOS 7 새로 만들기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS-7-셋업하기"><span class="toc-number">4.</span> <span class="toc-text">CentOS 7 셋업하기</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://susan-y.github.io/2019/02/28/190228/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://susan-y.github.io/2019/02/28/190228/&text=Setup CentOS 7 in VritualBox"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://susan-y.github.io/2019/02/28/190228/&is_video=false&description=Setup CentOS 7 in VritualBox"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Setup CentOS 7 in VritualBox&body=Check out this article: http://susan-y.github.io/2019/02/28/190228/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://susan-y.github.io/2019/02/28/190228/&title=Setup CentOS 7 in VritualBox"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://susan-y.github.io/2019/02/28/190228/&name=Setup CentOS 7 in VritualBox&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Susan Y. Kang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-117829887-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

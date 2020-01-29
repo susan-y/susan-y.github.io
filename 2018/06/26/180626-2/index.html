@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138985966-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'UA-138985966-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Accessing Keychain Items with Face ID or Touch ID: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기Origin: Apple Developer Document  Create an Access ControlSecAccessControlTo create a protected keychain i">
+<meta name="keywords" content="iOS,keychain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS &#x2F; study &#x2F; Accessing Keychain Items with Face ID or Touch ID (2)">
+<meta property="og:url" content="http://susan-y.github.io/2018/06/26/180626-2/index.html">
+<meta property="og:site_name" content="Dev Log">
+<meta property="og:description" content="Accessing Keychain Items with Face ID or Touch ID: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기Origin: Apple Developer Document  Create an Access ControlSecAccessControlTo create a protected keychain i">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-29T05:12:01.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS &#x2F; study &#x2F; Accessing Keychain Items with Face ID or Touch ID (2)">
+<meta name="twitter:description" content="Accessing Keychain Items with Face ID or Touch ID: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기Origin: Apple Developer Document  Create an Access ControlSecAccessControlTo create a protected keychain i">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/08/09/180809-1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/26/180626-1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://susan-y.github.io/2018/06/26/180626-2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://susan-y.github.io/2018/06/26/180626-2/&text=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://susan-y.github.io/2018/06/26/180626-2/&is_video=false&description=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)&body=Check out this article: http://susan-y.github.io/2018/06/26/180626-2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://susan-y.github.io/2018/06/26/180626-2/&name=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-an-Access-Control"><span class="toc-number">1.</span> <span class="toc-text">Create an Access Control</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SecAccessControl"><span class="toc-number">1.1.</span> <span class="toc-text">SecAccessControl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"><span class="toc-number">1.2.</span> <span class="toc-text">kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#userPresence-flag"><span class="toc-number">1.3.</span> <span class="toc-text">userPresence flag</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Optionally-Provide-a-Customized-Context"><span class="toc-number">2.</span> <span class="toc-text">Optionally, Provide a Customized Context</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TouchIDAuthenticationAllwableReuseDuration"><span class="toc-number">2.1.</span> <span class="toc-text">TouchIDAuthenticationAllwableReuseDuration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Add-the-Keychina-Item"><span class="toc-number">3.</span> <span class="toc-text">Add the Keychina Item</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Provide-a-Prompt-When-Reading-the-Item"><span class="toc-number">4.</span> <span class="toc-text">Provide a Prompt When Reading the Item</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Dev Log</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-26T01:19:55.000Z" itemprop="datePublished">2018-06-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/">iOS</a>, <a class="tag-link" href="/tags/keychain/">keychain</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>Accessing Keychain Items with Face ID or Touch ID<br>: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기<br>Origin: <a href="https://developer.apple.com/documentation/localauthentication/accessing_keychain_items_with_face_id_or_touch_id" target="_blank" rel="noopener">Apple Developer Document</a></p>
+</blockquote>
+<h1 id="Create-an-Access-Control"><a href="#Create-an-Access-Control" class="headerlink" title="Create an Access Control"></a>Create an Access Control</h1><h2 id="SecAccessControl"><a href="#SecAccessControl" class="headerlink" title="SecAccessControl"></a>SecAccessControl</h2><p>To create a protected keychain item, begin by creating a SecAccessControl instance:</p>
+<ul>
+<li>보호된 키체인아이템을 생성하기 위해서 <strong>SecAccessControl</strong> 인스턴스를 생성함.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> access = <span class="type">SecAccessControlCreateWithFlags</span>(<span class="literal">nil</span>, <span class="comment">// Use the default allocator.</span></span><br><span class="line">                                            kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,</span><br><span class="line">                                            .userPresence,</span><br><span class="line">                                            <span class="literal">nil</span>) <span class="comment">// Ignore any error.</span></span><br></pre></td></tr></table></figure>
+<h2 id="kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"><a href="#kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly" class="headerlink" title="kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"></a>kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</h2><p>The access control instance contains restrictions along two dimensions: accessibility and authentication.<br>For the first, the kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly setting prevents items from being stored if the device has no passcode.<br>Further, any item already stored in the keychain with this level of accessibility becomes unavailable if the user removes the passcode.<br>Also, because this accessibility ends with ThisDeviceOnly, the item isn’t eligible for the iCloud keychain and won’t be included if the user restores a device backup to a new device.<br>This is the most restrictive option, but others are available.</p>
+<ul>
+<li>access control 인스턴스는 두가지 제한을 포함. 접근과 인증</li>
+<li>첫번째로 <strong>kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</strong> 설정은 디바이스가 패스코드를 가지고 있지 않은 경우 아이템이 저장되는 것을 막는다.</li>
+<li><strong>키체인에 (이 키를 가지고 있는) 이미 저장된 아이템에 대해서, 사용자가 패스코드를 지웠다면 사용할 수 없게됨.</strong></li>
+<li>이 접근은 ThisDeviceOnly 이니까, 이 키를 가지고 있는 키체인아이템은 iCloud키체인에서 사용할 수 없으며, 새로운 디바이스에 백업할 때도 복원되지 않음.</li>
+<li>이 키가 제일 제한적 옵션임. 다른 옵션들도 있으므로 참고.</li>
+</ul>
+<h2 id="userPresence-flag"><a href="#userPresence-flag" class="headerlink" title="userPresence flag"></a>userPresence flag</h2><p>Along the authentication dimension, the above code uses the userPresence flag. This tells keychain services to request biometric authentication, or to fall back on the device passcode, whenever the item is later read from the keychain. For more information about creating an access control instance, including the various levels of restrictiveness in each dimension, see Restricting Keychain Item Accessibility.</p>
+<ul>
+<li>위의 코드는 ‘userPresence’라는 플래그를 사용함. 이 플래그는 나중에 키체인아이템을 읽을 때, 키체인서비스가 바이오메트릭 인증을 요청한다고 말하거나 이 디바이스의 패스코드를 띄우게끔 한다.</li>
+<li>다양한 제한단계를 포함하여, access control 인스턴스를 생성하는 것에 대한 더 많은 정보는 다음 문서를 읽기 바람.</li>
+<li><a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/restricting_keychain_item_accessibility" target="_blank" rel="noopener">Restricting Keychain Item Accessibility</a></li>
+</ul>
+<h1 id="Optionally-Provide-a-Customized-Context"><a href="#Optionally-Provide-a-Customized-Context" class="headerlink" title="Optionally, Provide a Customized Context"></a>Optionally, Provide a Customized Context</h1><p>Keychain services automatically makes use of the LocalAuthentication framework, and in particular uses an LAContext instance to authenticate the user.<br>You can let keychain services create a new context every time it needs to authenticate.<br>However, if you want to alter the default configuration, you can optionally create a context for it to use instead:</p>
+<ul>
+<li>키체인서비스는 자동으로 LocalAuthentication 프레임웍을 사용하도록 만들고, 사용자 인증을 위해 LAContext인스턴스를 일부 사용함.</li>
+<li>인증이 필요하다면 키체인서비스가 매번 새로운 context를 생성하도록 할 수 있음.</li>
+<li>그러나 기본 설정을 바꿀 경우 다음 코드와 같이 선택적으로 context를 만들어야함.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> context = <span class="type">LAContext</span>()</span><br><span class="line">context.touchIDAuthenticationAllowableReuseDuration = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2 id="TouchIDAuthenticationAllwableReuseDuration"><a href="#TouchIDAuthenticationAllwableReuseDuration" class="headerlink" title="TouchIDAuthenticationAllwableReuseDuration"></a>TouchIDAuthenticationAllwableReuseDuration</h2><p>In this example, you set the context’s touchIDAuthenticationAllowableReuseDuration parameter to a non-zero value. As a result, any Touch ID authentication that keychain services requires is satisfied by the most recent device unlock event, if it happened within the given number of seconds (up to five mintues). This configuration prevents the user from having to authenticate twice in quick succession: once to get into the device, and immediately again to obtain a keychain item. Note that this grace period applies specifically to device unlock with Touch ID, not keychain retrieval authentications.</p>
+<ul>
+<li>이 예제처럼 touchIDAuthenticationAllowableReuseDuration 파라미터를 0이 아닌 값으로 설정합니다.</li>
+<li>결과적으로 모든 Touch ID 인증은 가장 최근의 언락이벤트로 만족됨, 지정된 초 내에 발생한 경우. (최대 5분)</li>
+<li>이 설정은 사용자가 빠른 프로세스 내에서 두번의 인증을 해야하는 것을 막습니다. 예를 들면, 디바이스를 언락하고 즉시 키체인아이템에 접근하는 경우.</li>
+<li>이 유예기간은 키체인 검색인증이 아닌 터치아이디로 잠금해제 하기에만 적용됨을 알아두세요.</li>
+</ul>
+<h1 id="Add-the-Keychina-Item"><a href="#Add-the-Keychina-Item" class="headerlink" title="Add the Keychina Item"></a>Add the Keychina Item</h1><p>Next, put all of the attributes together into a query dictionary:</p>
+<ul>
+<li>다음으로 쿼리딕셔너리 안에 속성을 모두 넣는다.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> query: [<span class="type">String</span>: <span class="type">Any</span>] = [kSecClass <span class="keyword">as</span> <span class="type">String</span>: kSecClassInternetPassword,</span><br><span class="line">                            kSecAttrAccount <span class="keyword">as</span> <span class="type">String</span>: account,</span><br><span class="line">                            kSecAttrServer <span class="keyword">as</span> <span class="type">String</span>: server,</span><br><span class="line">                            kSecAttrAccessControl <span class="keyword">as</span> <span class="type">String</span>: access <span class="keyword">as</span> <span class="type">Any</span>,</span><br><span class="line">                            kSecUseAuthenticationContext <span class="keyword">as</span> <span class="type">String</span>: context,</span><br><span class="line">                            kSecValueData <span class="keyword">as</span> <span class="type">String</span>: password]</span><br></pre></td></tr></table></figure>
+<p>This query is very much like the one described in Adding a Password to the Keychain, with the addition of the access control instance and the context. Then use this query to actually create the item:</p>
+<ul>
+<li>이 쿼리는 context, access control 인스턴스와 함께 패스워드를 키체인에 추가에 설명된 것과 유사함(??). 이 쿼리는 실제로 키체인아이템을 생성함.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> status = <span class="type">SecItemAdd</span>(query <span class="keyword">as</span> <span class="type">CFDictionary</span>, <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">guard</span> status == errSecSuccess <span class="keyword">else</span> &#123; <span class="keyword">throw</span> <span class="type">KeychainError</span>(status: status) &#125;</span><br></pre></td></tr></table></figure>
+<p>Test the return status and handle error conditions in a way that makes sense for your app. For example, you might handle the errSecDuplicateItem error by attempting to modify the item that already exists. See Using the Keychain to Manage User Secrets for a general discussion of working with keychain items.</p>
+<ul>
+<li>내 앱에서 오류조건과 리턴 상태를 테스트합니다. 예를 들어, 이미 있는 항목을 수정해봄으로써 ‘errSecDuplicateItem’에러를 핸들링할 수 있습니다. </li>
+<li>키체인아이템관련한 내용은 <a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/using_the_keychain_to_manage_user_secrets" target="_blank" rel="noopener">Using the Keychain to Manage User Secrets</a>를 참고</li>
+</ul>
+<h1 id="Provide-a-Prompt-When-Reading-the-Item"><a href="#Provide-a-Prompt-When-Reading-the-Item" class="headerlink" title="Provide a Prompt When Reading the Item"></a>Provide a Prompt When Reading the Item</h1><p>When reading the protected item, you search for it as described in Searching for Keychain Items. Keychain services works with LocalAuthentication to authenticate the user automatically as needed, using the context you provided, if any. However, there are a few additional query settings you might want to include. First, you can provide a string that the authentication context presents to the user when asking for a TouchID event.<br>Set this string in the kSecUseOperationPrompt attribute of the keychain item search query:</p>
+<ul>
+<li>보호된 아이템을 읽을 때, <a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/searching_for_keychain_items" target="_blank" rel="noopener">Searching for Keychain Items</a>에서 설명된 것 처럼 검색할 수 있음.</li>
+<li>키페인 서비스는 LocalAuthentication을 동작시켜서 앱에서 제공되는 context를 사용하여 유저를 자동으로 인증한다.</li>
+<li>그렇지만 몇가지 추가해야하는 쿼리 설정이 있음.</li>
+<li>먼저 TouchID 이벤트가 떴을 때 사용자에게 표시되는 인증 context string을 제공할 수 있음.</li>
+<li>kSecUseOperationPrompt 속성을 사용하여 키체인항목 검색쿼리에 설정한다.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> query: [<span class="type">String</span>: <span class="type">Any</span>] = [kSecClass <span class="keyword">as</span> <span class="type">String</span>: kSecClassInternetPassword,</span><br><span class="line">                            kSecAttrServer <span class="keyword">as</span> <span class="type">String</span>: server,</span><br><span class="line">                            kSecMatchLimit <span class="keyword">as</span> <span class="type">String</span>: kSecMatchLimitOne,</span><br><span class="line">                            kSecReturnAttributes <span class="keyword">as</span> <span class="type">String</span>: <span class="literal">true</span>,</span><br><span class="line">                            kSecUseOperationPrompt <span class="keyword">as</span> <span class="type">String</span>: <span class="string">"Access your password on the keychain"</span>,</span><br><span class="line">                            kSecReturnData <span class="keyword">as</span> <span class="type">String</span>: <span class="literal">true</span>]</span><br></pre></td></tr></table></figure>
+<p>Providing this prompt lets the user know why you want them to authenticate. The corresponding dialog already names your app, so you don’t have to include that in the prompt. Additionally, if you don’t want keychain services to prompt for authentication when you search for items, for example, because you’re conducting a broad search and are willing to simply skip any protected items, you can specify the kSecUseAuthenticationUI value with the kSecUseAuthenticationUISkip key.</p>
+<ul>
+<li>이 프롬프트를 제공하는 것은 유저가 이 앱이 인증을 원하는 이유를 알게 하기 위해서임. </li>
+<li>이미 다이얼로그에서 앱이름을 표시하므로, 프롬프트 string에는 포함하지 않아도 됨.</li>
+<li>추가로, 키체인아이템을 검색할 때 인증프롬프트를 원하지 않으면 kSecUseAuthenticationUI, kSecUseAuthenticationUISkip 키를 사용할 수 있다.</li>
+<li>예를 들면, 광범위한 검색을 수행하고, 보호된 아이템에 대해서 건너뛰기 위한 경우.</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-an-Access-Control"><span class="toc-number">1.</span> <span class="toc-text">Create an Access Control</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SecAccessControl"><span class="toc-number">1.1.</span> <span class="toc-text">SecAccessControl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"><span class="toc-number">1.2.</span> <span class="toc-text">kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#userPresence-flag"><span class="toc-number">1.3.</span> <span class="toc-text">userPresence flag</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Optionally-Provide-a-Customized-Context"><span class="toc-number">2.</span> <span class="toc-text">Optionally, Provide a Customized Context</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TouchIDAuthenticationAllwableReuseDuration"><span class="toc-number">2.1.</span> <span class="toc-text">TouchIDAuthenticationAllwableReuseDuration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Add-the-Keychina-Item"><span class="toc-number">3.</span> <span class="toc-text">Add the Keychina Item</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Provide-a-Prompt-When-Reading-the-Item"><span class="toc-number">4.</span> <span class="toc-text">Provide a Prompt When Reading the Item</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://susan-y.github.io/2018/06/26/180626-2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://susan-y.github.io/2018/06/26/180626-2/&text=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://susan-y.github.io/2018/06/26/180626-2/&is_video=false&description=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)&body=Check out this article: http://susan-y.github.io/2018/06/26/180626-2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://susan-y.github.io/2018/06/26/180626-2/&title=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://susan-y.github.io/2018/06/26/180626-2/&name=iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Susan Y. Kang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-117829887-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
