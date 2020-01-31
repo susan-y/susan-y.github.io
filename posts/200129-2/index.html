@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Raspberry Pi Boot without screen on MacOS&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">Raspberry Pi Boot without screen on MacOS</h1><p class="article date">2020-01-29</p></section><article class="article markdown-body"><h2 id="draft">Draft</h2>
+<ul>
+<li>2019-04-26</li>
+</ul>
+<h2 id="준비물--prerequisites">준비물 | Prerequisites</h2>
+<ul>
+<li>내 컴퓨터</li>
+<li>공유기</li>
+<li>LAN 케이블</li>
+<li>Raspberry Pi</li>
+<li>Micro SD Card 16GB, Micro SD Card Reader</li>
+</ul>
+<h2 id="개발환경--environments">개발환경 | Environments</h2>
+<ul>
+<li>MacOS Mojave</li>
+<li>RPI 3B</li>
+<li>Raspbian Stretch With Desktop</li>
+<li>BalenaEtcher</li>
+</ul>
+<h2 id="원격화면-연결을-위한-설정--turn-vnc-on">원격화면 연결을 위한 설정 | Turn VNC on</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
+</code></pre></div><ol>
+<li>interfaces config</li>
+<li>VNC Enable &gt; YES</li>
+</ol>
+<h2 id="tightvncserver-설치--install-tightvncserver">tightvncserver 설치 | Install tightvncserver</h2>
+<p>sudo apt-get install tightvncserver</p>
+<h2 id="reboot--execute">Reboot &amp; Execute</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo reboot
+...
+tightvncserver
+</code></pre></div><h2 id="macos-security-preferences">MacOS Security Preferences</h2>
+<p>Settings &gt; Sharing 에서 Screen sharing enable 설정하기</p>
+<h2 id="macos-finder">MacOS finder</h2>
+<ol>
+<li>command + K</li>
+<li>vnc://raspberrypi.local:5901</li>
+</ol>
+</article><section class="article labels"><a class="tag" href=/tags/rpi/>rpi</a><a class="tag" href=/tags/raspberry-pi/>raspberry pi</a><a class="tag" href=/tags/balena-etcher/>balena etcher</a><a class="tag" href=/tags/vnc/>vnc</a><a class="tag" href=/tags/macos/>macos</a></section><section class="article navigation"><p><a class="link" href="/posts/200129-1/"><span class="li">&larr;</span>Raspberry Pi 3B+ Wifi Ethernet Bridge</a></p><p><a class="link" href="/posts/190910/"><span class="li">&rarr;</span>express.js generator</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Dev Log</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in Docker on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 03 May 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Basic Command</title>
+      <link>/posts/190503/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190503/</guid>
+      <description>Docker Hub https://hub.docker.com/
+summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&#39;라는 이름으로 실행한다. repo를 실행할 때 sshd도 함께 실행한다. -P: docker image 생성시에 설정되어있는 PORT를 모두 오픈한다는 옵션 -v: 링크할 로컬 폴더를 뒤에 나열한다는 옵션  Show Process List Docker Container 상태 확인하기</description>
+    </item>
+    
+  </channel>
+</rss>

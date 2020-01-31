@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>router on Dev Log</title>
+    <link>/tags/router/</link>
+    <description>Recent content in router on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/router/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rapsberry PI as Router / 3B &#43; Buster</title>
+      <link>/posts/190826/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190826/</guid>
+      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.
+Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
+denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
+    </item>
+    
+  </channel>
+</rss>

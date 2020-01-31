@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / iOS App Name Localization&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / iOS App Name Localization</h1><p class="article date">2018-08-09</p></section><article class="article markdown-body"><h2 id="pre-requisites">Pre-requisites</h2>
+<h3 id="env">env.</h3>
+<ul>
+<li>Xcode 9</li>
+<li>macOS High Sierra</li>
+</ul>
+<h2 id="infopliststrings-만들기">InfoPlist.strings 만들기</h2>
+<ol>
+<li>File &gt; New &gt; File&hellip;</li>
+<li>FileName:  InfoPlist.strings</li>
+</ol>
+<h2 id="localization-추가하기">Localization 추가하기</h2>
+<ol>
+<li>Project &gt; Info
+Localizations에 사용할 언어를 추가한다. English, Korean</li>
+<li>InfoPlist.strings 의  File Inspector에서 Localization  &gt; ‘localize’ 버튼 클릭</li>
+<li>English, Korean 추가</li>
+<li>InfoPlist.strings(korean)</li>
+</ol>
+<ul>
+<li>CFBundleDisplayName=“앱이름”</li>
+</ul>
+<ol start="5">
+<li>InfoPlist.strings(english)</li>
+</ol>
+<ul>
+<li>CFBundleDisplayName=“AppName”</li>
+</ul>
+<ol start="6">
+<li>기타 권한 설명 추가하기</li>
+</ol>
+<ul>
+<li>사진라이브러리 권한: NSPhotoLibraryUsageDescription=&rdquo;&quot;;</li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/infoplist/>infoplist</a></section><section class="article navigation"><p><a class="link" href="/posts/190228/"><span class="li">&larr;</span>Setup CentOS 7 in VritualBox</a></p><p><a class="link" href="/posts/180626-2/"><span class="li">&rarr;</span>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

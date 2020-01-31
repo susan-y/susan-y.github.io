@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">Onion Omega2+ Oled Expansion을 이용한 QR Code Generator</h1><p class="article date">2019-03-20</p></section><article class="article markdown-body"><blockquote>
+<p>Omega2+ 의 초기 설정이 완료된 상태에서 진행합니다. 초기 설정은 <a href="https://innoaus.com/posts/20190319/"target="_blank">이전 포스트</a>를 참고합니다.</p>
+</blockquote>
+<h2 id="준비물">준비물</h2>
+<ol>
+<li>Onion Omega2+</li>
+<li>Expansion Dock</li>
+<li>OLED Expansion</li>
+</ol>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image6.jpg"><img  src="/images/20190320_image6.jpg"
+        alt/></a></p>
+<h2 id="단계">단계</h2>
+<h3 id="omega2-접속하기">Omega2+ 접속하기</h3>
+<ol>
+<li>브라우저를 열고 주소창에 <strong>[omega 이름].local</strong>을 입력하여 접속합니다.
+<a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image1.png"><img  src="/images/20190320_image1.png"
+        alt/></a></li>
+<li>로그인 후 처음화면에 보이는 Terminal을 선택하면 Omega의 터미널로 접속합니다.
+<a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image2.png"><img  src="/images/20190320_image2.png"
+        alt/></a></li>
+<li>브라우저에서 로그인했던 Username, Password로 로그인합니다.
+<a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image3.png"><img  src="/images/20190320_image3.png"
+        alt/></a></li>
+</ol>
+<h3 id="open-package-설치">Open Package 설치</h3>
+<p>opkg 커맨드를 사용하여 오픈소스로 제공되는 라이브러리들을 설치하여 사용할 수 있습니다.</p>
+<ol>
+<li>먼저 opkg 툴을 업데이트합니다.</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">opkg update
+</code></pre></div><ol start="2">
+<li>opkg를 이용하여 필요한 패키지를 설치합니다.</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">opkg install python-light python-codecs pyOledExp git git-http ca-bundle
+</code></pre></div><h3 id="git-소스코드-다운로드">Git 소스코드 다운로드</h3>
+<p>위의 설치가 완료되면 git커맨드로 Onion에서 제공하는 oledQrCodeGenerator 소스코드를 내려받을 수 있습니다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span>
+git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
+</code></pre></div><h3 id="qr-code-generator-실행하기">QR Code Generator 실행하기</h3>
+<p>아래 스크립트를 실행하면 OLED에 QR코드가 표시됩니다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> oledQrCodeGenerator
+python main.py <span class="s1">&#39;Hello, Onion?&#39;</span>
+</code></pre></div><p><a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image4.png"><img  src="/images/20190320_image4.png"
+        alt/></a>
+main.py 소스코드에 &lsquo;Hello, Onion?&lsquo;문장을 파라미터로 전달하면 OLED에 전달한 문장이 QR코드로 표시됩니다.
+<a target="_blank" rel="noopener noreferrer" 
+  href="/images/20190320_image5.jpg"><img  src="/images/20190320_image5.jpg"
+        alt/></a></p>
+</article><section class="article labels"><a class="tag" href=/tags/omega/>Omega</a><a class="tag" href=/tags/iot/>IoT</a><a class="tag" href=/tags/embedded/>Embedded</a></section><section class="article navigation"><p><a class="link" href="/posts/190502/"><span class="li">&larr;</span>Platform IO Basic for Arduino</a></p><p><a class="link" href="/posts/190228/"><span class="li">&rarr;</span>Setup CentOS 7 in VritualBox</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

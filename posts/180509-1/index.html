@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / Hotspot Study&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / Hotspot Study</h1><p class="article date">2018-05-09</p></section><article class="article markdown-body"><h1 id="original">Original</h1>
+<p><a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/Hotspot_Network_Subsystem_Guide/Contents/Introduction.html#//apple_ref/doc/uid/TP40016639-CH1-SW1"target="_blank">Hotspot Network Subsystem Programming Guide</a></p>
+<h1 id="번역">번역</h1>
+<h2 id="about-the-hotspot-network-subsystem"><a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/Hotspot_Network_Subsystem_Guide/Contents/Introduction.html#//apple_ref/doc/uid/TP40016639-CH1-SW1"target="_blank">About the Hotspot Network Subsystem</a></h2>
+<p>The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks. This programming guide is a companion to Apple’s NEHotspotHelper Class Reference, which describes the Hotspot Helper API.</p>
+<ul>
+<li>핫스팟 네트워크 서브시스템은 핫스팟 헬퍼앱이 와이파이 핫스팟 네트워크를 분류하거나 인증하는 절차에 참여할 수 있게 합니다. 핫스팟 헬퍼 API를 설명하기 위해 NEHotspotHelper 클래스 참고문서를 따릅니다.</li>
+</ul>
+<p>A Hotspot Helper application receives commands to be processed and provides a response to a command after it has been processed. In most instances, application command processing occurs while the application is running in the background.</p>
+<ul>
+<li>핫스팟 헬퍼</li>
+</ul>
+<p>The application receives commands to process as part of two main functions: authentication and scan list filtering. These functions and their recommended implementations are described in the following sections:</p>
+<ul>
+<li>ㅇㅐ플리케이션은 2개의 주요 기능의 부분으로 처리할 명령을 받음: 인증과 스캔목록 필터링. 이러한 함수와 구현방법은 다음 절에서 설명.</li>
+</ul>
+<h2 id="authentication-state-machine">Authentication State Machine</h2>
+<p>One main function of the Hotspot Helper is to participate in the authentication state machine summarized in Figure 1-1. This state machine incorporates feedback from the helpers at various times after associating to a Wi-Fi network.</p>
+<ul>
+<li>주요기능 중 하나는 핫스팟헬퍼가 인증상태 시스템에 참여하는 것입니다. 상태 시스템은 Wi-Fi 네트워크에 연결한 후에 헬퍼로부터 피드백을 여러번 받습니다.</li>
+</ul>
+<p>The state machine maintains a cache of results for each network that is visited, which lets it remember which helper was last chosen for a given network.</p>
+<ul>
+<li>상태 시스템은 각각의 네트워크에 방문했을 때의 결과를 캐시에 남기므로, 주어진 네트워크에서 마지막으로 선택된 헬퍼를 기억합니다.
+To help understand how the state machine works, consider the typical sequences of events for the following scenarios.</li>
+<li>상태 시스템이 어떻게 동작하는지 이해하기 위해서, 다음 시나리오에서 일반적인 이벤트의 순차를 볼 필요가 있습니다.</li>
+</ul>
+<h2 id="sequence-when-network-is-captive">Sequence When Network Is Captive</h2>
+<p>네트워크가 Captive 상태일 때 순서</p>
+<ol>
+<li>State machine is in <strong>Inactive</strong> state.
+<ul>
+<li>상태시스템이 Inactive 상태이다.</li>
+</ul>
+</li>
+<li>Associate to Wi-Fi network.
+<ul>
+<li>Wi-Fi 네트워크에 연결한다.</li>
+</ul>
+</li>
+<li>IP connectivity is established.
+<ul>
+<li>IP 접속가능성을 평가한다.</li>
+</ul>
+</li>
+<li>State machine moves to <strong>Evaluating</strong> state.
+<ul>
+<li>상태시스템이 평가상태로 바뀐다.</li>
+</ul>
+</li>
+<li>Sends <strong>Evaluate</strong> command to each Hotspot Helper.
+<ul>
+<li>Evaludate 커맨드를 각 핫스팟헬퍼에게 전송</li>
+</ul>
+</li>
+<li>Each Hotspot Helper processes the Evaluate command and determines whether the network is captive (it requires authentication).
+<ul>
+<li>각 핫스팟 헬퍼가 Evaluate 커맨드를 처리하고, 네트워크가 captive 상태인지 결정한다. (인증이 필요함)</li>
+</ul>
+</li>
+<li>Results from Evaluate indicate that network is captive; the “best” Hotspot Helper is chosen (best_helper).
+<ul>
+<li>Evaluate 결과로 captive 네트워크를 나타낸다. 가장 좋은 핫스팟 헬퍼를 선택한다.</li>
+</ul>
+</li>
+<li>State machine moves to <strong>Authenticating</strong> state; cache entry is created specifying best_helper.
+<ul>
+<li>상태시스템이 Authenticating 상태로 바뀐다. 캐시엔트리가 생성되어 베스트헬퍼가 특정된다.</li>
+</ul>
+</li>
+<li>Sends <strong>Authenticate</strong> command to best_helper.
+<ul>
+<li>Authenticate 커맨드를 베스트헬퍼에게 보낸다.</li>
+</ul>
+</li>
+<li>best_helper performs necessary operation to authenticate to the network and returns <strong>kNEHotspotHelperResultSuccess</strong>.
+<ul>
+<li>베스트헬퍼는 네트워크인증을 위한 필수동작을 수행하고, kNEHotstpoHelperResultSuccess를 반환한다.</li>
+</ul>
+</li>
+<li>State machine moves to <strong>Authenticated</strong> state and sets a Maintaining timer.
+<ul>
+<li>상태시스템은 Authenticated 상태로 바뀌고, 유지시간을 설정한다.</li>
+</ul>
+</li>
+<li>Timer fires; State machine moves to <strong>Maintaining</strong> state.
+<ul>
+<li>유지시간 시작; 상태머신은 Maintaining 상태로 바뀐다.</li>
+</ul>
+</li>
+<li>Sends <strong>Maintain</strong> command to best_helper.
+<ul>
+<li>Maintain 커맨드를 베스트헬퍼로 전송한다.</li>
+</ul>
+</li>
+<li>best_helper processes command and returns <strong>kNEHotspotHelperResultSuccess</strong>.
+<ul>
+<li>베스트헬퍼는 Maintain 커맨드를 처리하고, kNEHotstpoHelperResultSuccess를 반환한다.</li>
+</ul>
+</li>
+<li>Repeat steps 11 though 14.
+<ul>
+<li>11-14번 단계를 반복한다.</li>
+</ul>
+</li>
+</ol>
+<h2 id="sequence-when-network-is-not-captive">Sequence When Network Is Not Captive</h2>
+<p>네트워크가 Not Cative 일 때 순서</p>
+<ol>
+<li>State machine is in <strong>Inactive</strong> state.
+<ul>
+<li>상태시스템은 Inactive 상태이다.</li>
+</ul>
+</li>
+<li>Associate to Wi-Fi network.
+<ul>
+<li>Wi-Fi네트워크에 연결한다.</li>
+</ul>
+</li>
+<li>IP connectivity is established.
+<ul>
+<li>IP 접속가능성을 평가한다.</li>
+</ul>
+</li>
+<li>State machine moves to Evaluating state.
+<ul>
+<li>상태시스템을 <strong>Evaludating</strong> 상태로 바꾼다.</li>
+</ul>
+</li>
+<li>Sends Evaluate command to each Hotspot Helper.
+<ul>
+<li><strong>Evaluate</strong> 커맨드를 각 핫스팟헬퍼에 전송한다.</li>
+</ul>
+</li>
+<li>Each helper processes the Evaluate command to determine whether the network is captive.
+<ul>
+<li>각 헬퍼는 <strong>Evaluate</strong> 커맨드를 처리하기 위해 네트워크가 captive인지 결정한다.</li>
+</ul>
+</li>
+<li>Results from Evaluate indicate the network is not captive.
+<ul>
+<li>Evaluate 결과로 network가 not captive인 걸 표시한다.</li>
+</ul>
+</li>
+<li>State machine moves to Authenticated state; cache entry is created indicating network not captive
+<ul>
+<li>상태시스템이 <strong>Autenticated</strong> 상태로 바뀐다. 캐시엔트리가 생성되어 not captive 네트워크로 표시됨.</li>
+</ul>
+</li>
+</ol>
+</article><section class="article labels"><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/network/>network</a><a class="tag" href=/tags/hotspot/>hotspot</a></section><section class="article navigation"><p><a class="link" href="/posts/180509-2/"><span class="li">&larr;</span>iOS / In-App Purchase 기록</a></p><p><a class="link" href="/posts/180425-1/"><span class="li">&rarr;</span>iOS / PHILIPS HUE SDK 2 ; Controller</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

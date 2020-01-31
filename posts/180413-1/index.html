@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / NetworkExtension / Connect Wifi on my app&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / NetworkExtension / Connect Wifi on my app</h1><p class="article date">2018-04-13</p></section><article class="article markdown-body"><h2 id="prerequsites">Prerequsites</h2>
+<h3 id="refrences">Refrences</h3>
+<ul>
+<li><a href="https://developer.apple.com/documentation/networkextension"target="_blank">NetworkExtension</a></li>
+</ul>
+<h3 id="env">Env.</h3>
+<ul>
+<li>Xcode 9</li>
+<li>iOS11 above</li>
+<li>Swift4</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="1-capabilities">1. Capabilities</h3>
+<p>Hotspot Configuration On
+<a target="_blank" rel="noopener noreferrer" 
+  href="/images/image001.png"><img  src="/images/image001.png"
+        alt/></a></p>
+<h3 id="2-code">2. Code</h3>
+<h4 id="swift4">swift4</h4>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">connectClicked</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">NEHotspotConfiguration</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">ssid</span><span class="p">:</span> <span class="s">&#34;</span><span class="s">[name]</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">passphrase</span><span class="p">:</span> <span class="s">&#34;</span><span class="s">[password]</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">isWEP</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">.</span><span class="n">joinOnce</span> <span class="p">=</span> <span class="kc">true</span>
+    <span class="n">NEHotspotConfigurationManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">!</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></article><section class="article navigation"><p><a class="link" href="/posts/180413-2/"><span class="li">&larr;</span>Android / Connect Wifi on my app</a></p><p><a class="link" href="/posts/hello-world/"><span class="li">&rarr;</span>Hello World</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

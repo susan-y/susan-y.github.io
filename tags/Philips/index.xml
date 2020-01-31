@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philips on Dev Log</title>
+    <link>/tags/philips/</link>
+    <description>Recent content in Philips on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 25 Apr 2018 10:54:11 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/philips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK 2 ; Controller</title>
+      <link>/posts/180425-1/</link>
+      <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
+      
+      <guid>/posts/180425-1/</guid>
+      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.
+ Hue Bridge IP Address: 192.168.0.100 나의 iPhone IP Address: 192.168.0.101  Hue Bridge 찾기  Find Bridge Button 만들기 Find Bridge Button Action Code  Found Hue Bridge에 연결하기  connect foundBridge  Hue Light 조정하기  Control Hue Light State  </description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK</title>
+      <link>/posts/180416-1/</link>
+      <pubDate>Mon, 16 Apr 2018 11:08:18 +0000</pubDate>
+      
+      <guid>/posts/180416-1/</guid>
+      <description>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.
+ Prerequisites Downloads  HueSDK from Philips Github: HueSDK.framework HueSDK iOS Framework Guide: HueSDK iOS Framework Guide  env.  macOS 10.13 (High Sierra) Xcode 9 iOS 11.3 Swift4  Getting Started 1. 새 Xcode 프로젝트 만들기  Project Name: TestHue Template: Single View Language: Swift  2. Framework 추가하기 주의 &amp;raquo; HueSDK iOS Framework Guide를 보면 device, simulator의 Framework를 한번에 추가하는 방법으로 알려주는데, 빠른 실행과 결과를 보기 위해 device Framework만 추가한다.</description>
+    </item>
+    
+  </channel>
+</rss>

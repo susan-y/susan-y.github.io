@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</h1><p class="article date">2018-06-26</p></section><article class="article markdown-body"><blockquote>
+<p>Accessing Keychain Items with Face ID or Touch ID
+: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기
+Origin: <a href="https://developer.apple.com/documentation/localauthentication/accessing_keychain_items_with_face_id_or_touch_id"target="_blank">Apple Developer Document</a></p>
+</blockquote>
+<h1 id="create-an-access-control">Create an Access Control</h1>
+<h2 id="secaccesscontrol">SecAccessControl</h2>
+<p>To create a protected keychain item, begin by creating a SecAccessControl instance:</p>
+<ul>
+<li>보호된 키체인아이템을 생성하기 위해서 <strong>SecAccessControl</strong> 인스턴스를 생성함.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">access</span> <span class="p">=</span> <span class="n">SecAccessControlCreateWithFlags</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="c1">//</span><span class="c1"> </span><span class="c1">U</span><span class="c1">s</span><span class="c1">e</span><span class="c1"> </span><span class="c1">t</span><span class="c1">h</span><span class="c1">e</span><span class="c1"> </span><span class="c1">d</span><span class="c1">e</span><span class="c1">f</span><span class="c1">a</span><span class="c1">u</span><span class="c1">l</span><span class="c1">t</span><span class="c1"> </span><span class="c1">a</span><span class="c1">l</span><span class="c1">l</span><span class="c1">o</span><span class="c1">c</span><span class="c1">a</span><span class="c1">t</span><span class="c1">o</span><span class="c1">r</span><span class="c1">.</span>
+                                            <span class="n">kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</span><span class="p">,</span>
+                                            <span class="p">.</span><span class="n">userPresence</span><span class="p">,</span>
+                                            <span class="kc">nil</span><span class="p">)</span> <span class="c1">//</span><span class="c1"> </span><span class="c1">I</span><span class="c1">g</span><span class="c1">n</span><span class="c1">o</span><span class="c1">r</span><span class="c1">e</span><span class="c1"> </span><span class="c1">a</span><span class="c1">n</span><span class="c1">y</span><span class="c1"> </span><span class="c1">e</span><span class="c1">r</span><span class="c1">r</span><span class="c1">o</span><span class="c1">r</span><span class="c1">.</span>
+</code></pre></div><h2 id="ksecattraccessiblewhenpasscodesetthisdeviceonly">kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</h2>
+<p>The access control instance contains restrictions along two dimensions: accessibility and authentication.
+For the first, the kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly setting prevents items from being stored if the device has no passcode.
+Further, any item already stored in the keychain with this level of accessibility becomes unavailable if the user removes the passcode.
+Also, because this accessibility ends with ThisDeviceOnly, the item isn’t eligible for the iCloud keychain and won’t be included if the user restores a device backup to a new device.
+This is the most restrictive option, but others are available.</p>
+<ul>
+<li>access control 인스턴스는 두가지 제한을 포함. 접근과 인증</li>
+<li>첫번째로 <strong>kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly</strong> 설정은 디바이스가 패스코드를 가지고 있지 않은 경우 아이템이 저장되는 것을 막는다.</li>
+<li><strong>키체인에 (이 키를 가지고 있는) 이미 저장된 아이템에 대해서, 사용자가 패스코드를 지웠다면 사용할 수 없게됨.</strong></li>
+<li>이 접근은 ThisDeviceOnly 이니까, 이 키를 가지고 있는 키체인아이템은 iCloud키체인에서 사용할 수 없으며, 새로운 디바이스에 백업할 때도 복원되지 않음.</li>
+<li>이 키가 제일 제한적 옵션임. 다른 옵션들도 있으므로 참고.</li>
+</ul>
+<h2 id="userpresence-flag">userPresence flag</h2>
+<p>Along the authentication dimension, the above code uses the userPresence flag. This tells keychain services to request biometric authentication, or to fall back on the device passcode, whenever the item is later read from the keychain. For more information about creating an access control instance, including the various levels of restrictiveness in each dimension, see Restricting Keychain Item Accessibility.</p>
+<ul>
+<li>위의 코드는 &lsquo;userPresence'라는 플래그를 사용함. 이 플래그는 나중에 키체인아이템을 읽을 때, 키체인서비스가 바이오메트릭 인증을 요청한다고 말하거나 이 디바이스의 패스코드를 띄우게끔 한다.</li>
+<li>다양한 제한단계를 포함하여, access control 인스턴스를 생성하는 것에 대한 더 많은 정보는 다음 문서를 읽기 바람.</li>
+<li><a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/restricting_keychain_item_accessibility"target="_blank">Restricting Keychain Item Accessibility</a></li>
+</ul>
+<h1 id="optionally-provide-a-customized-context">Optionally, Provide a Customized Context</h1>
+<p>Keychain services automatically makes use of the LocalAuthentication framework, and in particular uses an LAContext instance to authenticate the user.
+You can let keychain services create a new context every time it needs to authenticate.
+However, if you want to alter the default configuration, you can optionally create a context for it to use instead:</p>
+<ul>
+<li>키체인서비스는 자동으로 LocalAuthentication 프레임웍을 사용하도록 만들고, 사용자 인증을 위해 LAContext인스턴스를 일부 사용함.</li>
+<li>인증이 필요하다면 키체인서비스가 매번 새로운 context를 생성하도록 할 수 있음.</li>
+<li>그러나 기본 설정을 바꿀 경우 다음 코드와 같이 선택적으로 context를 만들어야함.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">context</span> <span class="p">=</span> <span class="n">LAContext</span><span class="p">(</span><span class="p">)</span>
+<span class="n">context</span><span class="p">.</span><span class="n">touchIDAuthenticationAllowableReuseDuration</span> <span class="p">=</span> <span class="mi">10</span>
+</code></pre></div><h2 id="touchidauthenticationallwablereuseduration">TouchIDAuthenticationAllwableReuseDuration</h2>
+<p>In this example, you set the context’s touchIDAuthenticationAllowableReuseDuration parameter to a non-zero value. As a result, any Touch ID authentication that keychain services requires is satisfied by the most recent device unlock event, if it happened within the given number of seconds (up to five mintues). This configuration prevents the user from having to authenticate twice in quick succession: once to get into the device, and immediately again to obtain a keychain item. Note that this grace period applies specifically to device unlock with Touch ID, not keychain retrieval authentications.</p>
+<ul>
+<li>이 예제처럼 touchIDAuthenticationAllowableReuseDuration 파라미터를 0이 아닌 값으로 설정합니다.</li>
+<li>결과적으로 모든 Touch ID 인증은 가장 최근의 언락이벤트로 만족됨, 지정된 초 내에 발생한 경우. (최대 5분)</li>
+<li>이 설정은 사용자가 빠른 프로세스 내에서 두번의 인증을 해야하는 것을 막습니다. 예를 들면, 디바이스를 언락하고 즉시 키체인아이템에 접근하는 경우.</li>
+<li>이 유예기간은 키체인 검색인증이 아닌 터치아이디로 잠금해제 하기에만 적용됨을 알아두세요.</li>
+</ul>
+<h1 id="add-the-keychina-item">Add the Keychina Item</h1>
+<p>Next, put all of the attributes together into a query dictionary:</p>
+<ul>
+<li>다음으로 쿼리딕셔너리 안에 속성을 모두 넣는다.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">query</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="n">kSecClass</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">kSecClassInternetPassword</span><span class="p">,</span>
+                            <span class="n">kSecAttrAccount</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">account</span><span class="p">,</span>
+                            <span class="n">kSecAttrServer</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">server</span><span class="p">,</span>
+                            <span class="n">kSecAttrAccessControl</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">access</span> <span class="k">as</span> <span class="nb">Any</span><span class="p">,</span>
+                            <span class="n">kSecUseAuthenticationContext</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">context</span><span class="p">,</span>
+                            <span class="n">kSecValueData</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">password</span><span class="p">]</span>
+</code></pre></div><p>This query is very much like the one described in Adding a Password to the Keychain, with the addition of the access control instance and the context. Then use this query to actually create the item:</p>
+<ul>
+<li>이 쿼리는 context, access control 인스턴스와 함께 패스워드를 키체인에 추가에 설명된 것과 유사함(??). 이 쿼리는 실제로 키체인아이템을 생성함.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">status</span> <span class="p">=</span> <span class="n">SecItemAdd</span><span class="p">(</span><span class="n">query</span> <span class="k">as</span> <span class="n">CFDictionary</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="k">guard</span> <span class="n">status</span> <span class="p">=</span><span class="p">=</span> <span class="n">errSecSuccess</span> <span class="k">else</span> <span class="p">{</span> <span class="k">throw</span> <span class="n">KeychainError</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">status</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div><p>Test the return status and handle error conditions in a way that makes sense for your app. For example, you might handle the errSecDuplicateItem error by attempting to modify the item that already exists. See Using the Keychain to Manage User Secrets for a general discussion of working with keychain items.</p>
+<ul>
+<li>내 앱에서 오류조건과 리턴 상태를 테스트합니다. 예를 들어, 이미 있는 항목을 수정해봄으로써 &lsquo;errSecDuplicateItem'에러를 핸들링할 수 있습니다.</li>
+<li>키체인아이템관련한 내용은 <a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/using_the_keychain_to_manage_user_secrets"target="_blank">Using the Keychain to Manage User Secrets</a>를 참고</li>
+</ul>
+<h1 id="provide-a-prompt-when-reading-the-item">Provide a Prompt When Reading the Item</h1>
+<p>When reading the protected item, you search for it as described in Searching for Keychain Items. Keychain services works with LocalAuthentication to authenticate the user automatically as needed, using the context you provided, if any. However, there are a few additional query settings you might want to include. First, you can provide a string that the authentication context presents to the user when asking for a TouchID event.
+Set this string in the kSecUseOperationPrompt attribute of the keychain item search query:</p>
+<ul>
+<li>보호된 아이템을 읽을 때, <a href="https://developer.apple.com/documentation/security/keychain_services/keychain_items/searching_for_keychain_items"target="_blank">Searching for Keychain Items</a>에서 설명된 것 처럼 검색할 수 있음.</li>
+<li>키페인 서비스는 LocalAuthentication을 동작시켜서 앱에서 제공되는 context를 사용하여 유저를 자동으로 인증한다.</li>
+<li>그렇지만 몇가지 추가해야하는 쿼리 설정이 있음.</li>
+<li>먼저 TouchID 이벤트가 떴을 때 사용자에게 표시되는 인증 context string을 제공할 수 있음.</li>
+<li>kSecUseOperationPrompt 속성을 사용하여 키체인항목 검색쿼리에 설정한다.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">query</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="n">kSecClass</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">kSecClassInternetPassword</span><span class="p">,</span>
+                            <span class="n">kSecAttrServer</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">server</span><span class="p">,</span>
+                            <span class="n">kSecMatchLimit</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="n">kSecMatchLimitOne</span><span class="p">,</span>
+                            <span class="n">kSecReturnAttributes</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                            <span class="n">kSecUseOperationPrompt</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="s">&#34;</span><span class="s">Access your password on the keychain</span><span class="s">&#34;</span><span class="p">,</span>
+                            <span class="n">kSecReturnData</span> <span class="k">as</span> <span class="nb">String</span><span class="p">:</span> <span class="kc">true</span><span class="p">]</span>
+</code></pre></div><p>Providing this prompt lets the user know why you want them to authenticate. The corresponding dialog already names your app, so you don’t have to include that in the prompt. Additionally, if you don’t want keychain services to prompt for authentication when you search for items, for example, because you’re conducting a broad search and are willing to simply skip any protected items, you can specify the kSecUseAuthenticationUI value with the kSecUseAuthenticationUISkip key.</p>
+<ul>
+<li>이 프롬프트를 제공하는 것은 유저가 이 앱이 인증을 원하는 이유를 알게 하기 위해서임.</li>
+<li>이미 다이얼로그에서 앱이름을 표시하므로, 프롬프트 string에는 포함하지 않아도 됨.</li>
+<li>추가로, 키체인아이템을 검색할 때 인증프롬프트를 원하지 않으면 kSecUseAuthenticationUI, kSecUseAuthenticationUISkip 키를 사용할 수 있다.</li>
+<li>예를 들면, 광범위한 검색을 수행하고, 보호된 아이템에 대해서 건너뛰기 위한 경우.</li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/keychain/>keychain</a></section><section class="article navigation"><p><a class="link" href="/posts/180809-1/"><span class="li">&larr;</span>iOS / iOS App Name Localization</a></p><p><a class="link" href="/posts/180626-1/"><span class="li">&rarr;</span>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

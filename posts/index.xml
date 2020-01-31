@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Dev Log</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to use ionicons in Devextreme Vuejs</title>
+      <link>/posts/200130/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200130/</guid>
+      <description>ionicons 홈페이지 https://ionicons.com/
+Environments  Devextreme Vuejs Project  https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/   Devextreme Vue Template  https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template    단계   Download &amp;lsquo;Designer Pack&amp;rsquo; ionicons 홈페이지에 오른쪽 상단에 보면 Designer Pack을 다운로드할 수 있음.
+  css/ font/ 폴더를 vuejs 프로젝트의 assets/ 폴더 아래 붙여넣는다. 
+  main.js에 css를 import 한다.
+  import &amp;#39;./assets/css/ionicons.css&amp;#39;; npm run build 또는 npm run dev(serve)  사용하기 devextreme-vue-template/app-navigation.js 에서 icon 부분을 다음과 같이 변경한다.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 3B&#43; Wifi Ethernet Bridge</title>
+      <link>/posts/200129-1/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200129-1/</guid>
+      <description>Draft 2019-04-23
+Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
+목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다. 따라서 라즈베리파이를 Ehternet Bridge로 만듭니다.
+준비물  Raspberry Pi 3B+, 키보드, 마우스, 모니터  데스크탑과 와이파이 네트워크의 브릿지로 사용합니다. 라즈베리파이 3B+는 802.11ac 와이파이를 가지고 있어서 이 프로젝트에 적당합니다.   데스크탑: iMac 27 공유기: ipTime Raspbian Stretch  단계 sudo -Es apt-get update &amp;amp;&amp;amp; apt-get upgrade 라즈베리파이를 Wifi에 연결합니다. /etc/wpa_supplicant/wpa_supplicant.conf 파일을 열어서 아래와 유사하게 되어있는 걸 확인합니다. country_code는 US로 지정했습니다.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Boot without screen on MacOS</title>
+      <link>/posts/200129-2/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200129-2/</guid>
+      <description>Draft  2019-04-26  준비물 | Prerequisites  내 컴퓨터 공유기 LAN 케이블 Raspberry Pi Micro SD Card 16GB, Micro SD Card Reader  개발환경 | Environments  MacOS Mojave RPI 3B Raspbian Stretch With Desktop BalenaEtcher  원격화면 연결을 위한 설정 | Turn VNC on sudo raspi-config  interfaces config VNC Enable &amp;gt; YES  tightvncserver 설치 | Install tightvncserver sudo apt-get install tightvncserver
+Reboot &amp;amp; Execute sudo reboot .</description>
+    </item>
+    
+    <item>
+      <title>express.js generator</title>
+      <link>/posts/190910/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190910/</guid>
+      <description>Environments  Mac 10.14.x iTerm2, zsh  Project Name  express10  Step 1. expressjs 프로젝트 생성 express --view=pug express10 [project name] 2. package 초기화 cd express10 npm install 3. 실행 npm start // or DEBUG=express10:* npm start </description>
+    </item>
+    
+    <item>
+      <title>Rapsberry PI as Router / 3B &#43; Buster</title>
+      <link>/posts/190826/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190826/</guid>
+      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.
+Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
+denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
+    </item>
+    
+    <item>
+      <title>Android / Get Phone Number, Carrier Name on Android 19-29</title>
+      <link>/posts/190809-2/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190809-2/</guid>
+      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.4  step MainActivity.kt override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContentView(R.layout.activity_main) val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager log(&amp;#34;======================================&amp;#34;) if (if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.M) { checkSelfPermission(READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED } else { TODO(&amp;#34;VERSION.SDK_INT &amp;lt; M&amp;#34;) } ) { log(tm.line1Number) //+821011112222 } log(tm.networkCountryIso) //KR log(tm.networkOperator) //45080 log(tm.networkOperatorName) //KT log(&amp;#34;==========================================&amp;#34;) } App Manifest &amp;lt;uses-permission android:name=&amp;#34;android.permission.READ_PHONE_STATE&amp;#34;/&amp;gt; App Permission Check  Settings -&amp;gt; Applications -&amp;gt; [This App] -&amp;gt; Permission -&amp;gt; Telephone Turn permission On  </description>
+    </item>
+    
+    <item>
+      <title>iOS / CTCarrier on iOS 12</title>
+      <link>/posts/190809-1/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190809-1/</guid>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.viewDidLoad() //Doanyadditionalsetupafterloadingtheview. textView.text = &amp;#34;&amp;#34; let info: CTTelephonyNetworkInfo = CTTelephonyNetworkInfo() for (service, carrier) in info.serviceSubscriberCellularProviders ?? [:] { print(&amp;#34;\(service), \(carrier)&amp;#34;) print(carrier.carrierName!) print(carrier.mobileCountryCode!) print(carrier.mobileNetworkCode!) print(carrier.isoCountryCode!) print(carrier.allowsVOIP) textView.text.append(&amp;#34;Service: \(service), Carrier: \(carrier.description)\n&amp;#34;) } } </description>
+    </item>
+    
+    <item>
+      <title>Docker Basic Command</title>
+      <link>/posts/190503/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190503/</guid>
+      <description>Docker Hub https://hub.docker.com/
+summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&#39;라는 이름으로 실행한다. repo를 실행할 때 sshd도 함께 실행한다. -P: docker image 생성시에 설정되어있는 PORT를 모두 오픈한다는 옵션 -v: 링크할 로컬 폴더를 뒤에 나열한다는 옵션  Show Process List Docker Container 상태 확인하기</description>
+    </item>
+    
+    <item>
+      <title>iOS / Swift Error throw, throws, try, catch</title>
+      <link>/posts/190502-2/</link>
+      <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
+      
+      <guid>/posts/190502-2/</guid>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething... guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) } return true } viewDidLoad override func viewDidLoad() { super.viewDidLoad() let ret = try? addNew(username: username, password: password) if ret == false { print(&amp;#34;failed&amp;#34;) } else { print(&amp;#34;success!&amp;#34;) } } //or override func viewDidLoad() { super.viewDidLoad() do { let _ = try addNew(username: username, password: password) } catch { print(error.</description>
+    </item>
+    
+    <item>
+      <title>Platform IO Basic for Arduino</title>
+      <link>/posts/190502/</link>
+      <pubDate>Thu, 02 May 2019 09:22:38 +0000</pubDate>
+      
+      <guid>/posts/190502/</guid>
+      <description>platformio.ini Project Configuration File. 프로젝트 설정파일입니다.
+Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_port = [Port Name] ; example ; upload_port = /dev/cu.usbmodem/144104 monitor_port = [Port Name] ; example ; monitor_port = /dev/cu.usbmodem/144104 references Platform IO Docs: platformio.ini https://docs.platformio.org/en/latest/projectconf.html</description>
+    </item>
+    
+    <item>
+      <title>Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator</title>
+      <link>/posts/190320/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190320/</guid>
+      <description>Omega2+ 의 초기 설정이 완료된 상태에서 진행합니다. 초기 설정은 이전 포스트를 참고합니다.
+ 준비물  Onion Omega2+ Expansion Dock OLED Expansion  
+단계 Omega2+ 접속하기  브라우저를 열고 주소창에 [omega 이름].local을 입력하여 접속합니다.  로그인 후 처음화면에 보이는 Terminal을 선택하면 Omega의 터미널로 접속합니다.  브라우저에서 로그인했던 Username, Password로 로그인합니다.   Open Package 설치 opkg 커맨드를 사용하여 오픈소스로 제공되는 라이브러리들을 설치하여 사용할 수 있습니다.
+ 먼저 opkg 툴을 업데이트합니다.</description>
+    </item>
+    
+    <item>
+      <title>Setup CentOS 7 in VritualBox</title>
+      <link>/posts/190228/</link>
+      <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
+      
+      <guid>/posts/190228/</guid>
+      <description>환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox 버추얼박스를 다운로드합니다.
+ VirtualBox Download Page  
+Download CentOS 7 ISO 최신 iso파일을 미러사이트에서 다운로드합니다.
+ CentOS Download Page 파일이름 참고: CentOS-7-x86_64-DVD-1810.iso  
+VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
+ Install VirtualBox BIOS Setting에서 Advanced &amp;gt; Intel Virtualization Technology 설정을 Enabled로 변경  VirtualBox 실행 VirtualBox -&amp;gt; 새로 만들기  Name: Centos7 64 종류: Linux 버전: Red Hat(64-bit)    새로 만든 Centos7을 실행하기 전에 다음을 설정합니다.</description>
+    </item>
+    
+    <item>
+      <title>iOS / iOS App Name Localization</title>
+      <link>/posts/180809-1/</link>
+      <pubDate>Thu, 09 Aug 2018 10:34:10 +0000</pubDate>
+      
+      <guid>/posts/180809-1/</guid>
+      <description>Pre-requisites env.  Xcode 9 macOS High Sierra  InfoPlist.strings 만들기  File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.strings  Localization 추가하기  Project &amp;gt; Info Localizations에 사용할 언어를 추가한다. English, Korean InfoPlist.strings 의 File Inspector에서 Localization &amp;gt; ‘localize’ 버튼 클릭 English, Korean 추가 InfoPlist.strings(korean)   CFBundleDisplayName=“앱이름”  InfoPlist.strings(english)   CFBundleDisplayName=“AppName”  기타 권한 설명 추가하기   사진라이브러리 권한: NSPhotoLibraryUsageDescription=&amp;rdquo;&amp;quot;;  </description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</title>
+      <link>/posts/180626-2/</link>
+      <pubDate>Tue, 26 Jun 2018 10:19:55 +0000</pubDate>
+      
+      <guid>/posts/180626-2/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
+ Create an Access Control SecAccessControl To create a protected keychain item, begin by creating a SecAccessControl instance:
+ 보호된 키체인아이템을 생성하기 위해서 SecAccessControl 인스턴스를 생성함.  let access = SecAccessControlCreateWithFlags(nil, //Usethedefaultallocator. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .userPresence, nil) //Ignoreanyerror. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly The access control instance contains restrictions along two dimensions: accessibility and authentication. For the first, the kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly setting prevents items from being stored if the device has no passcode.</description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</title>
+      <link>/posts/180626-1/</link>
+      <pubDate>Tue, 26 Jun 2018 09:46:00 +0000</pubDate>
+      
+      <guid>/posts/180626-1/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
+ Overview 개요 Keychain Items When you store a secure item like a password or a private key in the keychain, you dictate the conditions under which that item can be accessed later. Among other things, you can tell keychain services that every time it tries to read the item, it should first seek the user’s permission—for example, by authenticating the user biometrically with Face ID or Touch ID.</description>
+    </item>
+    
+    <item>
+      <title>Android / Fullscreen Splash</title>
+      <link>/posts/180622/</link>
+      <pubDate>Fri, 22 Jun 2018 11:10:19 +0000</pubDate>
+      
+      <guid>/posts/180622/</guid>
+      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.intent.category.LAUNCHER&amp;#34; /&amp;gt; &amp;lt;/intent-filter&amp;gt; &amp;lt;/activity&amp;gt; values/v23/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;android:windowLightStatusBar&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; values/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>IOT / IoT Hub Study</title>
+      <link>/posts/180511-1/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180511-1/</guid>
+      <description>IoT 허브 역할  IoT 디바이스 컨트롤러. 전구, 도어락, 온도조절기 등의 Smart Device와 Hub는 Zigbee 통신 등으로 커맨드를 주고 받는다. Hub는 외부로부터 전달된 커맨드를 받아서 Device를 제어하는 역할을 한다.  Hue Bridge  필립스의 Hue 제품은 Hue앱을 설치하고 Hue Bridge에 연결하여 Hue제품을 제어할 수 있다. Amazon Alexa, Apple HomeKit, Google Home과 연계하여 음성으로 조명을 컨트롤 할 수 있다.  그 외의 Hub  Samsung / SmartThings Hub ADT Home Security with SmartThings Hub Belkin / WeMo Bridge Wink / Wink Hub Hive / Hive Hub  IoT Device 제조사  nest, 온도조절기, 카메라, 초인종, 도어락, 연기감지 Philips, 조명 Yale, keyless lock Hive, 온도조절기, 카메라, 조명, 플러그 Belkin, 조광기, 카메라, 플러그  IoT Hub Assistant  Amazon Alexa, Apple HomeKit, Google Home 등과 같은 Assistant Speaker를 사용하여 음성으로 제어할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>iOS / In-App Purchase 기록</title>
+      <link>/posts/180509-2/</link>
+      <pubDate>Wed, 09 May 2018 13:39:17 +0000</pubDate>
+      
+      <guid>/posts/180509-2/</guid>
+      <description>Original In-App Purchase Programming Guide
+번역 About In-App Purchase In-App Purchase allows you to embed a store inside your app using the StoreKit framework. This framework connects to the App Store on your app’s behalf to securely process payments from users, prompting them to authorize payment. The framework then notifies your app, which provides the purchased items to users. Use In-App Purchase to collect payment for additional features and content.</description>
+    </item>
+    
+    <item>
+      <title>iOS / Hotspot Study</title>
+      <link>/posts/180509-1/</link>
+      <pubDate>Wed, 09 May 2018 13:30:04 +0000</pubDate>
+      
+      <guid>/posts/180509-1/</guid>
+      <description>Original Hotspot Network Subsystem Programming Guide
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks. This programming guide is a companion to Apple’s NEHotspotHelper Class Reference, which describes the Hotspot Helper API.
+ 핫스팟 네트워크 서브시스템은 핫스팟 헬퍼앱이 와이파이 핫스팟 네트워크를 분류하거나 인증하는 절차에 참여할 수 있게 합니다. 핫스팟 헬퍼 API를 설명하기 위해 NEHotspotHelper 클래스 참고문서를 따릅니다.</description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK 2 ; Controller</title>
+      <link>/posts/180425-1/</link>
+      <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
+      
+      <guid>/posts/180425-1/</guid>
+      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.
+ Hue Bridge IP Address: 192.168.0.100 나의 iPhone IP Address: 192.168.0.101  Hue Bridge 찾기  Find Bridge Button 만들기 Find Bridge Button Action Code  Found Hue Bridge에 연결하기  connect foundBridge  Hue Light 조정하기  Control Hue Light State  </description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK</title>
+      <link>/posts/180416-1/</link>
+      <pubDate>Mon, 16 Apr 2018 11:08:18 +0000</pubDate>
+      
+      <guid>/posts/180416-1/</guid>
+      <description>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.
+ Prerequisites Downloads  HueSDK from Philips Github: HueSDK.framework HueSDK iOS Framework Guide: HueSDK iOS Framework Guide  env.  macOS 10.13 (High Sierra) Xcode 9 iOS 11.3 Swift4  Getting Started 1. 새 Xcode 프로젝트 만들기  Project Name: TestHue Template: Single View Language: Swift  2. Framework 추가하기 주의 &amp;raquo; HueSDK iOS Framework Guide를 보면 device, simulator의 Framework를 한번에 추가하는 방법으로 알려주는데, 빠른 실행과 결과를 보기 위해 device Framework만 추가한다.</description>
+    </item>
+    
+    <item>
+      <title>Android / Connect Wifi on my app</title>
+      <link>/posts/180413-2/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-2/</guid>
+      <description>Prerequsites Env.  Android studio 3 Target API 26 Kotlin  Getting Started 1. Permission &amp;lt;uses-permission android:name=&amp;#34;android.permission.CHANGE_WIFI_STATE&amp;#34; /&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.ACCESS_WIFI_STATE&amp;#34; /&amp;gt; 2. Code kotlin fun wifiConnect() { val ssid = &amp;#34;my hotspot ssid&amp;#34; val key = &amp;#34;my hotspot password&amp;#34; val wifiConfig = WifiConfiguration() wifiConfig.SSID = &amp;#34;\&amp;#34;&amp;#34; + ssid + &amp;#34;\&amp;#34;&amp;#34; wifiConfig.preSharedKey = &amp;#34;\&amp;#34;&amp;#34; + key + &amp;#34;\&amp;#34;&amp;#34; wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK) val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager val netId = wifiManager.addNetwork(wifiConfig) wifiManager.disconnect() wifiManager.enableNetwork(netId, true) wifiManager.</description>
+    </item>
+    
+    <item>
+      <title>iOS / NetworkExtension / Connect Wifi on my app</title>
+      <link>/posts/180413-1/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-1/</guid>
+      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1. Capabilities Hotspot Configuration On 
+2. Code swift4 @IBAction func connectClicked(_ sender: Any) { let config = NEHotspotConfiguration.init(ssid: &amp;#34;[name]&amp;#34;, passphrase: &amp;#34;[password]&amp;#34;, isWEP: false) config.joinOnce = true NEHotspotConfigurationManager.shared.apply(config) { (error) in if (error != nil) { print(error!) } } } </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>/posts/hello-world/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing
+Run server $ hexo server More info: Server
+Generate static files $ hexo generate More info: Generating
+Deploy to remote sites $ hexo deploy More info: Deployment</description>
+    </item>
+    
+  </channel>
+</rss>

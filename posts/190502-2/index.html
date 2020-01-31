@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / Swift Error throw, throws, try, catch&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / Swift Error throw, throws, try, catch</h1><p class="article date">2019-05-02</p></section><article class="article markdown-body"><h2 id="summary">summary</h2>
+<ul>
+<li>Error를 throw하고 throws catch 하는 방법 간단히 정리</li>
+<li>Swift5, Xcode10</li>
+</ul>
+<h2 id="addnew-function">addnew function</h2>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">addNew</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>        
+    <span class="c1">//</span><span class="c1"> </span><span class="c1">d</span><span class="c1">o</span><span class="c1"> </span><span class="c1">s</span><span class="c1">o</span><span class="c1">m</span><span class="c1">e</span><span class="c1">t</span><span class="c1">h</span><span class="c1">i</span><span class="c1">n</span><span class="c1">g</span><span class="c1">.</span><span class="c1">.</span><span class="c1">.</span>
+
+    <span class="k">guard</span> <span class="n">status</span> <span class="p">=</span><span class="p">=</span> <span class="n">errSecSuccess</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">KeychainError</span><span class="p">.</span><span class="n">unhandledError</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">status</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="viewdidload">viewDidLoad</h2>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">(</span><span class="p">)</span>
+
+    <span class="kd">let</span> <span class="nv">ret</span> <span class="p">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">addNew</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">password</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="p">=</span><span class="p">=</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="s">failed</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="s">success!</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="p">}</span>        
+<span class="p">}</span>
+<span class="c1">//</span><span class="c1"> </span><span class="c1">o</span><span class="c1">r</span>
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">(</span><span class="p">)</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="k">try</span> <span class="n">addNew</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">password</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div><h2 id="error-enum">Error enum</h2>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">enum</span> <span class="nc">KeychainError</span><span class="p">:</span> <span class="n">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">noPassword</span>
+    <span class="k">case</span> <span class="n">unexpectedPasswordData</span>
+    <span class="k">case</span> <span class="n">unhandledError</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">OSStatus</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/swift/>Swift</a><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/error/>error</a></section><section class="article navigation"><p><a class="link" href="/posts/190503/"><span class="li">&larr;</span>Docker Basic Command</a></p><p><a class="link" href="/posts/190502/"><span class="li">&rarr;</span>Platform IO Basic for Arduino</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

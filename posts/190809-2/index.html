@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Android / Get Phone Number, Carrier Name on Android 19-29&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">Android / Get Phone Number, Carrier Name on Android 19-29</h1><p class="article date">2019-08-09</p></section><article class="article markdown-body"><h2 id="environments">Environments</h2>
+<ul>
+<li>Android API 19 - 29</li>
+<li>Kotlin</li>
+<li>Android Studio 3.4</li>
+</ul>
+<h2 id="step">step</h2>
+<h3 id="mainactivitykt">MainActivity.kt</h3>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"> <span class="kr">override</span> <span class="n">fun</span> <span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+    <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+
+    <span class="n">val</span> <span class="n">tm</span> <span class="p">=</span> <span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="n">TELEPHONY_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="n">TelephonyManager</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&#34;</span><span class="s">======================================</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">VERSION</span><span class="p">.</span><span class="n">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="p">.</span><span class="n">VERSION_CODES</span><span class="p">.</span><span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">checkSelfPermission</span><span class="p">(</span><span class="n">READ_PHONE_STATE</span><span class="p">)</span> <span class="p">=</span><span class="p">=</span> <span class="n">PackageManager</span><span class="p">.</span><span class="n">PERMISSION_GRANTED</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">TODO</span><span class="p">(</span><span class="s">&#34;</span><span class="s">VERSION.SDK_INT &lt; M</span><span class="s">&#34;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">line1Number</span><span class="p">)</span>     <span class="c1">//</span><span class="c1"> </span><span class="c1">+</span><span class="c1">8</span><span class="c1">2</span><span class="c1">1</span><span class="c1">0</span><span class="c1">1</span><span class="c1">1</span><span class="c1">1</span><span class="c1">1</span><span class="c1">2</span><span class="c1">2</span><span class="c1">2</span><span class="c1">2</span>
+    <span class="p">}</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkCountryIso</span><span class="p">)</span>   <span class="c1">//</span><span class="c1"> </span><span class="c1">K</span><span class="c1">R</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperator</span><span class="p">)</span>     <span class="c1">//</span><span class="c1"> </span><span class="c1">4</span><span class="c1">5</span><span class="c1">0</span><span class="c1">8</span><span class="c1">0</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperatorName</span><span class="p">)</span> <span class="c1">//</span><span class="c1"> </span><span class="c1">K</span><span class="c1">T</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&#34;</span><span class="s">==========================================</span><span class="s">&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="app-manifest">App Manifest</h3>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.READ_PHONE_STATE&#34;</span><span class="nt">/&gt;</span>
+</code></pre></div><h3 id="app-permission-check">App Permission Check</h3>
+<ul>
+<li>Settings -&gt; Applications -&gt; [This App] -&gt; Permission -&gt; Telephone <em>Turn permission On</em></li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/android/>Android</a><a class="tag" href=/tags/kotlin/>Kotlin</a><a class="tag" href=/tags/telephony-manager/>Telephony Manager</a></section><section class="article navigation"><p><a class="link" href="/posts/190826/"><span class="li">&larr;</span>Rapsberry PI as Router / 3B + Buster</a></p><p><a class="link" href="/posts/190809-1/"><span class="li">&rarr;</span>iOS / CTCarrier on iOS 12</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

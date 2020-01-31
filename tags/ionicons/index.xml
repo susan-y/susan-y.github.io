@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ionicons on Dev Log</title>
+    <link>/tags/ionicons/</link>
+    <description>Recent content in ionicons on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/ionicons/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to use ionicons in Devextreme Vuejs</title>
+      <link>/posts/200130/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200130/</guid>
+      <description>ionicons 홈페이지 https://ionicons.com/
+Environments  Devextreme Vuejs Project  https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/   Devextreme Vue Template  https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template    단계   Download &amp;lsquo;Designer Pack&amp;rsquo; ionicons 홈페이지에 오른쪽 상단에 보면 Designer Pack을 다운로드할 수 있음.
+  css/ font/ 폴더를 vuejs 프로젝트의 assets/ 폴더 아래 붙여넣는다. 
+  main.js에 css를 import 한다.
+  import &amp;#39;./assets/css/ionicons.css&amp;#39;; npm run build 또는 npm run dev(serve)  사용하기 devextreme-vue-template/app-navigation.js 에서 icon 부분을 다음과 같이 변경한다.</description>
+    </item>
+    
+  </channel>
+</rss>

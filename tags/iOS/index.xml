@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iOS on Dev Log</title>
+    <link>/tags/ios/</link>
+    <description>Recent content in iOS on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / CTCarrier on iOS 12</title>
+      <link>/posts/190809-1/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190809-1/</guid>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.viewDidLoad() //Doanyadditionalsetupafterloadingtheview. textView.text = &amp;#34;&amp;#34; let info: CTTelephonyNetworkInfo = CTTelephonyNetworkInfo() for (service, carrier) in info.serviceSubscriberCellularProviders ?? [:] { print(&amp;#34;\(service), \(carrier)&amp;#34;) print(carrier.carrierName!) print(carrier.mobileCountryCode!) print(carrier.mobileNetworkCode!) print(carrier.isoCountryCode!) print(carrier.allowsVOIP) textView.text.append(&amp;#34;Service: \(service), Carrier: \(carrier.description)\n&amp;#34;) } } </description>
+    </item>
+    
+    <item>
+      <title>iOS / Swift Error throw, throws, try, catch</title>
+      <link>/posts/190502-2/</link>
+      <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
+      
+      <guid>/posts/190502-2/</guid>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething... guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) } return true } viewDidLoad override func viewDidLoad() { super.viewDidLoad() let ret = try? addNew(username: username, password: password) if ret == false { print(&amp;#34;failed&amp;#34;) } else { print(&amp;#34;success!&amp;#34;) } } //or override func viewDidLoad() { super.viewDidLoad() do { let _ = try addNew(username: username, password: password) } catch { print(error.</description>
+    </item>
+    
+    <item>
+      <title>iOS / iOS App Name Localization</title>
+      <link>/posts/180809-1/</link>
+      <pubDate>Thu, 09 Aug 2018 10:34:10 +0000</pubDate>
+      
+      <guid>/posts/180809-1/</guid>
+      <description>Pre-requisites env.  Xcode 9 macOS High Sierra  InfoPlist.strings 만들기  File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.strings  Localization 추가하기  Project &amp;gt; Info Localizations에 사용할 언어를 추가한다. English, Korean InfoPlist.strings 의 File Inspector에서 Localization &amp;gt; ‘localize’ 버튼 클릭 English, Korean 추가 InfoPlist.strings(korean)   CFBundleDisplayName=“앱이름”  InfoPlist.strings(english)   CFBundleDisplayName=“AppName”  기타 권한 설명 추가하기   사진라이브러리 권한: NSPhotoLibraryUsageDescription=&amp;rdquo;&amp;quot;;  </description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</title>
+      <link>/posts/180626-2/</link>
+      <pubDate>Tue, 26 Jun 2018 10:19:55 +0000</pubDate>
+      
+      <guid>/posts/180626-2/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
+ Create an Access Control SecAccessControl To create a protected keychain item, begin by creating a SecAccessControl instance:
+ 보호된 키체인아이템을 생성하기 위해서 SecAccessControl 인스턴스를 생성함.  let access = SecAccessControlCreateWithFlags(nil, //Usethedefaultallocator. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .userPresence, nil) //Ignoreanyerror. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly The access control instance contains restrictions along two dimensions: accessibility and authentication. For the first, the kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly setting prevents items from being stored if the device has no passcode.</description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</title>
+      <link>/posts/180626-1/</link>
+      <pubDate>Tue, 26 Jun 2018 09:46:00 +0000</pubDate>
+      
+      <guid>/posts/180626-1/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
+ Overview 개요 Keychain Items When you store a secure item like a password or a private key in the keychain, you dictate the conditions under which that item can be accessed later. Among other things, you can tell keychain services that every time it tries to read the item, it should first seek the user’s permission—for example, by authenticating the user biometrically with Face ID or Touch ID.</description>
+    </item>
+    
+    <item>
+      <title>iOS / Hotspot Study</title>
+      <link>/posts/180509-1/</link>
+      <pubDate>Wed, 09 May 2018 13:30:04 +0000</pubDate>
+      
+      <guid>/posts/180509-1/</guid>
+      <description>Original Hotspot Network Subsystem Programming Guide
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks. This programming guide is a companion to Apple’s NEHotspotHelper Class Reference, which describes the Hotspot Helper API.
+ 핫스팟 네트워크 서브시스템은 핫스팟 헬퍼앱이 와이파이 핫스팟 네트워크를 분류하거나 인증하는 절차에 참여할 수 있게 합니다. 핫스팟 헬퍼 API를 설명하기 위해 NEHotspotHelper 클래스 참고문서를 따릅니다.</description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK 2 ; Controller</title>
+      <link>/posts/180425-1/</link>
+      <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
+      
+      <guid>/posts/180425-1/</guid>
+      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.
+ Hue Bridge IP Address: 192.168.0.100 나의 iPhone IP Address: 192.168.0.101  Hue Bridge 찾기  Find Bridge Button 만들기 Find Bridge Button Action Code  Found Hue Bridge에 연결하기  connect foundBridge  Hue Light 조정하기  Control Hue Light State  </description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK</title>
+      <link>/posts/180416-1/</link>
+      <pubDate>Mon, 16 Apr 2018 11:08:18 +0000</pubDate>
+      
+      <guid>/posts/180416-1/</guid>
+      <description>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.
+ Prerequisites Downloads  HueSDK from Philips Github: HueSDK.framework HueSDK iOS Framework Guide: HueSDK iOS Framework Guide  env.  macOS 10.13 (High Sierra) Xcode 9 iOS 11.3 Swift4  Getting Started 1. 새 Xcode 프로젝트 만들기  Project Name: TestHue Template: Single View Language: Swift  2. Framework 추가하기 주의 &amp;raquo; HueSDK iOS Framework Guide를 보면 device, simulator의 Framework를 한번에 추가하는 방법으로 알려주는데, 빠른 실행과 결과를 보기 위해 device Framework만 추가한다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</h1><p class="article date">2018-06-26</p></section><article class="article markdown-body"><blockquote>
+<p>Accessing Keychain Items with Face ID or Touch ID
+: 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기
+Origin: <a href="https://developer.apple.com/documentation/localauthentication/accessing_keychain_items_with_face_id_or_touch_id"target="_blank">Apple Developer Document</a></p>
+</blockquote>
+<h1 id="overview-개요">Overview 개요</h1>
+<h2 id="keychain-items">Keychain Items</h2>
+<p>When you store a secure item like a password or a private key in the keychain, you dictate the conditions under which that item can be accessed later.
+Among other things, you can tell keychain services that every time it tries to read the item, it should first seek the user’s permission—for example, by authenticating the user biometrically with Face ID or Touch ID. You rely on both the Security and LocalAuthentication frameworks to enable this behavior.</p>
+<ul>
+<li>패스워드나 개인키 같은 안전이 필요한 항목을 키체인에 저장할 때, 나중에 접근할 때의 조건을 요구하도록 설정할 수 있음.</li>
+<li>무엇보다도(?) 키체인서비스에서 키체인아이템을 읽을 때마다 매번 사용자의 허락을 받아야함. (예를 들면 바이오메트릭정보인 페이스아이디나 터치아이디)</li>
+<li>이 때 Security, LocalAuthentication 프레임웍이 사용됨.</li>
+</ul>
+<h3 id="framework-and-secure-enclave">Framework and Secure Enclave</h3>
+<p>To access keychain items in general, you use keychain services within the Security framework. When authentication is needed, keychain services then relies on the LocalAuthentication framework to present the appropriate interface to the user. The Secure Enclave then carries out the authentication by, for example, testing the user’s finger against the stored fingerprints. The Secure Enclave passes back a pass/fail result that gates keychain item access. No user space or operating system software ever has access to the underlying authentication data, such as stored fingerprints.</p>
+<ul>
+<li>보통 키페인항목에 접근하기 위해서 Security프레임웍의 키체인서비스를 이용함.</li>
+<li>인증이 필요할 때, 키페인서비스가 LocalAuthentication프레임웍을 사용해서 적절하게 사용자인터페이스를 표시해줌. (터치아이디, 페이스아이디)</li>
+<li>SE가 인증을 수행함. (예를 들어 저장된 지문을 이용한 사용자지문을 테스트)</li>
+<li>SE는 키체인아이템에 대한 접근 결과로 통과 또는 실패를 반환함. 유저스페이스, OS는 저장된 지문데이터같은 인증데이터에 접근할 수 없음.</li>
+</ul>
+<h2 id="set-the-face-id-usage-description--페이스아이디-사용설명-설정하기">Set the Face ID Usage Description / 페이스아이디 사용설명 설정하기</h2>
+<h3 id="infoplist">Info.plist</h3>
+<p>In any project that uses biometrics, include the NSFaceIDUsageDescription key in your app’s Info.plist file. Without this key, the system won’t allow your app to use Face ID. The value for this key is a string that the system presents to the user the first time your app attempts to use Face ID. The string should clearly explain why your app needs access to this authentication mechanism. The system doesn’t require a comparable usage description for Touch ID.</p>
+<ul>
+<li>바이오메트릭을 사용하는 프로젝트에서는 NSFaceIDUsageDescription 키를 Info.plist 파일에 추가해야함.</li>
+<li>이 키가 없으면 시스템은 내 앱이 Face ID를 사용하는 것을 허락하지 않음.</li>
+<li>이 키의 값인 String은 사용자가 내 앱에서 처음 Face ID를 사용하려고 할 때 시스템에서 표시해 줌.</li>
+<li>String은 내 앱이 인증절차 접근해야하는 이유를 명확하게 설명해야함.</li>
+<li>Touch ID에 대해서는 이런 키를 요구하지 않음.</li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/keychain/>keychain</a></section><section class="article navigation"><p><a class="link" href="/posts/180626-2/"><span class="li">&larr;</span>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</a></p><p><a class="link" href="/posts/180622/"><span class="li">&rarr;</span>Android / Fullscreen Splash</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

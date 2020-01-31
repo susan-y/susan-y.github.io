@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Rapsberry PI as Router / 3B &#43; Buster&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">Rapsberry PI as Router / 3B + Buster</h1><p class="article date">2019-08-26</p></section><article class="article markdown-body"><h2 id="environments">Environments</h2>
+<ul>
+<li>Raspberry PI 3B x 1</li>
+<li>Micro SD Card 32GB x 1</li>
+<li>Lan Cable x 1</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>Raspbian Buster</li>
+<li>Balena Etcher</li>
+<li>Terminal</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>단계를 그대로 따라한다.</p>
+<h2 id="step">Step</h2>
+<h3 id="1-upgrade">1. Upgrade</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get update
+sudo apt-get upgrade
+</code></pre></div><h3 id="2-install-hostapd-bridge-utils">2. Install Hostapd, Bridge-utils</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install hostapd bridge-utils
+sudo systemctl stop hostapd
+</code></pre></div><h3 id="3-dhcpcdconf-파일-편집하기">3. dhcpcd.conf 파일 편집하기</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/dhcpcd.conf
+</code></pre></div><p>맨 아래에 두줄 추가</p>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">denyinterfaces wlan0</span>
+<span class="na">denyinterfaces eth0</span>
+</code></pre></div><h3 id="4-bridge-만들기">4. Bridge 만들기</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo brctl addbr br0
+sudo brctl addif br0 eth0
+</code></pre></div><h3 id="5-interfaces-파일-편집하기">5. interfaces 파일 편집하기</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/network/interfaces
+</code></pre></div><p>맨 아래에 다음 내용을 추가한다.</p>
+<pre><code class="language-conf" data-lang="conf">allow-hotplug wlan0
+iface wlan0 inet manual
+
+auto br0
+iface br0 inet dhcp
+bridge_ports eth0 wlan0
+</code></pre><h3 id="6-hostapdconf-파일-생성하기">6. hostapd.conf 파일 생성하기</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/hostapd/hostapd.conf
+</code></pre></div><p>파일을 새로 만들고 다음 내용을 추가한다.</p>
+<pre><code class="language-conf" data-lang="conf">interface=wlan0
+bridge=br0
+ssid=myssid
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=mypassword
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+</code></pre><p>ssid와 wpa_passphrase는 내가 쓸 WiFi 정보로 변경</p>
+<h3 id="7-hostapd-파일-편집하기">7. hostapd 파일 편집하기</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/default/hostapd
+</code></pre></div><pre><code class="language-conf" data-lang="conf">DAEMON_CONF=&quot;/etc/hostapd/hostpad.conf&quot;
+</code></pre><h3 id="8-재부팅">8. 재부팅</h3>
+<pre><code>sudo reboot
+</code></pre><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="failed-to-start-hostapdservice-unit-hostapdservice-is-masked">&ldquo;Failed to start hostapd.service: Unit hostapd.service is masked.&rdquo;</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl stop hostapd
+sudo systemctl unmask hostapd
+sudo systemctl start hostapd
+</code></pre></div><h3 id="locale-warning">&ldquo;Locale warning&rdquo;</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
+</code></pre></div><h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/">https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/</a></li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/raspberrypi/>RaspberryPI</a><a class="tag" href=/tags/wifi/>wifi</a><a class="tag" href=/tags/router/>router</a><a class="tag" href=/tags/bridge/>bridge</a><a class="tag" href=/tags/network/>network</a></section><section class="article navigation"><p><a class="link" href="/posts/190910/"><span class="li">&larr;</span>express.js generator</a></p><p><a class="link" href="/posts/190809-2/"><span class="li">&rarr;</span>Android / Get Phone Number, Carrier Name on Android 19-29</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

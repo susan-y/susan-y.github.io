@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / PHILIPS HUE SDK&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / PHILIPS HUE SDK</h1><p class="article date">2018-04-16</p></section><article class="article markdown-body"><blockquote>
+<p>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.</p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="downloads">Downloads</h3>
+<ul>
+<li>HueSDK from Philips Github: <a href="https://github.com/PhilipsHue/HueSDK"target="_blank">HueSDK.framework</a></li>
+<li>HueSDK iOS Framework Guide: <a href="https://github.com/PhilipsHue/HueSDK/blob/master/HueSDK/Apple/GettingStarted_Apple"target="_blank">HueSDK iOS Framework Guide</a></li>
+</ul>
+<h3 id="env">env.</h3>
+<ul>
+<li>macOS 10.13 (High Sierra)</li>
+<li>Xcode 9</li>
+<li>iOS 11.3</li>
+<li>Swift4</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="1-새-xcode-프로젝트-만들기">1. 새 Xcode 프로젝트 만들기</h3>
+<ul>
+<li>Project Name: TestHue</li>
+<li>Template: Single View</li>
+<li>Language: Swift</li>
+</ul>
+<h3 id="2-framework-추가하기">2. Framework 추가하기</h3>
+<p>주의 &raquo; <a href="https://github.com/PhilipsHue/HueSDK/blob/master/HueSDK/Apple/GettingStarted_Apple"target="_blank">HueSDK iOS Framework Guide</a>를 보면 device, simulator의 Framework를 한번에 추가하는 방법으로 알려주는데, 빠른 실행과 결과를 보기 위해 device Framework만 추가한다.</p>
+<ol>
+<li>Project Directory에 Dependencies 폴더 생성하고, HueSDK.framework 복사</li>
+</ol>
+<ul>
+<li>home/TestHue/Dependencies/<strong><a href="https://github.com/PhilipsHue/HueSDK"target="_blank">HueSDK.framework</a></strong> (for device)</li>
+<li>home/TestHue/TestHue.xcodeproj</li>
+</ul>
+<ol start="2">
+<li>
+<p>Xcode에서 <strong>Dependencies</strong>그룹을 생성하고, 위에서 복사한 HueSDK.framework을 drag&amp;drop으로 Add Reference
+<a target="_blank" rel="noopener noreferrer" 
+  href="./image001.png?classes=small_image"><img  src="./image001.png?classes=small_image"
+        alt/></a></p>
+</li>
+<li>
+<p>Target &gt; Build Phases &gt; <strong>Link Binary With Libraries</strong>에 Project Navigation에서
+HueSDK.framework을 drag&amp;drop으로 Add
+<a target="_blank" rel="noopener noreferrer" 
+  href="./image002.png?classes=small_image"><img  src="./image002.png?classes=small_image"
+        alt/></a></p>
+</li>
+<li>
+<p>Target &gt; General &gt; <strong>Embedded Binaries</strong>에 HueSDK.framework 추가
+<a target="_blank" rel="noopener noreferrer" 
+  href="./image004.png"><img  src="./image004.png"
+        alt/></a></p>
+</li>
+<li>
+<p>Objective-C Briding Header추가를 위해 Header.h 추가</p>
+</li>
+</ol>
+<ul>
+<li>New File &gt; Header file</li>
+<li>File Name: <strong>Header.h</strong>
+<a target="_blank" rel="noopener noreferrer" 
+  href="./image003.png"><img  src="./image003.png"
+        alt/></a></li>
+<li>Target &gt; Build Settings &gt; Objective-C Briding Header 수정</li>
+<li><strong>TestHue/Header.h</strong> 입력</li>
+<li>Header.h에 다음 추가</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-h" data-lang="h"><span class="cp">#</span><span class="cp">import &lt;HueSDK</span><span class="cp">/</span><span class="cp">HueSDK.h&gt;</span><span class="cp">
+</span></code></pre></div><h3 id="3-enable-bitcode">3. Enable Bitcode</h3>
+<ul>
+<li>No</li>
+</ul>
+<h3 id="4-build--run">4. Build &amp; Run</h3>
+<ul>
+<li>HueSDK.framework for device만 추가했기때문에</li>
+<li>Build전에 대상 기기가 Device나 Generic iOS Device가 선택되어있는지 확인한다.
+<a target="_blank" rel="noopener noreferrer" 
+  href="./image005.png"><img  src="./image005.png"
+        alt/></a></li>
+</ul>
+<h2 id="using-sdk-guide">Using SDK Guide</h2>
+<ul>
+<li><a href="https://www.developers.meethue.com/">https://www.developers.meethue.com/</a> 에 회원등록하면, 자세한 Hue SDK Guide를 확인할 수 있다.</li>
+</ul>
+<h2 id="맛보기">맛보기</h2>
+<p>HueSDK가 잘 링크되었는지 확인하기 위해서 아래 코드를 삽입해서 Build &amp; Run 해본다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">documentsPath</span> <span class="p">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="p">.</span><span class="n">documentDirectory</span><span class="p">,</span> <span class="p">.</span><span class="n">userDomainMask</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        
+<span class="n">PHSPersistence</span><span class="p">.</span><span class="n">setStorageLocation</span><span class="p">(</span><span class="n">documentsPath</span><span class="p">,</span> <span class="n">andDeviceId</span><span class="p">:</span> <span class="s">&#34;</span><span class="s">001122334455</span><span class="s">&#34;</span><span class="p">)</span>
+<span class="n">PHSLog</span><span class="p">.</span><span class="n">setConsoleLogLevel</span><span class="p">(</span><span class="n">PHSLogLevel</span><span class="p">.</span><span class="n">debug</span><span class="p">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
+</article><section class="article labels"><a class="tag" href=/tags/philips/>Philips</a><a class="tag" href=/tags/hue/>HUE</a><a class="tag" href=/tags/ios/>iOS</a></section><section class="article navigation"><p><a class="link" href="/posts/180425-1/"><span class="li">&larr;</span>iOS / PHILIPS HUE SDK 2 ; Controller</a></p><p><a class="link" href="/posts/180413-2/"><span class="li">&rarr;</span>Android / Connect Wifi on my app</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>

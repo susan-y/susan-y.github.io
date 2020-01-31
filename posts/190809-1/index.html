@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>iOS / CTCarrier on iOS 12&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.254bb4efc113b00d64b92e23047328e39b92acbd714bd86851a19f8f50453f0483d602373b351f6f5d40bf091dade94e.css" integrity="sha384-JUu078ETsA1kuS4jBHMo45uSrL1xS9hoUaGfj1BFPwSD1gI3OzUfb11AvwkdrelO"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">iOS / CTCarrier on iOS 12</h1><p class="article date">2019-08-09</p></section><article class="article markdown-body"><h2 id="environments">Environments</h2>
+<ul>
+<li>Swift 5.0</li>
+<li>Xcode 10</li>
+<li>Mojave</li>
+</ul>
+<h2 id="step">step</h2>
+<h3 id="viewcontrollerswift">ViewController.swift</h3>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="nc">CoreTelephony</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">(</span><span class="p">)</span>
+        <span class="c1">//</span><span class="c1"> </span><span class="c1">D</span><span class="c1">o</span><span class="c1"> </span><span class="c1">a</span><span class="c1">n</span><span class="c1">y</span><span class="c1"> </span><span class="c1">a</span><span class="c1">d</span><span class="c1">d</span><span class="c1">i</span><span class="c1">t</span><span class="c1">i</span><span class="c1">o</span><span class="c1">n</span><span class="c1">a</span><span class="c1">l</span><span class="c1"> </span><span class="c1">s</span><span class="c1">e</span><span class="c1">t</span><span class="c1">u</span><span class="c1">p</span><span class="c1"> </span><span class="c1">a</span><span class="c1">f</span><span class="c1">t</span><span class="c1">e</span><span class="c1">r</span><span class="c1"> </span><span class="c1">l</span><span class="c1">o</span><span class="c1">a</span><span class="c1">d</span><span class="c1">i</span><span class="c1">n</span><span class="c1">g</span><span class="c1"> </span><span class="c1">t</span><span class="c1">h</span><span class="c1">e</span><span class="c1"> </span><span class="c1">v</span><span class="c1">i</span><span class="c1">e</span><span class="c1">w</span><span class="c1">.</span>
+        <span class="n">textView</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&#34;</span><span class="s">&#34;</span>
+        
+        <span class="kd">let</span> <span class="nv">info</span><span class="p">:</span> <span class="n">CTTelephonyNetworkInfo</span> <span class="p">=</span> <span class="n">CTTelephonyNetworkInfo</span><span class="p">(</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">carrier</span><span class="p">)</span> <span class="k">in</span> <span class="n">info</span><span class="p">.</span><span class="n">serviceSubscriberCellularProviders</span> <span class="p">?</span><span class="p">?</span> <span class="p">[</span><span class="p">:</span><span class="p">]</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="si">\(</span><span class="n">service</span><span class="si">)</span><span class="s">, </span><span class="si">\(</span><span class="n">carrier</span><span class="si">)</span><span class="s">&#34;</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">carrier</span><span class="p">.</span><span class="n">carrierName</span><span class="p">!</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">carrier</span><span class="p">.</span><span class="n">mobileCountryCode</span><span class="p">!</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">carrier</span><span class="p">.</span><span class="n">mobileNetworkCode</span><span class="p">!</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">carrier</span><span class="p">.</span><span class="n">isoCountryCode</span><span class="p">!</span><span class="p">)</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">carrier</span><span class="p">.</span><span class="n">allowsVOIP</span><span class="p">)</span>
+            <span class="n">textView</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#34;</span><span class="s">Service: </span><span class="si">\(</span><span class="n">service</span><span class="si">)</span><span class="s">, Carrier: </span><span class="si">\(</span><span class="n">carrier</span><span class="p">.</span><span class="n">description</span><span class="si">)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/ios/>iOS</a><a class="tag" href=/tags/swift/>Swift</a><a class="tag" href=/tags/ctcarrier/>CTCarrier</a></section><section class="article navigation"><p><a class="link" href="/posts/190809-2/"><span class="li">&larr;</span>Android / Get Phone Number, Carrier Name on Android 19-29</a></p><p><a class="link" href="/posts/190503/"><span class="li">&rarr;</span>Docker Basic Command</a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></div>
+</body>
+
+</html>
