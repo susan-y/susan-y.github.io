@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-2/</guid>
-      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.4  step MainActivity.kt override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContentView(R.layout.activity_main) val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager log(&amp;#34;======================================&amp;#34;) if (if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.M) { checkSelfPermission(READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED } else { TODO(&amp;#34;VERSION.SDK_INT &amp;lt; M&amp;#34;) } ) { log(tm.line1Number) //+821011112222 } log(tm.networkCountryIso) //KR log(tm.networkOperator) //45080 log(tm.networkOperatorName) //KT log(&amp;#34;==========================================&amp;#34;) } App Manifest &amp;lt;uses-permission android:name=&amp;#34;android.permission.READ_PHONE_STATE&amp;#34;/&amp;gt; App Permission Check  Settings -&amp;gt; Applications -&amp;gt; [This App] -&amp;gt; Permission -&amp;gt; Telephone Turn permission On  </description>
+      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Fri, 22 Jun 2018 11:10:19 +0000</pubDate>
       
       <guid>/posts/180622/</guid>
-      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.intent.category.LAUNCHER&amp;#34; /&amp;gt; &amp;lt;/intent-filter&amp;gt; &amp;lt;/activity&amp;gt; values/v23/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;android:windowLightStatusBar&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; values/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; </description>
+      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.</description>
     </item>
     
   </channel>

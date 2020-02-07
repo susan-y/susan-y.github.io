@@ -17,7 +17,7 @@
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180511-1/</guid>
-      <description>IoT 허브 역할  IoT 디바이스 컨트롤러. 전구, 도어락, 온도조절기 등의 Smart Device와 Hub는 Zigbee 통신 등으로 커맨드를 주고 받는다. Hub는 외부로부터 전달된 커맨드를 받아서 Device를 제어하는 역할을 한다.  Hue Bridge  필립스의 Hue 제품은 Hue앱을 설치하고 Hue Bridge에 연결하여 Hue제품을 제어할 수 있다. Amazon Alexa, Apple HomeKit, Google Home과 연계하여 음성으로 조명을 컨트롤 할 수 있다.  그 외의 Hub  Samsung / SmartThings Hub ADT Home Security with SmartThings Hub Belkin / WeMo Bridge Wink / Wink Hub Hive / Hive Hub  IoT Device 제조사  nest, 온도조절기, 카메라, 초인종, 도어락, 연기감지 Philips, 조명 Yale, keyless lock Hive, 온도조절기, 카메라, 조명, 플러그 Belkin, 조광기, 카메라, 플러그  IoT Hub Assistant  Amazon Alexa, Apple HomeKit, Google Home 등과 같은 Assistant Speaker를 사용하여 음성으로 제어할 수 있다.</description>
+      <description>IoT 허브 역할  IoT 디바이스 컨트롤러. 전구, 도어락, 온도조절기 등의 Smart Device와 Hub는 Zigbee 통신 등으로 커맨드를 주고 받는다.</description>
     </item>
     
   </channel>

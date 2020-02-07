@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-2/</guid>
-      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.4  step MainActivity.kt override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContentView(R.layout.activity_main) val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager log(&amp;#34;======================================&amp;#34;) if (if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.M) { checkSelfPermission(READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED } else { TODO(&amp;#34;VERSION.SDK_INT &amp;lt; M&amp;#34;) } ) { log(tm.line1Number) //+821011112222 } log(tm.networkCountryIso) //KR log(tm.networkOperator) //45080 log(tm.networkOperatorName) //KT log(&amp;#34;==========================================&amp;#34;) } App Manifest &amp;lt;uses-permission android:name=&amp;#34;android.permission.READ_PHONE_STATE&amp;#34;/&amp;gt; App Permission Check  Settings -&amp;gt; Applications -&amp;gt; [This App] -&amp;gt; Permission -&amp;gt; Telephone Turn permission On  </description>
+      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.</description>
     </item>
     
   </channel>

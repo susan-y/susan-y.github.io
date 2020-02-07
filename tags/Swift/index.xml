@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-1/</guid>
-      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.viewDidLoad() //Doanyadditionalsetupafterloadingtheview. textView.text = &amp;#34;&amp;#34; let info: CTTelephonyNetworkInfo = CTTelephonyNetworkInfo() for (service, carrier) in info.serviceSubscriberCellularProviders ?? [:] { print(&amp;#34;\(service), \(carrier)&amp;#34;) print(carrier.carrierName!) print(carrier.mobileCountryCode!) print(carrier.mobileNetworkCode!) print(carrier.isoCountryCode!) print(carrier.allowsVOIP) textView.text.append(&amp;#34;Service: \(service), Carrier: \(carrier.description)\n&amp;#34;) } } </description>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/posts/190502-2/</guid>
-      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething... guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) } return true } viewDidLoad override func viewDidLoad() { super.viewDidLoad() let ret = try? addNew(username: username, password: password) if ret == false { print(&amp;#34;failed&amp;#34;) } else { print(&amp;#34;success!&amp;#34;) } } //or override func viewDidLoad() { super.viewDidLoad() do { let _ = try addNew(username: username, password: password) } catch { print(error.</description>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething.</description>
     </item>
     
   </channel>

@@ -17,9 +17,7 @@
       <pubDate>Tue, 26 Jun 2018 10:19:55 +0000</pubDate>
       
       <guid>/posts/180626-2/</guid>
-      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
- Create an Access Control SecAccessControl To create a protected keychain item, begin by creating a SecAccessControl instance:
- 보호된 키체인아이템을 생성하기 위해서 SecAccessControl 인스턴스를 생성함.  let access = SecAccessControlCreateWithFlags(nil, //Usethedefaultallocator. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .userPresence, nil) //Ignoreanyerror. kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly The access control instance contains restrictions along two dimensions: accessibility and authentication. For the first, the kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly setting prevents items from being stored if the device has no passcode.</description>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document</description>
     </item>
     
     <item>
@@ -28,8 +26,7 @@
       <pubDate>Tue, 26 Jun 2018 09:46:00 +0000</pubDate>
       
       <guid>/posts/180626-1/</guid>
-      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document
- Overview 개요 Keychain Items When you store a secure item like a password or a private key in the keychain, you dictate the conditions under which that item can be accessed later. Among other things, you can tell keychain services that every time it tries to read the item, it should first seek the user’s permission—for example, by authenticating the user biometrically with Face ID or Touch ID.</description>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document</description>
     </item>
     
   </channel>

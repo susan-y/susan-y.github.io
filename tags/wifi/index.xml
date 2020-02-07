@@ -19,8 +19,7 @@
       <guid>/posts/200129-1/</guid>
       <description>Draft 2019-04-23
 Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
-목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다. 따라서 라즈베리파이를 Ehternet Bridge로 만듭니다.
-준비물  Raspberry Pi 3B+, 키보드, 마우스, 모니터  데스크탑과 와이파이 네트워크의 브릿지로 사용합니다. 라즈베리파이 3B+는 802.11ac 와이파이를 가지고 있어서 이 프로젝트에 적당합니다.   데스크탑: iMac 27 공유기: ipTime Raspbian Stretch  단계 sudo -Es apt-get update &amp;amp;&amp;amp; apt-get upgrade 라즈베리파이를 Wifi에 연결합니다. /etc/wpa_supplicant/wpa_supplicant.conf 파일을 열어서 아래와 유사하게 되어있는 걸 확인합니다. country_code는 US로 지정했습니다.</description>
+목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다.</description>
     </item>
     
     <item>
@@ -29,9 +28,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.
-Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
-denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
+      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.</description>
     </item>
     
   </channel>

@@ -18,8 +18,7 @@
       
       <guid>/posts/180509-1/</guid>
       <description>Original Hotspot Network Subsystem Programming Guide
-번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks. This programming guide is a companion to Apple’s NEHotspotHelper Class Reference, which describes the Hotspot Helper API.
- 핫스팟 네트워크 서브시스템은 핫스팟 헬퍼앱이 와이파이 핫스팟 네트워크를 분류하거나 인증하는 절차에 참여할 수 있게 합니다. 핫스팟 헬퍼 API를 설명하기 위해 NEHotspotHelper 클래스 참고문서를 따릅니다.</description>
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks.</description>
     </item>
     
   </channel>

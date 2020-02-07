@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-1/</guid>
-      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.viewDidLoad() //Doanyadditionalsetupafterloadingtheview. textView.text = &amp;#34;&amp;#34; let info: CTTelephonyNetworkInfo = CTTelephonyNetworkInfo() for (service, carrier) in info.serviceSubscriberCellularProviders ?? [:] { print(&amp;#34;\(service), \(carrier)&amp;#34;) print(carrier.carrierName!) print(carrier.mobileCountryCode!) print(carrier.mobileNetworkCode!) print(carrier.isoCountryCode!) print(carrier.allowsVOIP) textView.text.append(&amp;#34;Service: \(service), Carrier: \(carrier.description)\n&amp;#34;) } } </description>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
     </item>
     
   </channel>

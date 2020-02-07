@@ -17,9 +17,7 @@
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.
-Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
-denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
+      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.</description>
     </item>
     
     <item>
@@ -29,7 +27,7 @@ denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br
       
       <guid>/posts/190503/</guid>
       <description>Docker Hub https://hub.docker.com/
-summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&#39;라는 이름으로 실행한다. repo를 실행할 때 sshd도 함께 실행한다. -P: docker image 생성시에 설정되어있는 PORT를 모두 오픈한다는 옵션 -v: 링크할 로컬 폴더를 뒤에 나열한다는 옵션  Show Process List Docker Container 상태 확인하기</description>
+summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&#39;라는 이름으로 실행한다.</description>
     </item>
     
   </channel>

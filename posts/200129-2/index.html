@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Raspberry Pi Boot without screen on MacOS&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.0f4f81db19e515aee538ac892309a090178cb4eeb685addfc29fb05370f925c2d6ff8adcfb34e3f899818d903d902c79.css" integrity="sha384-D0&#43;B2xnlFa7lOKyJIwmgkBeMtO62ha3fwp&#43;wU3D5JcLW/4rc&#43;zTj&#43;JmBjZA9kCx5"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Raspberry Pi Boot without screen on MacOS&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.86066080981f536a9c2138283c0c0a2a1147626115b757d4ba1bfafb7c67bad84b98352a90f256b5065312769fc6286d.css" integrity="sha384-hgZggJgfU2qcITgoPAwKKhFHYmEVt1fUuhv6&#43;3xnuthLmDUqkPJWtQZTEnafxiht"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -26,10 +26,8 @@
 </ul>
 <h2 id="원격화면-연결을-위한-설정--turn-vnc-on">원격화면 연결을 위한 설정 | Turn VNC on</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
-</code></pre></div><ol>
-<li>interfaces config</li>
-<li>VNC Enable &gt; YES</li>
-</ol>
+</code></pre></div><h3 id="1-interfaces-config">1. interfaces config</h3>
+<h3 id="2-vnc-enable--yes">2. VNC Enable &gt; YES</h3>
 <h2 id="tightvncserver-설치--install-tightvncserver">tightvncserver 설치 | Install tightvncserver</h2>
 <p>sudo apt-get install tightvncserver</p>
 <h2 id="reboot--execute">Reboot &amp; Execute</h2>
@@ -39,10 +37,8 @@ tightvncserver
 </code></pre></div><h2 id="macos-security-preferences">MacOS Security Preferences</h2>
 <p>Settings &gt; Sharing 에서 Screen sharing enable 설정하기</p>
 <h2 id="macos-finder">MacOS finder</h2>
-<ol>
-<li>command + K</li>
-<li>vnc://raspberrypi.local:5901</li>
-</ol>
+<h3 id="1-command--k">1. command + K</h3>
+<h3 id="2-vncraspberrypilocal5901">2. vnc://raspberrypi.local:5901</h3>
 </article><section class="article labels"><a class="tag" href=/tags/rpi/>rpi</a><a class="tag" href=/tags/raspberry-pi/>raspberry pi</a><a class="tag" href=/tags/balena-etcher/>balena etcher</a><a class="tag" href=/tags/vnc/>vnc</a><a class="tag" href=/tags/macos/>macos</a></section><section class="article navigation"><p><a class="link" href="/posts/200129-1/"><span class="li">&larr;</span>Raspberry Pi 3B+ Wifi Ethernet Bridge</a></p><p><a class="link" href="/posts/190910/"><span class="li">&rarr;</span>express.js generator</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>

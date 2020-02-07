@@ -18,7 +18,7 @@
       
       <guid>/posts/190502/</guid>
       <description>platformio.ini Project Configuration File. 프로젝트 설정파일입니다.
-Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_port = [Port Name] ; example ; upload_port = /dev/cu.usbmodem/144104 monitor_port = [Port Name] ; example ; monitor_port = /dev/cu.usbmodem/144104 references Platform IO Docs: platformio.ini https://docs.platformio.org/en/latest/projectconf.html</description>
+Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_port = [Port Name] ; example ; upload_port = /dev/cu.</description>
     </item>
     
   </channel>

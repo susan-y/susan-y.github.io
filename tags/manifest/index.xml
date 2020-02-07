@@ -17,7 +17,7 @@
       <pubDate>Fri, 22 Jun 2018 11:10:19 +0000</pubDate>
       
       <guid>/posts/180622/</guid>
-      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.intent.category.LAUNCHER&amp;#34; /&amp;gt; &amp;lt;/intent-filter&amp;gt; &amp;lt;/activity&amp;gt; values/v23/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;android:windowLightStatusBar&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; values/styles &amp;lt;style name=&amp;#34;AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;windowNoTitle&amp;#34;&amp;gt;true&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; </description>
+      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.</description>
     </item>
     
   </channel>
