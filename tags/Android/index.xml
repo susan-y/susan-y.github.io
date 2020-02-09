@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on Dev Log</title>
+    <title>android on Dev Log</title>
     <link>/tags/android/</link>
-    <description>Recent content in Android on Dev Log</description>
+    <description>Recent content in android on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
@@ -27,6 +27,15 @@
       
       <guid>/posts/180622/</guid>
       <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.</description>
+    </item>
+    
+    <item>
+      <title>Android / Connect Wifi on my app</title>
+      <link>/posts/180413-2/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-2/</guid>
+      <description>Prerequsites Env.  Android studio 3 Target API 26 Kotlin  Getting Started 1.</description>
     </item>
     
   </channel>

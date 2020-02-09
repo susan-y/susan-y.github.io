@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on Dev Log</title>
+    <title>windows on Dev Log</title>
     <link>/tags/windows/</link>
-    <description>Recent content in Windows on Dev Log</description>
+    <description>Recent content in windows on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Feb 2019 14:39:19 +0000</lastBuildDate>

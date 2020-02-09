@@ -129,15 +129,6 @@
     </item>
     
     <item>
-      <title>RaspberryPI</title>
-      <link>/tags/raspberrypi/</link>
-      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/raspberrypi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>router</title>
       <link>/tags/router/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
@@ -147,7 +138,7 @@
     </item>
     
     <item>
-      <title>Android</title>
+      <title>android</title>
       <link>/tags/android/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
@@ -156,16 +147,7 @@
     </item>
     
     <item>
-      <title>CTCarrier</title>
-      <link>/tags/ctcarrier/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ctcarrier/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iOS</title>
+      <title>ios</title>
       <link>/tags/ios/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
@@ -174,7 +156,7 @@
     </item>
     
     <item>
-      <title>Kotlin</title>
+      <title>kotlin</title>
       <link>/tags/kotlin/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
@@ -183,7 +165,7 @@
     </item>
     
     <item>
-      <title>Swift</title>
+      <title>swift</title>
       <link>/tags/swift/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
@@ -192,25 +174,7 @@
     </item>
     
     <item>
-      <title>Telephony Manager</title>
-      <link>/tags/telephony-manager/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/telephony-manager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>basic</title>
-      <link>/tags/basic/</link>
-      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/basic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>/tags/docker/</link>
       <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
       
@@ -228,7 +192,7 @@
     </item>
     
     <item>
-      <title>Arduino</title>
+      <title>arduino</title>
       <link>/tags/arduino/</link>
       <pubDate>Thu, 02 May 2019 09:22:38 +0000</pubDate>
       
@@ -237,7 +201,7 @@
     </item>
     
     <item>
-      <title>PIO</title>
+      <title>pio</title>
       <link>/tags/pio/</link>
       <pubDate>Thu, 02 May 2019 09:22:38 +0000</pubDate>
       
@@ -246,16 +210,7 @@
     </item>
     
     <item>
-      <title>Embedded</title>
-      <link>/tags/embedded/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/embedded/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IoT</title>
+      <title>iot</title>
       <link>/tags/iot/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -264,7 +219,7 @@
     </item>
     
     <item>
-      <title>Omega</title>
+      <title>omega</title>
       <link>/tags/omega/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -273,7 +228,16 @@
     </item>
     
     <item>
-      <title>CentOS</title>
+      <title>qrcode</title>
+      <link>/tags/qrcode/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/qrcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
       <link>/tags/centos/</link>
       <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
       
@@ -282,11 +246,11 @@
     </item>
     
     <item>
-      <title>VirtualBox</title>
-      <link>/tags/virtualbox/</link>
+      <title>virtual box</title>
+      <link>/tags/virtual-box/</link>
       <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
       
-      <guid>/tags/virtualbox/</guid>
+      <guid>/tags/virtual-box/</guid>
       <description></description>
     </item>
     
@@ -300,7 +264,7 @@
     </item>
     
     <item>
-      <title>Windows</title>
+      <title>windows</title>
       <link>/tags/windows/</link>
       <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
       
@@ -336,11 +300,20 @@
     </item>
     
     <item>
-      <title>Home IoT</title>
-      <link>/tags/home-iot/</link>
+      <title>home</title>
+      <link>/tags/home/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/home-iot/</guid>
+      <guid>/tags/home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>in-app-purchase</title>
+      <link>/tags/in-app-purchase/</link>
+      <pubDate>Wed, 09 May 2018 13:39:17 +0000</pubDate>
+      
+      <guid>/tags/in-app-purchase/</guid>
       <description></description>
     </item>
     
@@ -354,7 +327,7 @@
     </item>
     
     <item>
-      <title>HUE</title>
+      <title>hue</title>
       <link>/tags/hue/</link>
       <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
       
@@ -363,7 +336,7 @@
     </item>
     
     <item>
-      <title>Philips</title>
+      <title>philips</title>
       <link>/tags/philips/</link>
       <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
       

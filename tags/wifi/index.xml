@@ -31,5 +31,23 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.</description>
     </item>
     
+    <item>
+      <title>Android / Connect Wifi on my app</title>
+      <link>/posts/180413-2/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-2/</guid>
+      <description>Prerequsites Env.  Android studio 3 Target API 26 Kotlin  Getting Started 1.</description>
+    </item>
+    
+    <item>
+      <title>iOS / NetworkExtension / Connect Wifi on my app</title>
+      <link>/posts/180413-1/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-1/</guid>
+      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+    </item>
+    
   </channel>
 </rss>

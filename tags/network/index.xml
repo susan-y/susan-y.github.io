@@ -30,5 +30,14 @@
 번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks.</description>
     </item>
     
+    <item>
+      <title>iOS / NetworkExtension / Connect Wifi on my app</title>
+      <link>/posts/180413-1/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-1/</guid>
+      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+    </item>
+    
   </channel>
 </rss>

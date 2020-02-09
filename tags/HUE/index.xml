@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HUE on Dev Log</title>
+    <title>hue on Dev Log</title>
     <link>/tags/hue/</link>
-    <description>Recent content in HUE on Dev Log</description>
+    <description>Recent content in hue on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 25 Apr 2018 10:54:11 +0000</lastBuildDate>

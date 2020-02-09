@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iOS on Dev Log</title>
+    <title>ios on Dev Log</title>
     <link>/tags/ios/</link>
-    <description>Recent content in iOS on Dev Log</description>
+    <description>Recent content in ios on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
@@ -57,6 +57,16 @@
     </item>
     
     <item>
+      <title>iOS / In-App Purchase 기록</title>
+      <link>/posts/180509-2/</link>
+      <pubDate>Wed, 09 May 2018 13:39:17 +0000</pubDate>
+      
+      <guid>/posts/180509-2/</guid>
+      <description>Original In-App Purchase Programming Guide
+번역 About In-App Purchase In-App Purchase allows you to embed a store inside your app using the StoreKit framework.</description>
+    </item>
+    
+    <item>
       <title>iOS / Hotspot Study</title>
       <link>/posts/180509-1/</link>
       <pubDate>Wed, 09 May 2018 13:30:04 +0000</pubDate>
@@ -82,6 +92,15 @@
       
       <guid>/posts/180416-1/</guid>
       <description>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.</description>
+    </item>
+    
+    <item>
+      <title>iOS / NetworkExtension / Connect Wifi on my app</title>
+      <link>/posts/180413-1/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-1/</guid>
+      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
     </item>
     
   </channel>
