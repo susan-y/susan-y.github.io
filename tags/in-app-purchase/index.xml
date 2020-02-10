@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>in-app-purchase on Dev Log</title>
+    <link>/tags/in-app-purchase/</link>
+    <description>Recent content in in-app-purchase on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 09 May 2018 13:39:17 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/in-app-purchase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / In-App Purchase 기록</title>
+      <link>/posts/180509-2/</link>
+      <pubDate>Wed, 09 May 2018 13:39:17 +0000</pubDate>
+      
+      <guid>/posts/180509-2/</guid>
+      <description>Original In-App Purchase Programming Guide
+번역 About In-App Purchase In-App Purchase allows you to embed a store inside your app using the StoreKit framework.</description>
+    </item>
+    
+  </channel>
+</rss>

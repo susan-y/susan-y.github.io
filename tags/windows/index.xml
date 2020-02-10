@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Dev Log</title>
+    <link>/tags/windows/</link>
+    <description>Recent content in windows on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 28 Feb 2019 14:39:19 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup CentOS 7 in VritualBox</title>
+      <link>/posts/190228/</link>
+      <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
+      
+      <guid>/posts/190228/</guid>
+      <description>환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox 버추얼박스를 다운로드합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

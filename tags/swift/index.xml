@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swift on Dev Log</title>
+    <link>/tags/swift/</link>
+    <description>Recent content in swift on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / CTCarrier on iOS 12</title>
+      <link>/posts/190809-1/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190809-1/</guid>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
+    </item>
+    
+    <item>
+      <title>iOS / Swift Error throw, throws, try, catch</title>
+      <link>/posts/190502-2/</link>
+      <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
+      
+      <guid>/posts/190502-2/</guid>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething.</description>
+    </item>
+    
+  </channel>
+</rss>

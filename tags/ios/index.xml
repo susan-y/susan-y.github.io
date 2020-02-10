@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ios on Dev Log</title>
+    <link>/tags/ios/</link>
+    <description>Recent content in ios on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / CTCarrier on iOS 12</title>
+      <link>/posts/190809-1/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190809-1/</guid>
+      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
+    </item>
+    
+    <item>
+      <title>iOS / Swift Error throw, throws, try, catch</title>
+      <link>/posts/190502-2/</link>
+      <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
+      
+      <guid>/posts/190502-2/</guid>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething.</description>
+    </item>
+    
+    <item>
+      <title>iOS / iOS App Name Localization</title>
+      <link>/posts/180809-1/</link>
+      <pubDate>Thu, 09 Aug 2018 10:34:10 +0000</pubDate>
+      
+      <guid>/posts/180809-1/</guid>
+      <description>Pre-requisites env.  Xcode 9 macOS High Sierra  InfoPlist.strings 만들기  File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.</description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (2)</title>
+      <link>/posts/180626-2/</link>
+      <pubDate>Tue, 26 Jun 2018 10:19:55 +0000</pubDate>
+      
+      <guid>/posts/180626-2/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document</description>
+    </item>
+    
+    <item>
+      <title>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</title>
+      <link>/posts/180626-1/</link>
+      <pubDate>Tue, 26 Jun 2018 09:46:00 +0000</pubDate>
+      
+      <guid>/posts/180626-1/</guid>
+      <description>Accessing Keychain Items with Face ID or Touch ID : 바이오메트릭정보로 키체인 아이템에 접근(Add, Read, Delete)하기 Origin: Apple Developer Document</description>
+    </item>
+    
+    <item>
+      <title>iOS / In-App Purchase 기록</title>
+      <link>/posts/180509-2/</link>
+      <pubDate>Wed, 09 May 2018 13:39:17 +0000</pubDate>
+      
+      <guid>/posts/180509-2/</guid>
+      <description>Original In-App Purchase Programming Guide
+번역 About In-App Purchase In-App Purchase allows you to embed a store inside your app using the StoreKit framework.</description>
+    </item>
+    
+    <item>
+      <title>iOS / Hotspot Study</title>
+      <link>/posts/180509-1/</link>
+      <pubDate>Wed, 09 May 2018 13:30:04 +0000</pubDate>
+      
+      <guid>/posts/180509-1/</guid>
+      <description>Original Hotspot Network Subsystem Programming Guide
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks.</description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK 2 ; Controller</title>
+      <link>/posts/180425-1/</link>
+      <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
+      
+      <guid>/posts/180425-1/</guid>
+      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.</description>
+    </item>
+    
+    <item>
+      <title>iOS / PHILIPS HUE SDK</title>
+      <link>/posts/180416-1/</link>
+      <pubDate>Mon, 16 Apr 2018 11:08:18 +0000</pubDate>
+      
+      <guid>/posts/180416-1/</guid>
+      <description>HUE SDK for iOS를 받아서 import하고, Sample Hue Controller를 만들어보자.</description>
+    </item>
+    
+    <item>
+      <title>iOS / NetworkExtension / Connect Wifi on my app</title>
+      <link>/posts/180413-1/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/180413-1/</guid>
+      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+    </item>
+    
+  </channel>
+</rss>

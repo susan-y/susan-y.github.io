@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manifest on Dev Log</title>
+    <link>/tags/manifest/</link>
+    <description>Recent content in manifest on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 22 Jun 2018 11:10:19 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/manifest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android / Fullscreen Splash</title>
+      <link>/posts/180622/</link>
+      <pubDate>Fri, 22 Jun 2018 11:10:19 +0000</pubDate>
+      
+      <guid>/posts/180622/</guid>
+      <description>Fullscreen Activity AndroidManifest.xml &amp;lt;activity android:name=&amp;#34;.SplashActivity&amp;#34; android:screenOrientation=&amp;#34;portrait&amp;#34; android:theme=&amp;#34;@style/AppTheme.NoActionBar&amp;#34;&amp;gt; &amp;lt;intent-filter&amp;gt; &amp;lt;action android:name=&amp;#34;android.intent.action.MAIN&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.</description>
+    </item>
+    
+  </channel>
+</rss>
