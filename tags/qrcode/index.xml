@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qrcode on Dev Log</title>
+    <link>/tags/qrcode/</link>
+    <description>Recent content in qrcode on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/qrcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator</title>
+      <link>/posts/190320/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/190320/</guid>
+      <description>Omega2+ 의 초기 설정이 완료된 상태에서 진행합니다. 초기 설정은 이전 포스트를 참고합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

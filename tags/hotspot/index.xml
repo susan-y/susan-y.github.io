@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hotspot on Dev Log</title>
+    <link>/tags/hotspot/</link>
+    <description>Recent content in hotspot on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 09 May 2018 13:30:04 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/hotspot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS / Hotspot Study</title>
+      <link>/posts/180509-1/</link>
+      <pubDate>Wed, 09 May 2018 13:30:04 +0000</pubDate>
+      
+      <guid>/posts/180509-1/</guid>
+      <description>Original Hotspot Network Subsystem Programming Guide
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks.</description>
+    </item>
+    
+  </channel>
+</rss>

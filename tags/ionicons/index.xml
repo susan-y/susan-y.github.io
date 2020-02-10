@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ionicons on Dev Log</title>
+    <link>/tags/ionicons/</link>
+    <description>Recent content in ionicons on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/ionicons/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to use ionicons in Devextreme Vuejs</title>
+      <link>/posts/200130/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200130/</guid>
+      <description>ionicons 홈페이지 https://ionicons.com/
+Environments  Devextreme Vuejs Project  https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/   Devextreme Vue Template  https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
