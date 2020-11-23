@@ -47,7 +47,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       
       <guid>/posts/190503/</guid>
       <description>Docker Hub https://hub.docker.com/
-summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&#39;라는 이름으로 실행한다.</description>
+summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&amp;rsquo;라는 이름으로 실행한다.</description>
     </item>
     
   </channel>

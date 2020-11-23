@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.78.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Docker Basic Command&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.edea6caa1a278325be2e42b72cccc90719ea680eb684e10adf0cd0a19e286f9b638388fcbe81c1ce58345d973fb65ee8.css" integrity="sha384-7epsqhongyW&#43;LkK3LMzJBxnqaA62hOEK3wzQoZ4ob5tjg4j8voHBzlg0XZc/tl7o"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Docker Basic Command&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.3e3c0236d449813972a65b45e73889d6c01f6512eff4be5dfefccb3c29cecbb358c05033eb61f87a081426d302b25be2.css" integrity="sha384-PjwCNtRJgTlypltF5ziJ1sAfZRLv9L5d/vzLPCnOy7NYwFAz62H4eggUJtMCslvi"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -21,7 +21,7 @@
 </code></pre></div><h2 id="start-docker-repo">Start Docker Repo</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D
 </code></pre></div><ul>
-<li>&lsquo;susany/tutorials:rpi&rsquo; repo를 &lsquo;rpi'라는 이름으로 실행한다.</li>
+<li>&lsquo;susany/tutorials:rpi&rsquo; repo를 &lsquo;rpi&rsquo;라는 이름으로 실행한다.</li>
 <li>repo를 실행할 때 sshd도 함께 실행한다.</li>
 <li>-P: docker image 생성시에 설정되어있는 PORT를 모두 오픈한다는 옵션</li>
 <li>-v: 링크할 로컬 폴더를 뒤에 나열한다는 옵션</li>
@@ -33,31 +33,31 @@
 <table>
 <thead>
 <tr>
-<th align="left">CONTAINER ID</th>
-<th align="left">IMAGE</th>
-<th align="left">COMMAND</th>
-<th align="left">CREATED</th>
-<th align="left">STATUS</th>
-<th align="left">PORTS</th>
-<th align="left">NAMES</th>
+<th style="text-align:left">CONTAINER ID</th>
+<th style="text-align:left">IMAGE</th>
+<th style="text-align:left">COMMAND</th>
+<th style="text-align:left">CREATED</th>
+<th style="text-align:left">STATUS</th>
+<th style="text-align:left">PORTS</th>
+<th style="text-align:left">NAMES</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">798a1b1e321e</td>
-<td align="left">susany/tutorials:rpi</td>
-<td align="left">&ldquo;/usr/bin/entry.sh /…&rdquo;</td>
-<td align="left">24 minutes ago</td>
-<td align="left">Up 24 minutes</td>
-<td align="left">0.0.0.0:32808-&gt;22/tcp</td>
-<td align="left">rpi</td>
+<td style="text-align:left">798a1b1e321e</td>
+<td style="text-align:left">susany/tutorials:rpi</td>
+<td style="text-align:left">&ldquo;/usr/bin/entry.sh /…&rdquo;</td>
+<td style="text-align:left">24 minutes ago</td>
+<td style="text-align:left">Up 24 minutes</td>
+<td style="text-align:left">0.0.0.0:32808-&gt;22/tcp</td>
+<td style="text-align:left">rpi</td>
 </tr>
 </tbody>
 </table>
 <h2 id="connect-to-rpi-container">Connect to &lsquo;rpi&rsquo; Container</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ssh -p <span class="o">[</span>port<span class="o">]</span> <span class="o">[</span>username<span class="o">]</span>@127.0.0.1
 <span class="c1"># example</span>
-<span class="c1"># ssh -p 32808 pi@127.0.0.1</span> 
+<span class="c1"># ssh -p 32808 pi@127.0.0.1 </span>
 </code></pre></div><h2 id="stop-rpi-container">Stop &lsquo;rpi&rsquo; Container</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker stop rpi
 </code></pre></div><h2 id="start-rpi-container">Start &lsquo;rpi&rsquo; Container</h2>

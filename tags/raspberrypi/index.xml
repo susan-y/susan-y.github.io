@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raspberrypi on Dev Log</title>
+    <link>/tags/raspberrypi/</link>
+    <description>Recent content in raspberrypi on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry OS 부팅 준비</title>
+      <link>/posts/201123/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/201123/</guid>
+      <description>준비중 Environments  Raspberry Pi 3B+ Raspberry Pi Imager  </description>
+    </item>
+    
+  </channel>
+</rss>

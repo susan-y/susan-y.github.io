@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.78.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Android / Get Phone Number, Carrier Name on Android 19-29&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.edea6caa1a278325be2e42b72cccc90719ea680eb684e10adf0cd0a19e286f9b638388fcbe81c1ce58345d973fb65ee8.css" integrity="sha384-7epsqhongyW&#43;LkK3LMzJBxnqaA62hOEK3wzQoZ4ob5tjg4j8voHBzlg0XZc/tl7o"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Android / Get Phone Number, Carrier Name on Android 19-29&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.3e3c0236d449813972a65b45e73889d6c01f6512eff4be5dfefccb3c29cecbb358c05033eb61f87a081426d302b25be2.css" integrity="sha384-PjwCNtRJgTlypltF5ziJ1sAfZRLv9L5d/vzLPCnOy7NYwFAz62H4eggUJtMCslvi"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -13,24 +13,24 @@
 </ul>
 <h2 id="step">step</h2>
 <h3 id="mainactivitykt">MainActivity.kt</h3>
-<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"> <span class="kr">override</span> <span class="n">fun</span> <span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"> <span class="kr">override</span> <span class="n">fun</span> <span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
     <span class="kc">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
     <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
 
     <span class="n">val</span> <span class="n">tm</span> <span class="p">=</span> <span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="n">TELEPHONY_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="n">TelephonyManager</span>
-    <span class="n">log</span><span class="p">(</span><span class="s">&#34;</span><span class="s">======================================</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&#34;======================================&#34;</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">VERSION</span><span class="p">.</span><span class="n">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="p">.</span><span class="n">VERSION_CODES</span><span class="p">.</span><span class="n">M</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">checkSelfPermission</span><span class="p">(</span><span class="n">READ_PHONE_STATE</span><span class="p">)</span> <span class="p">=</span><span class="p">=</span> <span class="n">PackageManager</span><span class="p">.</span><span class="n">PERMISSION_GRANTED</span>
+            <span class="n">checkSelfPermission</span><span class="p">(</span><span class="n">READ_PHONE_STATE</span><span class="p">)</span> <span class="p">==</span> <span class="n">PackageManager</span><span class="p">.</span><span class="n">PERMISSION_GRANTED</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">TODO</span><span class="p">(</span><span class="s">&#34;</span><span class="s">VERSION.SDK_INT &lt; M</span><span class="s">&#34;</span><span class="p">)</span>
+            <span class="n">TODO</span><span class="p">(</span><span class="s">&#34;VERSION.SDK_INT &lt; M&#34;</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">line1Number</span><span class="p">)</span>     <span class="c1">//</span><span class="c1"> </span><span class="c1">+</span><span class="c1">8</span><span class="c1">2</span><span class="c1">1</span><span class="c1">0</span><span class="c1">1</span><span class="c1">1</span><span class="c1">1</span><span class="c1">1</span><span class="c1">2</span><span class="c1">2</span><span class="c1">2</span><span class="c1">2</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">line1Number</span><span class="p">)</span>     <span class="c1">// +821011112222</span>
     <span class="p">}</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkCountryIso</span><span class="p">)</span>   <span class="c1">//</span><span class="c1"> </span><span class="c1">K</span><span class="c1">R</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperator</span><span class="p">)</span>     <span class="c1">//</span><span class="c1"> </span><span class="c1">4</span><span class="c1">5</span><span class="c1">0</span><span class="c1">8</span><span class="c1">0</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperatorName</span><span class="p">)</span> <span class="c1">//</span><span class="c1"> </span><span class="c1">K</span><span class="c1">T</span>
-    <span class="n">log</span><span class="p">(</span><span class="s">&#34;</span><span class="s">==========================================</span><span class="s">&#34;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkCountryIso</span><span class="p">)</span>   <span class="c1">// KR</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperator</span><span class="p">)</span>     <span class="c1">// 45080</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">networkOperatorName</span><span class="p">)</span> <span class="c1">// KT</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&#34;==========================================&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="app-manifest">App Manifest</h3>
 <div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.READ_PHONE_STATE&#34;</span><span class="nt">/&gt;</span>

@@ -17,7 +17,7 @@
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/posts/190502-2/</guid>
-      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { //dosomething.</description>
+      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
     </item>
     
   </channel>

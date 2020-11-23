@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.63.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.78.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>iOS / In-App Purchase 기록&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.edea6caa1a278325be2e42b72cccc90719ea680eb684e10adf0cd0a19e286f9b638388fcbe81c1ce58345d973fb65ee8.css" integrity="sha384-7epsqhongyW&#43;LkK3LMzJBxnqaA62hOEK3wzQoZ4ob5tjg4j8voHBzlg0XZc/tl7o"><body>
+<meta name="supported-color-schemes" content="light dark"><title>iOS / In-App Purchase 기록&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.3e3c0236d449813972a65b45e73889d6c01f6512eff4be5dfefccb3c29cecbb358c05033eb61f87a081426d302b25be2.css" integrity="sha384-PjwCNtRJgTlypltF5ziJ1sAfZRLv9L5d/vzLPCnOy7NYwFAz62H4eggUJtMCslvi"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -11,7 +11,7 @@
 <h2 id="about-in-app-purchase">About In-App Purchase</h2>
 <p>In-App Purchase allows you to embed a store inside your app using the StoreKit framework. This framework connects to the App Store on your app’s behalf to securely process payments from users, prompting them to authorize payment. The framework then notifies your app, which provides the purchased items to users. Use In-App Purchase to collect payment for additional features and content.</p>
 <ul>
-<li>&lsquo;인앱구입'은 나의 앱에 StoreKit을 사용해서 하나의 스토어를 만드는 것입니다. 이 프레임워크는 사용자가 안전한 결제를 하기위해 앱을 대신하여 앱스토어에 연결하여 결제승인을 요청합니다. 그리고 앱에 알려주고, 구입한 아이템을 사용자에게 제공합니다. 추가 기능과 컨텐츠의 구입목록을 위해 인앱구입을 사용합니다.</li>
+<li>&lsquo;인앱구입&rsquo;은 나의 앱에 StoreKit을 사용해서 하나의 스토어를 만드는 것입니다. 이 프레임워크는 사용자가 안전한 결제를 하기위해 앱을 대신하여 앱스토어에 연결하여 결제승인을 요청합니다. 그리고 앱에 알려주고, 구입한 아이템을 사용자에게 제공합니다. 추가 기능과 컨텐츠의 구입목록을 위해 인앱구입을 사용합니다.</li>
 </ul>
 <p>For example, using In-App Purchase, you can implement the following scenarios:
 예를 들어, 아래 시나리오를 구현할 수 있습니다.</p>
@@ -102,7 +102,7 @@ For more information, see In-App Purchase Configuration Guide for iTunes Connect
 <ul>
 <li>서버가 영수증을 처리할 때, production-signed앱에서 애플의 테스트 환경의 영수중을 받아서 처리할 수 있어야합니다.
 The recommended approach is for your production server to always validate receipts against the production App Store first. If validation fails with the error code “Sandbox receipt used in production”, validate against the test environment instead.</li>
-<li>프로덕션 서버가 앱스토어 프로덕션에 대한 영수증을 항상 먼저 확인하는 것이 좋습니다. &lsquo;프로덕션환경에서 사용되는 Sandbox 영수증'에러코드를 사용하여 실패한 경우는, 테스트환경에서 검사하세요.</li>
+<li>프로덕션 서버가 앱스토어 프로덕션에 대한 영수증을 항상 먼저 확인하는 것이 좋습니다. &lsquo;프로덕션환경에서 사용되는 Sandbox 영수증&rsquo;에러코드를 사용하여 실패한 경우는, 테스트환경에서 검사하세요.</li>
 </ul>
 <h3 id="implementation-checklist">Implementation Checklist</h3>
 <p>Before you submit your app for review, verify that you’ve implemented all of the required behavior. Make sure you’ve implemented the following core In-App Purchase behavior (listed in order of a typical development process):</p>
