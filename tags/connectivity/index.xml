@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>connectivity on Dev Log</title>
+    <link>/tags/connectivity/</link>
+    <description>Recent content in connectivity on Dev Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/connectivity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android ConnectivityManager and NetworkRequest</title>
+      <link>/posts/200407/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200407/</guid>
+      <description>지금 문제들 Android Q 에서 WpaEnterprise 연결이 Programmatically 로 안됨.   2020-03 issued.</description>
+    </item>
+    
+  </channel>
+</rss>

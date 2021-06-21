@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Android ConnectivityManager and NetworkRequest</title>
+      <link>/posts/200407/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200407/</guid>
+      <description>지금 문제들 Android Q 에서 WpaEnterprise 연결이 Programmatically 로 안됨.   2020-03 issued.</description>
+    </item>
+    
+    <item>
       <title>Android / Get Phone Number, Carrier Name on Android 19-29</title>
       <link>/posts/190809-2/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>

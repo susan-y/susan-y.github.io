@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Android ConnectivityManager and NetworkRequest&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+    <div class="base-body"><section id="header" class="site header max-body-width">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
+    <h1 class="article title">Android ConnectivityManager and NetworkRequest</h1><p class="article date">2020-04-07</p></section><article class="article markdown-body"><h2 id="지금-문제들">지금 문제들</h2>
+<h3 id="android-q-에서-wpaenterprise-연결이-programmatically-로-안됨">Android Q 에서 WpaEnterprise 연결이 Programmatically 로 안됨.</h3>
+<ul>
+<li>
+<p>2020-03 issued.</p>
+</li>
+<li>
+<p>왜 안되는가 했더니, 아래 API들이 29버전에서 Deprecated됨. 그래서 다 False로 처리됨</p>
+<ul>
+<li>WifiManager.addNetwork</li>
+<li>WifiManager.updateNetwork</li>
+<li>WifiManager.saveConfiguration</li>
+<li>WifiMAnager.removeNetwork</li>
+</ul>
+</li>
+<li>
+<p>해결하기</p>
+<ul>
+<li>WifiEnterpriseConfig로 연결할 Enterprise 연결 스펙을 하나 만들고,</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">eapConfig</span> <span class="p">=</span> <span class="n">WifiEnterpriseConfig</span><span class="p">()</span>
+<span class="n">eapConfig</span><span class="p">.</span><span class="n">identity</span> <span class="p">=</span> <span class="n">username</span>
+<span class="n">eapConfig</span><span class="p">.</span><span class="n">password</span> <span class="p">=</span> <span class="n">password</span>
+<span class="n">eapConfig</span><span class="p">.</span><span class="n">eapMethod</span> <span class="p">=</span> <span class="n">WifiEnterpriseConfig</span><span class="p">.</span><span class="n">Eap</span><span class="p">.</span><span class="n">PEAP</span>
+<span class="n">eapConfig</span><span class="p">.</span><span class="n">phase2Method</span> <span class="p">=</span> <span class="n">WifiEnterpriseConfig</span><span class="p">.</span><span class="n">Phase2</span><span class="p">.</span><span class="n">MSCHAPV2</span>
+<span class="n">eapConfig</span><span class="p">.</span><span class="n">caCertificate</span> <span class="p">=</span> <span class="k">null</span>
+<span class="k">val</span> <span class="py">builder</span> <span class="p">=</span> <span class="n">WifiNetworkSpecifier</span><span class="p">.</span><span class="n">Builder</span><span class="p">()</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">setSsid</span><span class="p">(</span><span class="n">ssid</span><span class="p">)</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">setWpa2EnterpriseConfig</span><span class="p">(</span><span class="n">eapConfig</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>WifiNetworkSpecifier로 연결할 와이파이 스펙 빌더를 선언해서 위의 &lsquo;enterpriseConfig&rsquo;를 추가해줌.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin">    <span class="k">val</span> <span class="py">wifiNetworkSpecifier</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">networkRequestBuilder</span> <span class="p">=</span> <span class="n">NetworkRequest</span><span class="p">.</span><span class="n">Builder</span><span class="p">()</span>
+<span class="n">networkRequestBuilder</span><span class="p">.</span><span class="n">addTransportType</span><span class="p">(</span><span class="n">NetworkCapabilities</span><span class="p">.</span><span class="n">TRANSPORT_WIFI</span><span class="p">)</span>
+<span class="n">networkRequestBuilder</span><span class="p">.</span><span class="n">setNetworkSpecifier</span><span class="p">(</span><span class="n">wifiNetworkSpecifier</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>NetworkRequest 빌더도 한개 만들어서 &lsquo;spectifier&rsquo;와 따로 선언한 networkCallback를 파라미터로 넣어줘서 request하면 UI상에 해당 와이파이 연결 다이얼로그가 뜸.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">networkRequest</span> <span class="p">=</span> <span class="n">networkRequestBuilder</span><span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">cm</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="p">.</span><span class="n">CONNECTIVITY_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="n">ConnectivityManager</span>
+<span class="n">cm</span><span class="p">.</span><span class="n">requestNetwork</span><span class="p">(</span><span class="n">networkRequest</span><span class="p">,</span> <span class="n">networkCallback</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h3 id="wifinetworkspecifier로-연결되게-해놨더니-인터넷이-안됨">WifiNetworkSpecifier로 연결되게 해놨더니, 인터넷이 안됨.</h3>
+<ul>
+<li>2020-04-06 issued.</li>
+<li>왜 안되는지 못찾음.</li>
+</ul>
+</article><section class="article labels"><a class="tag" href=/tags/android/>android</a><a class="tag" href=/tags/connectivity/>connectivity</a><a class="tag" href=/tags/network/>network</a></section><section class="article navigation"><p><a class="link" href="/posts/201123/"><span class="li">&larr;</span>Raspberry OS 설치 및 기본 세팅하기</a></p><p><a class="link" href="/posts/200221/"><span class="li">&rarr;</span>RxSwift </a class="link">
+    </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+    <p class="copyright">Dev Log</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138985966-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

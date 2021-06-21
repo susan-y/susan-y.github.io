@@ -21,12 +21,49 @@
     </item>
     
     <item>
+      <title>Raspberry PI에 MagicMirror² 설치 및 구동</title>
+      <link>/posts/210514/</link>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/210514/</guid>
+      <description>준비중 Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 32GB   Node 설치  curl -sL https://deb.</description>
+    </item>
+    
+    <item>
       <title>Raspberry OS 설치 및 기본 세팅하기</title>
       <link>/posts/201123/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
       <description>Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB  Step  /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
+    </item>
+    
+    <item>
+      <title>Android ConnectivityManager and NetworkRequest</title>
+      <link>/posts/200407/</link>
+      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200407/</guid>
+      <description>지금 문제들 Android Q 에서 WpaEnterprise 연결이 Programmatically 로 안됨.   2020-03 issued.</description>
+    </item>
+    
+    <item>
+      <title>RxSwift </title>
+      <link>/posts/200221/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/200221/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Helloworld</title>
+      <link>/posts/helloworld/</link>
+      <pubDate>Fri, 31 Jan 2020 13:41:05 +0900</pubDate>
+      
+      <guid>/posts/helloworld/</guid>
+      <description>Title Hello World?
+Test Code Shell hugo new site susan-blog JS &amp;lt;script&amp;gt; import something from &amp;#39;.</description>
     </item>
     
     <item>
@@ -241,6 +278,15 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       
       <guid>/posts/180413-1/</guid>
       <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>/posts/hello-world/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info.</description>
     </item>
     
   </channel>
