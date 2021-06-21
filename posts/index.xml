@@ -6,18 +6,27 @@
     <description>Recent content in Posts on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Raspberry OS 부팅 준비</title>
+      <title>Arduino HC-06과 Android 블루투스 통신으로 LED 제어하기</title>
+      <link>/posts/210621/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/210621/</guid>
+      <description>준비 준비물  Arduino Uno x1 HC-06 module x1 LED x2 안드로이드 폰(Android 11)  개발환경  Android Studio 4.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry OS 설치 및 기본 세팅하기</title>
       <link>/posts/201123/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>준비중 Environments  Raspberry Pi 3B+ Raspberry Pi Imager  </description>
+      <description>Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB  Step  /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
     </item>
     
     <item>

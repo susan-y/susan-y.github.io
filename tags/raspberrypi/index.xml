@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Raspberry OS 부팅 준비</title>
+      <title>Raspberry OS 설치 및 기본 세팅하기</title>
       <link>/posts/201123/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>준비중 Environments  Raspberry Pi 3B+ Raspberry Pi Imager  </description>
+      <description>Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB  Step  /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
     </item>
     
   </channel>

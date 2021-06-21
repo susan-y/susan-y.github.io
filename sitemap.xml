@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>http://susan-y.github.io/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/posts/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/android/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/arduino/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/posts/210621/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/hc06/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/posts/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/</loc><lastmod>2021-06-21T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/201123/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/raspberrypi/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/tags/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/ssh/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/vnc/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
+    <loc>http://susan-y.github.io/tags/wifi/</loc><lastmod>2020-11-23T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/devextreme/</loc><lastmod>2020-01-30T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/200130/</loc><lastmod>2020-01-30T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/ionicons/</loc><lastmod>2020-01-30T00:00:00+00:00</lastmod></url><url>
@@ -15,8 +22,6 @@
     <loc>http://susan-y.github.io/posts/200129-1/</loc><lastmod>2020-01-29T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/200129-2/</loc><lastmod>2020-01-29T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/rpi/</loc><lastmod>2020-01-29T00:00:00+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/tags/vnc/</loc><lastmod>2020-01-29T00:00:00+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/tags/wifi/</loc><lastmod>2020-01-29T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190910/</loc><lastmod>2019-09-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/expressjs/</loc><lastmod>2019-09-10T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/web/</loc><lastmod>2019-09-10T00:00:00+00:00</lastmod></url><url>
@@ -24,7 +29,6 @@
     <loc>http://susan-y.github.io/tags/network/</loc><lastmod>2019-08-26T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190826/</loc><lastmod>2019-08-26T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/router/</loc><lastmod>2019-08-26T00:00:00+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/tags/android/</loc><lastmod>2019-08-09T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190809-2/</loc><lastmod>2019-08-09T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/ios/</loc><lastmod>2019-08-09T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190809-1/</loc><lastmod>2019-08-09T00:00:00+00:00</lastmod></url><url>
@@ -34,7 +38,6 @@
     <loc>http://susan-y.github.io/posts/190503/</loc><lastmod>2019-05-03T00:00:00+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/error/</loc><lastmod>2019-05-02T10:44:26+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190502-2/</loc><lastmod>2019-05-02T10:44:26+00:00</lastmod></url><url>
-    <loc>http://susan-y.github.io/tags/arduino/</loc><lastmod>2019-05-02T09:22:38+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/pio/</loc><lastmod>2019-05-02T09:22:38+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/posts/190502/</loc><lastmod>2019-05-02T09:22:38+00:00</lastmod></url><url>
     <loc>http://susan-y.github.io/tags/iot/</loc><lastmod>2019-03-20T00:00:00+00:00</lastmod></url><url>

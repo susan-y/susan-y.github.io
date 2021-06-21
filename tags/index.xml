@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>android</title>
+      <link>/tags/android/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arduino</title>
+      <link>/tags/arduino/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HC06</title>
+      <link>/tags/hc06/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hc06/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>raspberrypi</title>
@@ -17,6 +44,33 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vnc</title>
+      <link>/tags/vnc/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vnc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wifi</title>
+      <link>/tags/wifi/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wifi/</guid>
       <description></description>
     </item>
     
@@ -84,24 +138,6 @@
     </item>
     
     <item>
-      <title>vnc</title>
-      <link>/tags/vnc/</link>
-      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vnc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wifi</title>
-      <link>/tags/wifi/</link>
-      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/wifi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>expressjs</title>
       <link>/tags/expressjs/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
@@ -147,15 +183,6 @@
     </item>
     
     <item>
-      <title>android</title>
-      <link>/tags/android/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ios</title>
       <link>/tags/ios/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
@@ -197,15 +224,6 @@
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/tags/error/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>arduino</title>
-      <link>/tags/arduino/</link>
-      <pubDate>Thu, 02 May 2019 09:22:38 +0000</pubDate>
-      
-      <guid>/tags/arduino/</guid>
       <description></description>
     </item>
     
