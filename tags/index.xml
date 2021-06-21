@@ -41,7 +41,7 @@
     <item>
       <title>raspberrypi</title>
       <link>/tags/raspberrypi/</link>
-      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/raspberrypi/</guid>
       <description></description>
@@ -71,51 +71,6 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/wifi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>connectivity</title>
-      <link>/tags/connectivity/</link>
-      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/connectivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>/tags/network/</link>
-      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ios</title>
-      <link>/tags/ios/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reativex</title>
-      <link>/tags/reativex/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/reativex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>swift</title>
-      <link>/tags/swift/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/swift/</guid>
       <description></description>
     </item>
     
@@ -210,6 +165,15 @@
     </item>
     
     <item>
+      <title>network</title>
+      <link>/tags/network/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>router</title>
       <link>/tags/router/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
@@ -219,11 +183,29 @@
     </item>
     
     <item>
+      <title>ios</title>
+      <link>/tags/ios/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kotlin</title>
       <link>/tags/kotlin/</link>
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift</title>
+      <link>/tags/swift/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/swift/</guid>
       <description></description>
     </item>
     

@@ -6,19 +6,10 @@
     <description>Recent content in raspberrypi on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 14 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Raspberry PI에 MagicMirror² 설치 및 구동</title>
-      <link>/posts/210514/</link>
-      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/210514/</guid>
-      <description>준비중 Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 32GB   Node 설치  curl -sL https://deb.</description>
-    </item>
     
     <item>
       <title>Raspberry OS 설치 및 기본 세팅하기</title>
