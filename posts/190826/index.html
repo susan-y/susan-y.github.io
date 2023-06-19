@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Rapsberry PI as Router / 3B &#43; Buster&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Rapsberry PI as Router / 3B &#43; Buster&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -21,32 +21,32 @@
 <p>단계를 그대로 따라한다.</p>
 <h2 id="step">Step</h2>
 <h3 id="1-upgrade">1. Upgrade</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get update
-sudo apt-get upgrade
-</code></pre></div><h3 id="2-install-hostapd-bridge-utils">2. Install Hostapd, Bridge-utils</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install hostapd bridge-utils
-sudo systemctl stop hostapd
-</code></pre></div><h3 id="3-dhcpcdconf-파일-편집하기">3. dhcpcd.conf 파일 편집하기</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/dhcpcd.conf
-</code></pre></div><p>맨 아래에 두줄 추가</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">denyinterfaces wlan0</span>
-<span class="na">denyinterfaces eth0</span>
-</code></pre></div><h3 id="4-bridge-만들기">4. Bridge 만들기</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo brctl addbr br0
-sudo brctl addif br0 eth0
-</code></pre></div><h3 id="5-interfaces-파일-편집하기">5. interfaces 파일 편집하기</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/network/interfaces
-</code></pre></div><p>맨 아래에 다음 내용을 추가한다.</p>
-<pre><code class="language-conf" data-lang="conf">allow-hotplug wlan0
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get upgrade
+</span></span></code></pre></div><h3 id="2-install-hostapd-bridge-utils">2. Install Hostapd, Bridge-utils</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install hostapd bridge-utils
+</span></span><span class="line"><span class="cl">sudo systemctl stop hostapd
+</span></span></code></pre></div><h3 id="3-dhcpcdconf-파일-편집하기">3. dhcpcd.conf 파일 편집하기</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vi /etc/dhcpcd.conf
+</span></span></code></pre></div><p>맨 아래에 두줄 추가</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">denyinterfaces wlan0</span>
+</span></span><span class="line"><span class="cl"><span class="na">denyinterfaces eth0</span>
+</span></span></code></pre></div><h3 id="4-bridge-만들기">4. Bridge 만들기</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo brctl addbr br0
+</span></span><span class="line"><span class="cl">sudo brctl addif br0 eth0
+</span></span></code></pre></div><h3 id="5-interfaces-파일-편집하기">5. interfaces 파일 편집하기</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vi /etc/network/interfaces
+</span></span></code></pre></div><p>맨 아래에 다음 내용을 추가한다.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">allow-hotplug wlan0
 iface wlan0 inet manual
 
 auto br0
 iface br0 inet dhcp
 bridge_ports eth0 wlan0
 </code></pre><h3 id="6-hostapdconf-파일-생성하기">6. hostapd.conf 파일 생성하기</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/hostapd/hostapd.conf
-</code></pre></div><p>파일을 새로 만들고 다음 내용을 추가한다.</p>
-<pre><code class="language-conf" data-lang="conf">interface=wlan0
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vi /etc/hostapd/hostapd.conf
+</span></span></code></pre></div><p>파일을 새로 만들고 다음 내용을 추가한다.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">interface=wlan0
 bridge=br0
 ssid=myssid
 hw_mode=g
@@ -62,20 +62,20 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 </code></pre><p>ssid와 wpa_passphrase는 내가 쓸 WiFi 정보로 변경</p>
 <h3 id="7-hostapd-파일-편집하기">7. hostapd 파일 편집하기</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo vi /etc/default/hostapd
-</code></pre></div><pre><code class="language-conf" data-lang="conf">DAEMON_CONF=&quot;/etc/hostapd/hostpad.conf&quot;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vi /etc/default/hostapd
+</span></span></code></pre></div><pre tabindex="0"><code class="language-conf" data-lang="conf">DAEMON_CONF=&#34;/etc/hostapd/hostpad.conf&#34;
 </code></pre><h3 id="8-재부팅">8. 재부팅</h3>
-<pre><code>sudo reboot
+<pre tabindex="0"><code>sudo reboot
 </code></pre><h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="failed-to-start-hostapdservice-unit-hostapdservice-is-masked">&ldquo;Failed to start hostapd.service: Unit hostapd.service is masked.&rdquo;</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl stop hostapd
-sudo systemctl unmask hostapd
-sudo systemctl start hostapd
-</code></pre></div><h3 id="locale-warning">&ldquo;Locale warning&rdquo;</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
-</code></pre></div><h2 id="references">References</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl stop hostapd
+</span></span><span class="line"><span class="cl">sudo systemctl unmask hostapd
+</span></span><span class="line"><span class="cl">sudo systemctl start hostapd
+</span></span></code></pre></div><h3 id="locale-warning">&ldquo;Locale warning&rdquo;</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo raspi-config
+</span></span></code></pre></div><h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/">https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/</a></li>
+<li><a href="https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/"target="_blank">https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/</a></li>
 </ul>
 </article><section class="article labels"><a class="tag" href=/tags/raspberry-pi/>raspberry pi</a><a class="tag" href=/tags/wifi/>wifi</a><a class="tag" href=/tags/router/>router</a><a class="tag" href=/tags/bridge/>bridge</a><a class="tag" href=/tags/network/>network</a></section><section class="article navigation"><p><a class="link" href="/posts/190910/"><span class="li">&larr;</span>express.js generator</a></p><p><a class="link" href="/posts/190809-2/"><span class="li">&rarr;</span>Android / Get Phone Number, Carrier Name on Android 19-29</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
@@ -83,7 +83,7 @@ sudo systemctl start hostapd
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

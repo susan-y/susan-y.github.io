@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Arduino HC-06과 Android 블루투스 통신으로 LED 제어하기&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Arduino HC-06과 Android 블루투스 통신으로 LED 제어하기&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -38,83 +38,83 @@
 <blockquote>
 <p>bluetooth.ino</p>
 </blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cm">/*
-</span><span class="cm">HC-06 bluetooth
-</span><span class="cm">*/</span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;SoftwareSerial.h&gt; </span><span class="cp">
-</span><span class="cp"></span>
-<span class="c1">// Serial 통신핀으로 D11번핀을 Rx로, D10번핀을 Tx로 선언
-</span><span class="c1"></span><span class="n">SoftwareSerial</span> <span class="nf">btSerial</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// btSerial(RX, TX);
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="n">led1</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">led2</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">command</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-    <span class="n">btSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// 블루투스 시리얼 통신 시작
-</span><span class="c1"></span>    
-    <span class="n">pinMode</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-    <span class="n">pinMode</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;READY &#34;</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>  
-  <span class="c1">// Android -&gt; Arduino
-</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">btSerial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">btSerial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>    
-    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;new line&#34;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;return&#34;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">command</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>    
-  <span class="p">}</span>
-
-  <span class="c1">// Arduino -&gt; Android
-</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">btSerial</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">());</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Control LED
-</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;A&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED on&#34;</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;B&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED off&#34;</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED off&#34;</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;[&#34;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;]&#34;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;waiting...&#34;</span><span class="p">);</span>    
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">HC-06 bluetooth
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;SoftwareSerial.h&gt; </span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Serial 통신핀으로 D11번핀을 Rx로, D10번핀을 Tx로 선언
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">SoftwareSerial</span> <span class="nf">btSerial</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// btSerial(RX, TX);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">led1</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">led2</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">command</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">btSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// 블루투스 시리얼 통신 시작
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="n">pinMode</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pinMode</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;READY &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Android -&gt; Arduino
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">btSerial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">btSerial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;new line&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;return&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">data</span> <span class="o">!=</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">command</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Arduino -&gt; Android
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">btSerial</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Control LED
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;A&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED on&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;B&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED off&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Turn LED off&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">led2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;[&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;]&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;waiting...&#34;</span><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ol start="2">
 <li>아두이노, HC-06, LED 연결</li>
 </ol>
 <ul>
@@ -178,7 +178,7 @@
 <li>
 <p>에듀이노 HC-06 정보 참고</p>
 <ul>
-<li><a href="https://eduino.kr/product/detail.html?product_no=27&amp;gclid=CjwKCAjwzruGBhBAEiwAUqMR8KkRWQCUf56PuslVpdaaYSxxxzbVNYkUWs3Lp5kcZIwPi9JDX1FnFhoC_vYQAvD_BwE">https://eduino.kr/product/detail.html?product_no=27&amp;gclid=CjwKCAjwzruGBhBAEiwAUqMR8KkRWQCUf56PuslVpdaaYSxxxzbVNYkUWs3Lp5kcZIwPi9JDX1FnFhoC_vYQAvD_BwE</a></li>
+<li><a href="https://eduino.kr/product/detail.html?product_no=27&amp;gclid=CjwKCAjwzruGBhBAEiwAUqMR8KkRWQCUf56PuslVpdaaYSxxxzbVNYkUWs3Lp5kcZIwPi9JDX1FnFhoC_vYQAvD_BwE"target="_blank">https://eduino.kr/product/detail.html?product_no=27&gclid=CjwKCAjwzruGBhBAEiwAUqMR8KkRWQCUf56PuslVpdaaYSxxxzbVNYkUWs3Lp5kcZIwPi9JDX1FnFhoC_vYQAvD_BwE</a></li>
 </ul>
 </li>
 <li>
@@ -188,13 +188,13 @@
 </ul>
 </li>
 </ul>
-</article><section class="article labels"><a class="tag" href=/tags/arduino/>arduino</a><a class="tag" href=/tags/hc06/>HC06</a><a class="tag" href=/tags/android/>android</a></section><section class="article navigation"><p><a class="link" href="/posts/201123/"><span class="li">&rarr;</span>Raspberry OS 설치 및 기본 세팅하기</a class="link">
+</article><section class="article labels"><a class="tag" href=/tags/arduino/>arduino</a><a class="tag" href=/tags/hc06/>HC06</a><a class="tag" href=/tags/android/>android</a></section><section class="article navigation"><p><a class="link" href="/posts/230619/"><span class="li">&larr;</span>2023년도 상반기 정리</a></p><p><a class="link" href="/posts/201123/"><span class="li">&rarr;</span>Raspberry OS 설치 및 기본 세팅하기</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

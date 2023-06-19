@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -38,20 +38,20 @@
 <ol>
 <li>먼저 opkg 툴을 업데이트합니다.</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">opkg update
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">opkg update
+</span></span></code></pre></div><ol start="2">
 <li>opkg를 이용하여 필요한 패키지를 설치합니다.</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">opkg install python-light python-codecs pyOledExp git git-http ca-bundle
-</code></pre></div><h3 id="git-소스코드-다운로드">Git 소스코드 다운로드</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">opkg install python-light python-codecs pyOledExp git git-http ca-bundle
+</span></span></code></pre></div><h3 id="git-소스코드-다운로드">Git 소스코드 다운로드</h3>
 <p>위의 설치가 완료되면 git커맨드로 Onion에서 제공하는 oledQrCodeGenerator 소스코드를 내려받을 수 있습니다.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span>
-git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
-</code></pre></div><h3 id="qr-code-generator-실행하기">QR Code Generator 실행하기</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/OnionIoT/oledQrCodeGenerator.git
+</span></span></code></pre></div><h3 id="qr-code-generator-실행하기">QR Code Generator 실행하기</h3>
 <p>아래 스크립트를 실행하면 OLED에 QR코드가 표시됩니다.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> oledQrCodeGenerator
-python main.py <span class="s1">&#39;Hello, Onion?&#39;</span>
-</code></pre></div><p><a target="_blank" rel="noopener noreferrer" 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> oledQrCodeGenerator
+</span></span><span class="line"><span class="cl">python main.py <span class="s1">&#39;Hello, Onion?&#39;</span>
+</span></span></code></pre></div><p><a target="_blank" rel="noopener noreferrer" 
   href="/images/20190320_image4.png"><img  src="/images/20190320_image4.png"
         alt/></a>
 main.py 소스코드에 &lsquo;Hello, Onion?&lsquo;문장을 파라미터로 전달하면 OLED에 전달한 문장이 QR코드로 표시됩니다.
@@ -64,7 +64,7 @@ main.py 소스코드에 &lsquo;Hello, Onion?&lsquo;문장을 파라미터로 전
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

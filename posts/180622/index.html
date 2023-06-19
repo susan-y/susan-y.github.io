@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Android / Fullscreen Splash&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Android / Fullscreen Splash&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
     <h1 class="article title">Android / Fullscreen Splash</h1><p class="article date">2018-06-22</p></section><article class="article markdown-body"><h1 id="fullscreen-activity">Fullscreen Activity</h1>
 <h2 id="androidmanifestxml">AndroidManifest.xml</h2>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span>
-    <span class="na">android:name=</span><span class="s">&#34;.SplashActivity&#34;</span>
-    <span class="na">android:screenOrientation=</span><span class="s">&#34;portrait&#34;</span>
-    <span class="na">android:theme=</span><span class="s">&#34;@style/AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.MAIN&#34;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.LAUNCHER&#34;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/intent-filter&gt;</span>
-<span class="nt">&lt;/activity&gt;</span>
-</code></pre></div><h2 id="valuesv23styles">values/v23/styles</h2>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowActionBar&#34;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowNoTitle&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;android:windowLightStatusBar&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/style&gt;</span>
-</code></pre></div><h2 id="valuesstyles">values/styles</h2>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowActionBar&#34;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowNoTitle&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/style&gt;</span>
-</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/android/>android</a><a class="tag" href=/tags/manifest/>manifest</a></section><section class="article navigation"><p><a class="link" href="/posts/180626-1/"><span class="li">&larr;</span>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</a></p><p><a class="link" href="/posts/180511-1/"><span class="li">&rarr;</span>IOT / IoT Hub Study</a class="link">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;activity</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:name=</span><span class="s">&#34;.SplashActivity&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:screenOrientation=</span><span class="s">&#34;portrait&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:theme=</span><span class="s">&#34;@style/AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.MAIN&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.LAUNCHER&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/activity&gt;</span>
+</span></span></code></pre></div><h2 id="valuesv23styles">values/v23/styles</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowActionBar&#34;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowNoTitle&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;android:windowLightStatusBar&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/style&gt;</span>
+</span></span></code></pre></div><h2 id="valuesstyles">values/styles</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme.NoActionBar&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowActionBar&#34;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&#34;windowNoTitle&#34;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/style&gt;</span>
+</span></span></code></pre></div></article><section class="article labels"><a class="tag" href=/tags/android/>android</a><a class="tag" href=/tags/manifest/>manifest</a></section><section class="article navigation"><p><a class="link" href="/posts/180626-1/"><span class="li">&larr;</span>iOS / study / Accessing Keychain Items with Face ID or Touch ID (1)</a></p><p><a class="link" href="/posts/180511-1/"><span class="li">&rarr;</span>IOT / IoT Hub Study</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

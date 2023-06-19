@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-1/</guid>
-      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
+      <description>Environments Swift 5.0 Xcode 10 Mojave step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/posts/190502-2/</guid>
-      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
+      <description>summary Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10 addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 09 Aug 2018 10:34:10 +0000</pubDate>
       
       <guid>/posts/180809-1/</guid>
-      <description>Pre-requisites env.  Xcode 9 macOS High Sierra  InfoPlist.strings 만들기  File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.</description>
+      <description>Pre-requisites env. Xcode 9 macOS High Sierra InfoPlist.strings 만들기 File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@
       <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
       
       <guid>/posts/180425-1/</guid>
-      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.</description>
+      <description>목표 Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기 environments Hue Bridge와 같은 네트워크에 연결해야한다.</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-1/</guid>
-      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1.</description>
     </item>
     
   </channel>

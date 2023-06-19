@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Raspberry Pi Boot without screen on MacOS&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Raspberry Pi Boot without screen on MacOS&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -25,16 +25,16 @@
 <li>BalenaEtcher</li>
 </ul>
 <h2 id="원격화면-연결을-위한-설정--turn-vnc-on">원격화면 연결을 위한 설정 | Turn VNC on</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
-</code></pre></div><h3 id="1-interfaces-config">1. interfaces config</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo raspi-config
+</span></span></code></pre></div><h3 id="1-interfaces-config">1. interfaces config</h3>
 <h3 id="2-vnc-enable--yes">2. VNC Enable &gt; YES</h3>
 <h2 id="tightvncserver-설치--install-tightvncserver">tightvncserver 설치 | Install tightvncserver</h2>
 <p>sudo apt-get install tightvncserver</p>
 <h2 id="reboot--execute">Reboot &amp; Execute</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo reboot
-...
-tightvncserver
-</code></pre></div><h2 id="macos-security-preferences">MacOS Security Preferences</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo reboot
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">tightvncserver
+</span></span></code></pre></div><h2 id="macos-security-preferences">MacOS Security Preferences</h2>
 <p>Settings &gt; Sharing 에서 Screen sharing enable 설정하기</p>
 <h2 id="macos-finder">MacOS finder</h2>
 <h3 id="1-command--k">1. command + K</h3>
@@ -45,7 +45,7 @@ tightvncserver
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

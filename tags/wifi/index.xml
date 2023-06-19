@@ -17,7 +17,7 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB  Step  /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
+      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.</description>
+      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-2/</guid>
-      <description>Prerequsites Env.  Android studio 3 Target API 26 Kotlin  Getting Started 1.</description>
+      <description>Prerequsites Env. Android studio 3 Target API 26 Kotlin Getting Started 1.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-1/</guid>
-      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1.</description>
     </item>
     
   </channel>

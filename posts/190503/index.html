@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Docker Basic Command&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Docker Basic Command&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
     <h1 class="article title">Docker Basic Command</h1><p class="article date">2019-05-03</p></section><article class="article markdown-body"><h2 id="docker-hub">Docker Hub</h2>
-<p><a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p><a href="https://hub.docker.com/"target="_blank">https://hub.docker.com/</a></p>
 <h2 id="summary">summary</h2>
 <ul>
 <li>docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음</li>
 </ul>
 <h2 id="pull-docker-repo">Pull Docker Repo</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker pull susany/tutorials:rpi
-
-<span class="c1"># example</span>
-<span class="c1"># docker pull [user name]/[repo name]:[tag name]</span>
-<span class="c1"># or</span>
-<span class="c1"># docker pull raspbian/stretch</span>
-</code></pre></div><h2 id="start-docker-repo">Start Docker Repo</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull susany/tutorials:rpi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># example</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker pull [user name]/[repo name]:[tag name]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker pull raspbian/stretch</span>
+</span></span></code></pre></div><h2 id="start-docker-repo">Start Docker Repo</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D
+</span></span></code></pre></div><ul>
 <li>&lsquo;susany/tutorials:rpi&rsquo; repo를 &lsquo;rpi&rsquo;라는 이름으로 실행한다.</li>
 <li>repo를 실행할 때 sshd도 함께 실행한다.</li>
 <li>-P: docker image 생성시에 설정되어있는 PORT를 모두 오픈한다는 옵션</li>
@@ -28,8 +28,8 @@
 </ul>
 <h2 id="show-process-list">Show Process List</h2>
 <p>Docker Container 상태 확인하기</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker ps -a
-</code></pre></div><h3 id="result">result</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker ps -a
+</span></span></code></pre></div><h3 id="result">result</h3>
 <table>
 <thead>
 <tr>
@@ -55,30 +55,30 @@
 </tbody>
 </table>
 <h2 id="connect-to-rpi-container">Connect to &lsquo;rpi&rsquo; Container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ssh -p <span class="o">[</span>port<span class="o">]</span> <span class="o">[</span>username<span class="o">]</span>@127.0.0.1
-<span class="c1"># example</span>
-<span class="c1"># ssh -p 32808 pi@127.0.0.1 </span>
-</code></pre></div><h2 id="stop-rpi-container">Stop &lsquo;rpi&rsquo; Container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker stop rpi
-</code></pre></div><h2 id="start-rpi-container">Start &lsquo;rpi&rsquo; Container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker stop rpi
-</code></pre></div><h2 id="commit-rpi-container">Commit &lsquo;rpi&rsquo; Container</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ssh -p <span class="o">[</span>port<span class="o">]</span> <span class="o">[</span>username<span class="o">]</span>@127.0.0.1
+</span></span><span class="line"><span class="cl"><span class="c1"># example</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ssh -p 32808 pi@127.0.0.1 </span>
+</span></span></code></pre></div><h2 id="stop-rpi-container">Stop &lsquo;rpi&rsquo; Container</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop rpi
+</span></span></code></pre></div><h2 id="start-rpi-container">Start &lsquo;rpi&rsquo; Container</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop rpi
+</span></span></code></pre></div><h2 id="commit-rpi-container">Commit &lsquo;rpi&rsquo; Container</h2>
 <p>&lsquo;rpi&rsquo; container를 지정한 repo에 덮어씌우거나 생성한다.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker commit rpi susany/tutorials:rpi
-</code></pre></div><h2 id="push-docker-repo">Push Docker Repo</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker commit rpi susany/tutorials:rpi
+</span></span></code></pre></div><h2 id="push-docker-repo">Push Docker Repo</h2>
 <p>지정한 repo를 docker hub에 저장한다.</p>
-<pre><code>docker push susany/tutorials:rpi
+<pre tabindex="0"><code>docker push susany/tutorials:rpi
 </code></pre><h2 id="tips">tips</h2>
 <h3 id="ssh-로그인-자동화">SSH 로그인 자동화</h3>
 <p>ssh public key를 카피한다.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ssh-copy-id -p <span class="m">32808</span> pi@127.0.0.1
-</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/docker/>docker</a><a class="tag" href=/tags/raspberry-pi/>raspberry pi</a></section><section class="article navigation"><p><a class="link" href="/posts/190809-1/"><span class="li">&larr;</span>iOS / CTCarrier on iOS 12</a></p><p><a class="link" href="/posts/190502-2/"><span class="li">&rarr;</span>iOS / Swift Error throw, throws, try, catch</a class="link">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ssh-copy-id -p <span class="m">32808</span> pi@127.0.0.1
+</span></span></code></pre></div></article><section class="article labels"><a class="tag" href=/tags/docker/>docker</a><a class="tag" href=/tags/raspberry-pi/>raspberry pi</a></section><section class="article navigation"><p><a class="link" href="/posts/190809-1/"><span class="li">&larr;</span>iOS / CTCarrier on iOS 12</a></p><p><a class="link" href="/posts/190502-2/"><span class="li">&rarr;</span>iOS / Swift Error throw, throws, try, catch</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

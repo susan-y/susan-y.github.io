@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>iOS / NetworkExtension / Connect Wifi on my app&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>iOS / NetworkExtension / Connect Wifi on my app&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -24,21 +24,21 @@
         alt/></a></p>
 <h3 id="2-code">2. Code</h3>
 <h4 id="swift4">swift4</h4>
-<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">connectClicked</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">NEHotspotConfiguration</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">ssid</span><span class="p">:</span> <span class="s">&#34;[name]&#34;</span><span class="p">,</span> <span class="n">passphrase</span><span class="p">:</span> <span class="s">&#34;[password]&#34;</span><span class="p">,</span> <span class="n">isWEP</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
-    <span class="n">config</span><span class="p">.</span><span class="n">joinOnce</span> <span class="p">=</span> <span class="kc">true</span>
-    <span class="n">NEHotspotConfigurationManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">!)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/ios/>ios</a><a class="tag" href=/tags/wifi/>wifi</a><a class="tag" href=/tags/network/>network</a></section><section class="article navigation"><p><a class="link" href="/posts/180413-2/"><span class="li">&larr;</span>Android / Connect Wifi on my app</a></p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-swift" data-lang="swift"><span class="line"><span class="cl"><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">connectClicked</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nv">config</span> <span class="p">=</span> <span class="n">NEHotspotConfiguration</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">ssid</span><span class="p">:</span> <span class="s">&#34;[name]&#34;</span><span class="p">,</span> <span class="n">passphrase</span><span class="p">:</span> <span class="s">&#34;[password]&#34;</span><span class="p">,</span> <span class="n">isWEP</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span><span class="p">.</span><span class="n">joinOnce</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="n">NEHotspotConfigurationManager</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">print</span><span class="p">(</span><span class="n">error</span><span class="p">!)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article><section class="article labels"><a class="tag" href=/tags/ios/>ios</a><a class="tag" href=/tags/wifi/>wifi</a><a class="tag" href=/tags/network/>network</a></section><section class="article navigation"><p><a class="link" href="/posts/180413-2/"><span class="li">&larr;</span>Android / Connect Wifi on my app</a></p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

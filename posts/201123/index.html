@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Raspberry OS 설치 및 기본 세팅하기&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>Raspberry OS 설치 및 기본 세팅하기&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
@@ -17,12 +17,12 @@
 <li>/Volumes/boot 경로에 wpa_supplicant.conf 파일을 만든다.
 부팅시 ssh 파일이 사라지므로, 위 두개의 파일을 한번에 만들어서 부팅해야함.</li>
 </ol>
-<pre><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+<pre tabindex="0"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=KR
 network={
-    ssid=&quot;yourSSID&quot;    
-    psk=&quot;Your_wireless_network_password&quot;
+    ssid=&#34;yourSSID&#34;    
+    psk=&#34;Your_wireless_network_password&#34;
 }
 </code></pre><ol start="3">
 <li>
@@ -35,15 +35,15 @@ network={
 초기 암호를 입력하면 들어갈 수 있습니다.</p>
 </li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ssh pi@10.100.100.124
-default password: raspberry
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ssh pi@10.100.100.124
+</span></span><span class="line"><span class="cl">default password: raspberry
+</span></span></code></pre></div><ol start="5">
 <li>ssh 설정 변경하기
 4번은 임시로 ssh를 enable 해준거기때문에 다음 접속시에는 또 ssh 파일을 강제로 넣어줘야하니까
 raspi config 에서 ssh설정을 켜줘야합니다.</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo raspi-config
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo raspi-config
+</span></span></code></pre></div><ol>
 <li>ssh, vnc 설정을 모두 켜줍니다.</li>
 <li>system update 업데이트, 로케일, 언어 설정 등도 해줍니다.</li>
 </ol>
@@ -60,14 +60,14 @@ ko_KR.UTF-8
 ko_KR만 해놓으면 한글 다 깨짐.</li>
 </ol>
 <p>2)sudo vi /etc/environment 를 새로 만들고 다음 내용을 추가해보자.</p>
-<pre><code>LANGUAGE=ko_KR
+<pre tabindex="0"><code>LANGUAGE=ko_KR
 LC_ALL=ko_KR
 LANG=ko_KR
 LC_TYPE=ko_KR
 </code></pre><ol start="3">
 <li>그리고 아래 커맨드 실행</li>
 </ol>
-<pre><code>sudo apt-get install --reinstall locales &amp;&amp; sudo dpkg-reconfigure locales
+<pre tabindex="0"><code>sudo apt-get install --reinstall locales &amp;&amp; sudo dpkg-reconfigure locales
 </code></pre><p>잘됨!</p>
 <ol start="7">
 <li>기타 설정</li>
@@ -79,14 +79,14 @@ LC_TYPE=ko_KR
 <ol start="8">
 <li>모니터 없으니까 설정에서 vnc enable</li>
 </ol>
-<pre><code>sudo raspi-config
+<pre tabindex="0"><code>sudo raspi-config
 </code></pre></article><section class="article labels"><a class="tag" href=/tags/raspberrypi/>raspberrypi</a><a class="tag" href=/tags/ssh/>ssh</a><a class="tag" href=/tags/wifi/>wifi</a><a class="tag" href=/tags/vnc/>vnc</a></section><section class="article navigation"><p><a class="link" href="/posts/210621/"><span class="li">&larr;</span>Arduino HC-06과 Android 블루투스 통신으로 LED 제어하기</a></p><p><a class="link" href="/posts/200130/"><span class="li">&rarr;</span>How to use ionicons in Devextreme Vuejs</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

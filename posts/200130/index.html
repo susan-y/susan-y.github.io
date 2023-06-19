@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.113.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>How to use ionicons in Devextreme Vuejs&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.1d4a76e253e8f16164fddda82406bbfb8c0404f76381f51e541af467da529f55948f0da582f0e71fa53f18025fb46a02.css" integrity="sha384-HUp24lPo8WFk/d2oJAa7&#43;4wEBPdjgfUeVBr0Z9pSn1WUjw2lgvDnH6U/GAJftGoC"><body>
+<meta name="supported-color-schemes" content="light dark"><title>How to use ionicons in Devextreme Vuejs&nbsp;&ndash;&nbsp;Dev Log</title><link rel="stylesheet" href="/css/core.min.2ab00d03381507c9ae3e1c0b8ad1892b178ab30713b051f1f009411cc51e27ef29496e8db81f573684e227a11e1d2a1e.css" integrity="sha384-KrANAzgVB8muPhwLitGJKxeKswcTsFHx8AlBHMUeJ&#43;8pSW6NuB9XNoTiJ6EeHSoe"><body>
     <div class="base-body"><section id="header" class="site header max-body-width">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/logo.png" alt /><span class="site name">Dev Log</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/posts/">Posts</a><a class="nav item" href="/about/">About</a><a class="nav item" href="/project/">Project</a></nav></div></span></div></section><div id="content" class="max-body-width"><section class="article header">
     <h1 class="article title">How to use ionicons in Devextreme Vuejs</h1><p class="article date">2020-01-30</p></section><article class="article markdown-body"><h2 id="ionicons-홈페이지">ionicons 홈페이지</h2>
-<p><a href="https://ionicons.com/">https://ionicons.com/</a></p>
+<p><a href="https://ionicons.com/"target="_blank">https://ionicons.com/</a></p>
 <h2 id="environments">Environments</h2>
 <ul>
 <li><strong>Devextreme Vuejs Project</strong>
 <ul>
-<li><a href="https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/">https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/</a></li>
+<li><a href="https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/"target="_blank">https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/</a></li>
 </ul>
 </li>
 <li><strong>Devextreme Vue Template</strong>
 <ul>
-<li><a href="https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template">https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template</a></li>
+<li><a href="https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template"target="_blank">https://github.com/DevExpress/devextreme-vue-template#devextreme-vue-template</a></li>
 </ul>
 </li>
 </ul>
@@ -28,30 +28,30 @@
   href="./image1.png"><img  src="./image1.png"
         alt/></a></p>
 <h3 id="3-mainjs에-css를-import-한다">3. main.js에 css를 import 한다.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="s1">&#39;./assets/css/ionicons.css&#39;</span><span class="p">;</span>
-</code></pre></div><h3 id="4-npm-run-build-또는-npm-run-devserve">4. npm run build 또는 npm run dev(serve)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./assets/css/ionicons.css&#39;</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="4-npm-run-build-또는-npm-run-devserve">4. npm run build 또는 npm run dev(serve)</h3>
 <h2 id="사용하기">사용하기</h2>
 <p><code>devextreme-vue-template/app-navigation.js</code> 에서 icon 부분을 다음과 같이 변경한다.</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="p">{[</span>
-   <span class="p">{</span>
-     <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;Dashboard&#34;</span><span class="p">,</span>
-     <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/dashboard&#34;</span><span class="p">,</span>
-     <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;ion ion-alert&#34;</span>
-   <span class="p">},</span>
-   <span class="p">{</span>
-     <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;App Mgmt&#34;</span><span class="p">,</span>
-     <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/app-mgmt&#34;</span><span class="p">,</span>
-     <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;ion ion-android-add&#34;</span>
-   <span class="p">}</span>
- <span class="p">]</span>
-<span class="p">...</span>
-</code></pre></div></article><section class="article labels"><a class="tag" href=/tags/ionicons/>ionicons</a><a class="tag" href=/tags/devextreme/>devextreme</a><a class="tag" href=/tags/vuejs/>vuejs</a></section><section class="article navigation"><p><a class="link" href="/posts/201123/"><span class="li">&larr;</span>Raspberry OS 설치 및 기본 세팅하기</a></p><p><a class="link" href="/posts/200129-1/"><span class="li">&rarr;</span>Raspberry Pi 3B+ Wifi Ethernet Bridge</a class="link">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{[</span>
+</span></span><span class="line"><span class="cl">   <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;Dashboard&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/dashboard&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;ion ion-alert&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">},</span>
+</span></span><span class="line"><span class="cl">   <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;App Mgmt&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">path</span><span class="o">:</span> <span class="s2">&#34;/app-mgmt&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">icon</span><span class="o">:</span> <span class="s2">&#34;ion ion-android-add&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></div></article><section class="article labels"><a class="tag" href=/tags/ionicons/>ionicons</a><a class="tag" href=/tags/devextreme/>devextreme</a><a class="tag" href=/tags/vuejs/>vuejs</a></section><section class="article navigation"><p><a class="link" href="/posts/201123/"><span class="li">&larr;</span>Raspberry OS 설치 및 기본 세팅하기</a></p><p><a class="link" href="/posts/200129-1/"><span class="li">&rarr;</span>Raspberry Pi 3B+ Wifi Ethernet Bridge</a class="link">
     </p></section></div><section id="footer" class="footer max-body-width"><div class="footer-wrap">
     <p class="copyright">Dev Log</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
         target="_blank">Notepadium</a></p>
-</div></section><script src="/js/prism.min.28f2bfd6dfaa7ad0e8b973373bb7db234d27a2faafc26d5ffd2de4c2b1b5f2bf80011f2e2976dc9fb364abb13f63ebdc.js" integrity="sha384-KPK/1t&#43;qetDouXM3O7fbI00novqvwm1f/S3kwrG18r&#43;AAR8uKXbcn7Nkq7E/Y&#43;vc"></script>
+</div></section><script src="/js/prism.min.c926d7ddd488ae6b783841308547967e841585f70e4c7a070feed533f3e117fca24b89f42cacbbdca5dd6788664365cf.js" integrity="sha384-ySbX3dSIrmt4OEEwhUeWfoQVhfcOTHoHD&#43;7VM/PhF/yiS4n0LKy73KXdZ4hmQ2XP"></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {

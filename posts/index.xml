@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dev Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2023년도 상반기 정리</title>
+      <link>/posts/230619/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/230619/</guid>
+      <description>월별 정리 1월 병가 2월 ELK 시작 Elasticsearch 환경 구성, 검색 집계 Kibana 시작, Console Logstash 3월 Metricbeat ELK + Vue + Vuetify AWS ELK 4월 Find The Gap 프로그램 참여 React 시작 책으로 배우기 동영상으로 배우기 5월 그룹웨어, 전자결재.</description>
+    </item>
     
     <item>
       <title>Arduino HC-06과 Android 블루투스 통신으로 LED 제어하기</title>
@@ -17,7 +26,7 @@
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/210621/</guid>
-      <description>준비 준비물  Arduino Uno x1 HC-06 module x1 LED x2 안드로이드 폰(Android 11)  개발환경  Android Studio 4.</description>
+      <description>준비 준비물 Arduino Uno x1 HC-06 module x1 LED x2 안드로이드 폰(Android 11) 개발환경 Android Studio 4.</description>
     </item>
     
     <item>
@@ -26,7 +35,7 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>Environments  Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB  Step  /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
+      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
     </item>
     
     <item>
@@ -36,7 +45,7 @@
       
       <guid>/posts/200130/</guid>
       <description>ionicons 홈페이지 https://ionicons.com/
-Environments  Devextreme Vuejs Project  https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/   Devextreme Vue Template  https://github.</description>
+Environments Devextreme Vuejs Project https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/ Devextreme Vue Template https://github.</description>
     </item>
     
     <item>
@@ -56,7 +65,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/200129-2/</guid>
-      <description>Draft  2019-04-26  준비물 | Prerequisites  내 컴퓨터 공유기 LAN 케이블 Raspberry Pi Micro SD Card 16GB, Micro SD Card Reader  개발환경 | Environments  MacOS Mojave RPI 3B Raspbian Stretch With Desktop BalenaEtcher  원격화면 연결을 위한 설정 | Turn VNC on sudo raspi-config 1.</description>
+      <description>Draft 2019-04-26 준비물 | Prerequisites 내 컴퓨터 공유기 LAN 케이블 Raspberry Pi Micro SD Card 16GB, Micro SD Card Reader 개발환경 | Environments MacOS Mojave RPI 3B Raspbian Stretch With Desktop BalenaEtcher 원격화면 연결을 위한 설정 | Turn VNC on sudo raspi-config 1.</description>
     </item>
     
     <item>
@@ -65,7 +74,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190910/</guid>
-      <description>Environments  Mac 10.14.x iTerm2, zsh  Project Name  express10  Step 1.</description>
+      <description>Environments Mac 10.14.x iTerm2, zsh Project Name express10 Step 1. expressjs 프로젝트 생성 express --view=pug express10 [project name] 2.</description>
     </item>
     
     <item>
@@ -74,7 +83,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments  Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1  Tools  Raspbian Buster Balena Etcher Terminal  Summary 단계를 그대로 따라한다.</description>
+      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.</description>
     </item>
     
     <item>
@@ -83,7 +92,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-2/</guid>
-      <description>Environments  Android API 19 - 29 Kotlin Android Studio 3.</description>
+      <description>Environments Android API 19 - 29 Kotlin Android Studio 3.4 step MainActivity.</description>
     </item>
     
     <item>
@@ -92,7 +101,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190809-1/</guid>
-      <description>Environments  Swift 5.0 Xcode 10 Mojave  step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
+      <description>Environments Swift 5.0 Xcode 10 Mojave step ViewController.swift import CoreTelephony override func viewDidLoad() { super.</description>
     </item>
     
     <item>
@@ -102,7 +111,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       
       <guid>/posts/190503/</guid>
       <description>Docker Hub https://hub.docker.com/
-summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음  Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D  &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&amp;rsquo;라는 이름으로 실행한다.</description>
+summary docker가 실행되고 로그인 된 상태에서 다음 커맨드를 실행할 수 있음 Pull Docker Repo docker pull susany/tutorials:rpi # example # docker pull [user name]/[repo name]:[tag name] # or # docker pull raspbian/stretch Start Docker Repo docker run -d -p 32808:22 -P --name rpi susany/tutorials:rpi /usr/sbin/sshd -D &amp;lsquo;susany/tutorials:rpi&amp;rsquo; repo를 &amp;lsquo;rpi&amp;rsquo;라는 이름으로 실행한다.</description>
     </item>
     
     <item>
@@ -111,7 +120,7 @@ summary  docker가 실행되고 로그인 된 상태에서 다음 커맨드를 �
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/posts/190502-2/</guid>
-      <description>summary  Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10  addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
+      <description>summary Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10 addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
     </item>
     
     <item>
@@ -139,7 +148,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
       
       <guid>/posts/190228/</guid>
-      <description>환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox 버추얼박스를 다운로드합니다.</description>
+      <description>환경 Windows 10 x64 ASUS BIOS 준비물 Download VirtualBox 버추얼박스를 다운로드합니다.</description>
     </item>
     
     <item>
@@ -148,7 +157,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Thu, 09 Aug 2018 10:34:10 +0000</pubDate>
       
       <guid>/posts/180809-1/</guid>
-      <description>Pre-requisites env.  Xcode 9 macOS High Sierra  InfoPlist.strings 만들기  File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.</description>
+      <description>Pre-requisites env. Xcode 9 macOS High Sierra InfoPlist.strings 만들기 File &amp;gt; New &amp;gt; File&amp;hellip; FileName: InfoPlist.</description>
     </item>
     
     <item>
@@ -184,7 +193,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180511-1/</guid>
-      <description>IoT 허브 역할  IoT 디바이스 컨트롤러. 전구, 도어락, 온도조절기 등의 Smart Device와 Hub는 Zigbee 통신 등으로 커맨드를 주고 받는다.</description>
+      <description>IoT 허브 역할 IoT 디바이스 컨트롤러. 전구, 도어락, 온도조절기 등의 Smart Device와 Hub는 Zigbee 통신 등으로 커맨드를 주고 받는다.</description>
     </item>
     
     <item>
@@ -213,7 +222,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Wed, 25 Apr 2018 10:54:11 +0000</pubDate>
       
       <guid>/posts/180425-1/</guid>
-      <description>목표  Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기  environments Hue Bridge와 같은 네트워크에 연결해야한다.</description>
+      <description>목표 Hue Bridge에 연결하기 Hue Bridge에 연결되어있는 Hue조명 상태 가져오기 Hue조명 조절하기 environments Hue Bridge와 같은 네트워크에 연결해야한다.</description>
     </item>
     
     <item>
@@ -231,7 +240,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-2/</guid>
-      <description>Prerequsites Env.  Android studio 3 Target API 26 Kotlin  Getting Started 1.</description>
+      <description>Prerequsites Env. Android studio 3 Target API 26 Kotlin Getting Started 1.</description>
     </item>
     
     <item>
@@ -240,7 +249,7 @@ Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_po
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-1/</guid>
-      <description>Prerequsites Refrences  NetworkExtension  Env.  Xcode 9 iOS11 above Swift4  Getting Started 1.</description>
+      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1.</description>
     </item>
     
   </channel>
