@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pio on Dev Log</title>
+    <title>pio on DEV LOG</title>
     <link>/tags/pio/</link>
-    <description>Recent content in pio on Dev Log</description>
+    <description>Recent content in pio on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 May 2019 09:22:38 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
       
       <guid>/posts/190502/</guid>
       <description>platformio.ini Project Configuration File. 프로젝트 설정파일입니다.
-Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_port = [Port Name] ; example ; upload_port = /dev/cu.</description>
+Baud Rate settings monitor_speed = 115200 when Multi Arduino connected upload_port = [Port Name] ; example ; upload_port = /dev/cu.usbmodem/144104 monitor_port = [Port Name] ; example ; monitor_port = /dev/cu.usbmodem/144104 references Platform IO Docs: platformio.ini https://docs.platformio.org/en/latest/projectconf.html</description>
     </item>
     
   </channel>

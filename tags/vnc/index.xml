@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vnc on Dev Log</title>
+    <title>vnc on DEV LOG</title>
     <link>/tags/vnc/</link>
-    <description>Recent content in vnc on Dev Log</description>
+    <description>Recent content in vnc on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,9 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
+      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다. /Volumes/boot 경로에 wpa_supplicant.conf 파일을 만든다. 부팅시 ssh 파일이 사라지므로, 위 두개의 파일을 한번에 만들어서 부팅해야함. ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 country=KR network={ ssid=&amp;#34;yourSSID&amp;#34; psk=&amp;#34;Your_wireless_network_password&amp;#34; } Angry IP Scanner 로 라즈베리파이를 찾는다. 10.100.100.124 - &amp;lsquo;raspberrypi.local&amp;rsquo; 이 뜸! 여기로 ssh 연결해서 다음 단계를 진행해보자.
+ssh raspberrypi.local 초기 암호를 입력하면 들어갈 수 있습니다.
+ssh pi@10.100.100.124 default password: raspberry ssh 설정 변경하기 4번은 임시로 ssh를 enable 해준거기때문에 다음 접속시에는 또 ssh 파일을 강제로 넣어줘야하니까 raspi config 에서 ssh설정을 켜줘야합니다.</description>
     </item>
     
     <item>
@@ -26,7 +28,8 @@
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/200129-2/</guid>
-      <description>Draft 2019-04-26 준비물 | Prerequisites 내 컴퓨터 공유기 LAN 케이블 Raspberry Pi Micro SD Card 16GB, Micro SD Card Reader 개발환경 | Environments MacOS Mojave RPI 3B Raspbian Stretch With Desktop BalenaEtcher 원격화면 연결을 위한 설정 | Turn VNC on sudo raspi-config 1.</description>
+      <description>Draft 2019-04-26 준비물 | Prerequisites 내 컴퓨터 공유기 LAN 케이블 Raspberry Pi Micro SD Card 16GB, Micro SD Card Reader 개발환경 | Environments MacOS Mojave RPI 3B Raspbian Stretch With Desktop BalenaEtcher 원격화면 연결을 위한 설정 | Turn VNC on sudo raspi-config 1. interfaces config 2. VNC Enable &amp;gt; YES tightvncserver 설치 | Install tightvncserver sudo apt-get install tightvncserver
+Reboot &amp;amp; Execute sudo reboot ... tightvncserver MacOS Security Preferences Settings &amp;gt; Sharing 에서 Screen sharing enable 설정하기</description>
     </item>
     
   </channel>

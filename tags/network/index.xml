@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>network on Dev Log</title>
+    <title>network on DEV LOG</title>
     <link>/tags/network/</link>
-    <description>Recent content in network on Dev Log</description>
+    <description>Recent content in network on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,9 @@
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.</description>
+      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.
+Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
+denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
     </item>
     
     <item>
@@ -27,7 +29,8 @@
       
       <guid>/posts/180509-1/</guid>
       <description>Original Hotspot Network Subsystem Programming Guide
-번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks.</description>
+번역 About the Hotspot Network Subsystem The Hotspot Network Subsystem allows a Hotspot Helper application to participate in the process of classifying and authenticating to Wi-Fi hotspot networks. This programming guide is a companion to Apple’s NEHotspotHelper Class Reference, which describes the Hotspot Helper API.
+핫스팟 네트워크 서브시스템은 핫스팟 헬퍼앱이 와이파이 핫스팟 네트워크를 분류하거나 인증하는 절차에 참여할 수 있게 합니다. 핫스팟 헬퍼 API를 설명하기 위해 NEHotspotHelper 클래스 참고문서를 따릅니다.</description>
     </item>
     
     <item>
@@ -36,7 +39,7 @@
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-1/</guid>
-      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1.</description>
+      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1. Capabilities Hotspot Configuration On 2. Code swift4 @IBAction func connectClicked(_ sender: Any) { let config = NEHotspotConfiguration.init(ssid: &amp;#34;[name]&amp;#34;, passphrase: &amp;#34;[password]&amp;#34;, isWEP: false) config.joinOnce = true NEHotspotConfigurationManager.shared.apply(config) { (error) in if (error != nil) { print(error!) } } } </description>
     </item>
     
   </channel>

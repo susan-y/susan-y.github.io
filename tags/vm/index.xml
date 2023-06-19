@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vm on Dev Log</title>
+    <title>vm on DEV LOG</title>
     <link>/tags/vm/</link>
-    <description>Recent content in vm on Dev Log</description>
+    <description>Recent content in vm on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Feb 2019 14:39:19 +0000</lastBuildDate>
@@ -17,7 +17,10 @@
       <pubDate>Thu, 28 Feb 2019 14:39:19 +0000</pubDate>
       
       <guid>/posts/190228/</guid>
-      <description>환경 Windows 10 x64 ASUS BIOS 준비물 Download VirtualBox 버추얼박스를 다운로드합니다.</description>
+      <description>환경 Windows 10 x64 ASUS BIOS 준비물 Download VirtualBox 버추얼박스를 다운로드합니다.
+VirtualBox Download Page Download CentOS 7 ISO 최신 iso파일을 미러사이트에서 다운로드합니다.
+CentOS Download Page 파일이름 참고: CentOS-7-x86_64-DVD-1810.iso VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
+Install VirtualBox BIOS Setting에서 Advanced &amp;gt; Intel Virtualization Technology 설정을 Enabled로 변경 VirtualBox 실행 VirtualBox -&amp;gt; 새로 만들기 Name: Centos7 64 종류: Linux 버전: Red Hat(64-bit) 새로 만든 Centos7을 실행하기 전에 다음을 설정합니다.</description>
     </item>
     
   </channel>

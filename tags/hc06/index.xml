@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HC06 on Dev Log</title>
+    <title>HC06 on DEV LOG</title>
     <link>/tags/hc06/</link>
-    <description>Recent content in HC06 on Dev Log</description>
+    <description>Recent content in HC06 on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,8 @@
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/210621/</guid>
-      <description>준비 준비물 Arduino Uno x1 HC-06 module x1 LED x2 안드로이드 폰(Android 11) 개발환경 Android Studio 4.</description>
+      <description>준비 준비물 Arduino Uno x1 HC-06 module x1 LED x2 안드로이드 폰(Android 11) 개발환경 Android Studio 4.2 Arduino IDE, VSCode MacOS Bigsur HC-06 Spec. 블루투스 버전: 2.0 밴드: 2.4GHz ~ 2.48GHz 수신 거리: -85dBm (Decibel-milliwatts) 목표 아두이도 HC-06과 안드로이드폰 페어링 및 연결 안드로이드폰의 SimpleBluetoothTerminal 앱으로 LED 제어하기 단계 아두이노 아두이노 소스코드 bluetooth.ino
+/* HC-06 bluetooth */ #include &amp;lt;SoftwareSerial.h&amp;gt; // Serial 통신핀으로 D11번핀을 Rx로, D10번핀을 Tx로 선언 SoftwareSerial btSerial (11, 10); // btSerial(RX, TX); int led1 = 7; int led2 = 8; int data; char command = 0; void setup() { Serial.</description>
     </item>
     
   </channel>

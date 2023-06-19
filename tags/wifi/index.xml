@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wifi on Dev Log</title>
+    <title>wifi on DEV LOG</title>
     <link>/tags/wifi/</link>
-    <description>Recent content in wifi on Dev Log</description>
+    <description>Recent content in wifi on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,9 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/201123/</guid>
-      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다.</description>
+      <description>Environments Raspberry Pi 3B+ Raspberry Pi Imager MicroSD 64GB Step /Volumes/boot 경로에 빈 ssh 파일을 만든다. /Volumes/boot 경로에 wpa_supplicant.conf 파일을 만든다. 부팅시 ssh 파일이 사라지므로, 위 두개의 파일을 한번에 만들어서 부팅해야함. ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 country=KR network={ ssid=&amp;#34;yourSSID&amp;#34; psk=&amp;#34;Your_wireless_network_password&amp;#34; } Angry IP Scanner 로 라즈베리파이를 찾는다. 10.100.100.124 - &amp;lsquo;raspberrypi.local&amp;rsquo; 이 뜸! 여기로 ssh 연결해서 다음 단계를 진행해보자.
+ssh raspberrypi.local 초기 암호를 입력하면 들어갈 수 있습니다.
+ssh pi@10.100.100.124 default password: raspberry ssh 설정 변경하기 4번은 임시로 ssh를 enable 해준거기때문에 다음 접속시에는 또 ssh 파일을 강제로 넣어줘야하니까 raspi config 에서 ssh설정을 켜줘야합니다.</description>
     </item>
     
     <item>
@@ -28,7 +30,9 @@
       <guid>/posts/200129-1/</guid>
       <description>Draft 2019-04-23
 Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
-목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다.</description>
+목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다. 따라서 라즈베리파이를 Ehternet Bridge로 만듭니다.
+준비물 Raspberry Pi 3B+, 키보드, 마우스, 모니터 데스크탑과 와이파이 네트워크의 브릿지로 사용합니다. 라즈베리파이 3B+는 802.11ac 와이파이를 가지고 있어서 이 프로젝트에 적당합니다. 데스크탑: iMac 27 공유기: ipTime Raspbian Stretch 단계 sudo -Es apt-get update &amp;amp;&amp;amp; apt-get upgrade 라즈베리파이를 Wifi에 연결합니다. /etc/wpa_supplicant/wpa_supplicant.conf 파일을 열어서 아래와 유사하게 되어있는 걸 확인합니다. country_code는 US로 지정했습니다.
+country=US ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&amp;#34;YOUR SSID&amp;#34; psk=&amp;#34;YOUR PASSWORD&amp;#34; } 아래 커맨드를 실행합니다.</description>
     </item>
     
     <item>
@@ -37,7 +41,9 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/190826/</guid>
-      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.</description>
+      <description>Environments Raspberry PI 3B x 1 Micro SD Card 32GB x 1 Lan Cable x 1 Tools Raspbian Buster Balena Etcher Terminal Summary 단계를 그대로 따라한다.
+Step 1. Upgrade sudo apt-get update sudo apt-get upgrade 2. Install Hostapd, Bridge-utils sudo apt-get install hostapd bridge-utils sudo systemctl stop hostapd 3. dhcpcd.conf 파일 편집하기 sudo vi /etc/dhcpcd.conf 맨 아래에 두줄 추가
+denyinterfaces wlan0 denyinterfaces eth0 4. Bridge 만들기 sudo brctl addbr br0 sudo brctl addif br0 eth0 5.</description>
     </item>
     
     <item>
@@ -46,7 +52,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-2/</guid>
-      <description>Prerequsites Env. Android studio 3 Target API 26 Kotlin Getting Started 1.</description>
+      <description>Prerequsites Env. Android studio 3 Target API 26 Kotlin Getting Started 1. Permission &amp;lt;uses-permission android:name=&amp;#34;android.permission.CHANGE_WIFI_STATE&amp;#34; /&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.ACCESS_WIFI_STATE&amp;#34; /&amp;gt; 2. Code kotlin fun wifiConnect() { val ssid = &amp;#34;my hotspot ssid&amp;#34; val key = &amp;#34;my hotspot password&amp;#34; val wifiConfig = WifiConfiguration() wifiConfig.SSID = &amp;#34;\&amp;#34;&amp;#34; + ssid + &amp;#34;\&amp;#34;&amp;#34; wifiConfig.preSharedKey = &amp;#34;\&amp;#34;&amp;#34; + key + &amp;#34;\&amp;#34;&amp;#34; wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK) val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager val netId = wifiManager.addNetwork(wifiConfig) wifiManager.disconnect() wifiManager.enableNetwork(netId, true) wifiManager.reconnect() } </description>
     </item>
     
     <item>
@@ -55,7 +61,7 @@ Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/180413-1/</guid>
-      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1.</description>
+      <description>Prerequsites Refrences NetworkExtension Env. Xcode 9 iOS11 above Swift4 Getting Started 1. Capabilities Hotspot Configuration On 2. Code swift4 @IBAction func connectClicked(_ sender: Any) { let config = NEHotspotConfiguration.init(ssid: &amp;#34;[name]&amp;#34;, passphrase: &amp;#34;[password]&amp;#34;, isWEP: false) config.joinOnce = true NEHotspotConfigurationManager.shared.apply(config) { (error) in if (error != nil) { print(error!) } } } </description>
     </item>
     
   </channel>

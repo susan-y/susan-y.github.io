@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>error on Dev Log</title>
+    <title>error on DEV LOG</title>
     <link>/tags/error/</link>
-    <description>Recent content in error on Dev Log</description>
+    <description>Recent content in error on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 02 May 2019 10:44:26 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 02 May 2019 10:44:26 +0000</pubDate>
       
       <guid>/posts/190502-2/</guid>
-      <description>summary Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10 addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something.</description>
+      <description>summary Error를 throw하고 throws catch 하는 방법 간단히 정리 Swift5, Xcode10 addnew function func addNew(username: String, password: String) throws -&amp;gt; Bool { // do something... guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) } return true } viewDidLoad override func viewDidLoad() { super.viewDidLoad() let ret = try? addNew(username: username, password: password) if ret == false { print(&amp;#34;failed&amp;#34;) } else { print(&amp;#34;success!&amp;#34;) } } // or override func viewDidLoad() { super.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev Log</title>
+    <title>DEV LOG</title>
     <link>/</link>
-    <description>Recent content on Dev Log</description>
+    <description>Recent content on DEV LOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0000</lastBuildDate>
@@ -26,8 +26,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Playground
-iOS, macOS Android WPF, Winform Express.js, Vue.js XD Dictionary</description>
+      <description> Playground
+iOS, macOS Android WPF, Winform Express.js, Vue.js XD Dictionary
+Swift5, Objective-C Kotlin, Java C#, XAML, DevExpress, Devextreme Vuejs Javascript, CSS3 Hardware
+iPad Pro 10.5 iPhone 5, iPhone 6, iPhone 8, iPhone 11 Pro iMac 27(Late 2012) MacBook Air 13(2013) MacBook Pro 15(2018) iPad Mini 3 Apple Watch Series 1 AirPods Revision
+updated 2020-01-29 updated 2019-08-09 </description>
     </item>
     
     <item>
