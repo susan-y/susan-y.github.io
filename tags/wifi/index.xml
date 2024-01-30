@@ -30,7 +30,7 @@ ssh pi@10.100.100.124 default password: raspberry ssh 설정 변경하기 4번�
       <guid>/posts/200129-1/</guid>
       <description>Draft 2019-04-23
 Origin Post https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
-목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다. 따라서 라즈베리파이를 Ehternet Bridge로 만듭니다.
+목표 라즈베리파이를 통해서 내 데스크탑을 와이파이에 연결합니다. 따라서 라즈베리파이를 Ethernet Bridge로 만듭니다.
 준비물 Raspberry Pi 3B+, 키보드, 마우스, 모니터 데스크탑과 와이파이 네트워크의 브릿지로 사용합니다. 라즈베리파이 3B+는 802.11ac 와이파이를 가지고 있어서 이 프로젝트에 적당합니다. 데스크탑: iMac 27 공유기: ipTime Raspbian Stretch 단계 sudo -Es apt-get update &amp;amp;&amp;amp; apt-get upgrade 라즈베리파이를 Wifi에 연결합니다. /etc/wpa_supplicant/wpa_supplicant.conf 파일을 열어서 아래와 유사하게 되어있는 걸 확인합니다. country_code는 US로 지정했습니다.
 country=US ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 network={ ssid=&amp;#34;YOUR SSID&amp;#34; psk=&amp;#34;YOUR PASSWORD&amp;#34; } 아래 커맨드를 실행합니다.</description>
     </item>
